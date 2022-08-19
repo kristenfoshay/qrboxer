@@ -1,6 +1,6 @@
-### CAPSTONE 2: STEP 3 - Sourcing Data
+# STEP 3 - Sourcing Data
 
-The central part of the application I’m designing for my 2nd capstone is an api that generates the QR Codes that I need so that my users can print them out and stick to a box. There are many QR Code generators out there but after some research I discovered that many had a paywall and/or were a bit complex to use. So after some decision making I decided to use Google’s api for generating QR Codes. It seems rather simple to use and since I want to focus the difficulty level on building a self-directed full stack application in a short period of time, I will use Google’s api and perhaps down the road, I can modify it to use another one that might add more functionality or design aspects (some allow you to change the color and other aspects of how the QR Code looks.) 
+The central part of the application I’m designing is an api that generates the QR Codes that I need so that my users can print them out and stick to a box. There are many QR Code generators out there but after some research I discovered that many had a paywall and/or were a bit complex to use. So after some decision making I decided to use Google’s api for generating QR Codes. It seems rather simple to use and since I want to focus the difficulty level on building a self-directed full stack application in a short period of time, I will use Google’s api and perhaps down the road, I can modify it to use another one that might add more functionality or design aspects (some allow you to change the color and other aspects of how the QR Code looks.) 
 
 https://developers.google.com/chart/infographics/docs/qr_codes
 

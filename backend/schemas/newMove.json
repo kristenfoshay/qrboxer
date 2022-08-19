@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "month": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 2
+      },
+      "year": {
+        "type": "integer",
+        "minimum": 4
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "location",
+      "month",
+      "year"
+    ]
+  }

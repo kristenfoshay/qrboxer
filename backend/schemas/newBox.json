@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "properties": {
+      "room": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "description": {
+        "type": "string"
+      },
+      "items": {
+        "type": "string"
+      },
+      "image-url": {
+        "type": "string",
+        "default": "",
+        "examples": [
+            "http://a.co/eobPtX2"
+        ]
+    }
+    },
+    "additionalProperties": false,
+    "required": [
+      "room",
+      "items"
+    ]
+  }

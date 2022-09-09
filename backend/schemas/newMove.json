@@ -11,11 +11,16 @@
       "month": {
         "type": "integer",
         "minimum": 1,
-        "maximum": 2
+        "maximum": 12
       },
       "year": {
         "type": "integer",
         "minimum": 4
+      },
+      "username": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 25
       }
     },
     "additionalProperties": false,

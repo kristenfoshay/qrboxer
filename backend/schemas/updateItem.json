@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string",
+      "default": "",
+      "examples": [
+          "http://a.co/eobPtX2"
+      ]
+  },
+  "box": {
+    "type": "integer"
+  }
+  },
+  "additionalProperties": false,
+  "required": [
+  ]
+}

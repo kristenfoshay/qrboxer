@@ -11,16 +11,9 @@
       "description": {
         "type": "string"
       },
-      "items": {
-        "type": "string"
-      },
-      "image-url": {
-        "type": "string",
-        "default": "",
-        "examples": [
-            "http://a.co/eobPtX2"
-        ]
-    }
+      "move": {
+        "type": "integer"
+      }
     },
     "additionalProperties": false,
     "required": []

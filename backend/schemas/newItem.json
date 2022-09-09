@@ -3,22 +3,23 @@
     "$id": "http://example.com/example.json",
     "type": "object",
     "properties": {
-      "room": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 100
-      },
       "description": {
         "type": "string"
       },
-      "move": {
-        "type": "integer"
-      }
+      "image": {
+        "type": "string",
+        "default": "",
+        "examples": [
+            "http://a.co/eobPtX2"
+        ]
+    },
+    "box": {
+      "type": "integer"
+    }
     },
     "additionalProperties": false,
     "required": [
-      "room",
       "description",
-      "move"
+      "box"
     ]
   }

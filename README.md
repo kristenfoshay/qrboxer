@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img width="350" src="https://live.staticflickr.com/65535/52344856137_c0abc9e2c3_k.jpg" alt="QRBoxer">
+    <img width="450" src="https://live.staticflickr.com/65535/52344856137_c0abc9e2c3_k.jpg" alt="QRBoxer">
     <br>
     <br>
 </h1>

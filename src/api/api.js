@@ -32,30 +32,28 @@ class QRBoxerApi {
     }
   }
 
-  // Individual API routes
 
-  /** Get the current user. */
 
   static async getCurrentUser(username) {
     let res = await this.request(`users/${username}`);
     return res.user;
   }
 
-  /** Get companies (filtered by name if not undefined) */
+ 
 
   static async getMoves(location) {
     let res = await this.request("moves", { location });
     return res.moves;
   }
 
-  /** Get details on a company by handle. */
+ 
 
   static async getMove(id) {
     let res = await this.request(`moves/${id}`);
     return res.move;
   }
 
-  /** Get list of jobs (filtered by title if not undefined) */
+
 
   static async getBoxes(room) {
     let res = await this.request("boxes", {room});

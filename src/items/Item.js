@@ -17,7 +17,7 @@ function Item() {
     acquireItems();
   }, [id]);
 
-  if (!box) return <p> Loading ... </p>;
+  if (!item) return <p> Loading ... </p>;
 
   return (
       <div className="Item col-md-8 offset-md-2">

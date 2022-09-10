@@ -11,6 +11,7 @@ function Moves() {
     async function getMovesBoxes() {
  
     let moves = await QRBoxerApi.getMoves();
+    console.log(moves);/////////////////////////////////////////////////
     setMoves(moves);
   }
   getMovesBoxes();  

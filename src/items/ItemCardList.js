@@ -1,11 +1,11 @@
 import React from "react";
 import ItemCard from "./ItemCard";
 
-function ItemCardList({ jobs }) {
+function ItemCardList({ items }) {
 
   return (
       <div className="ItemCardList">
-        {items.map(box => (
+        {items.map(item => (
             <ItemCard
                 key={item.id}
                 id={item.id}

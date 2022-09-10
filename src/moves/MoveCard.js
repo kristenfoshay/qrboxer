@@ -4,7 +4,7 @@ import "./MoveCard.css";
 
  class MoveCard extends Component {
   render() {
-    const { location, month, year } = this.props;
+    const { id, location, month, year } = this.props;
 
   return (
       <Link className="MoveCard card" to={`/moves/${id}`}>

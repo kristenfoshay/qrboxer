@@ -1,7 +1,7 @@
 import React from "react";
 import BoxCard from "./BoxCard";
 
-function BoxCardList({ jobs }) {
+function BoxCardList({ boxes }) {
 
   return (
       <div className="BoxCardList">

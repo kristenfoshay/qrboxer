@@ -1,11 +1,10 @@
 //import React, { useContext, useState } from "react";
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import "./ItemCard.css";
-//import UserContext from "../auth/UserContext";
 
-function ItemCard({ id, room, description, move }) {
+function ItemCard({ id, description, image, box }) {
   console.debug("ItemCard");
 
   return (

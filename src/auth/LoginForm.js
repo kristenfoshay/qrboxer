@@ -30,7 +30,7 @@ function LoginForm({ login }) {
     let result = await login(formData);
     setFormData(INITIAL_STATE)
     if (result.success) {
-      history.push("/companies");
+      history.push("/moves");
     }
 
 

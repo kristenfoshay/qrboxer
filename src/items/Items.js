@@ -10,7 +10,7 @@ function Items() {
   useEffect(() => {
     async function acquireItems() {
  
-    let boxes = await QRBoxerApi.getItems();
+    let items = await QRBoxerApi.getItems();
     setItems(items);
   }
   acquireItems();  

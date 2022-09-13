@@ -6,20 +6,12 @@ import Boxes from "../boxes/Boxes";
 import Items from "../items/Items";
 import Box from "../boxes/Box";
 import Move from "../moves/Move";
+import User from "../users/User";
 import Item from "../items/Item";
 import LoginForm from "../auth/LoginForm";
 import ProfileForm from "../profiles/ProfileForm";
 import SignupForm from "../auth/SignupForm";
 
-//import PrivateRoute from "./PrivateRoute";
-
-/** Site-wide routes.
- *
- * Parts of site should only be visitable when logged in. Those routes are
- * wrapped by <PrivateRoute>, which is an authorization component.
- *
- * Visiting a non-existant route Navigates to the homepage.
- */
 
 function Routes({ login, signup }) {
 
@@ -49,6 +41,10 @@ function Routes({ login, signup }) {
 
           <Route exact path="/items">
             <Items />
+          </Route>
+
+          <Route exact path="/users/:id">
+            <User />
           </Route>
 
           <Route exact path="/moves/:id">

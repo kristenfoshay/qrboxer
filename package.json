@@ -35,7 +35,7 @@
     "webpack": "^5.74.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "concurrently \"react-app-rewired start\" \"cd backend && nodemon server.js\"",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"

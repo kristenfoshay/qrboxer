@@ -1,5 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+@font-face {
+  font-family: 'Lobster';
+  src: local('Lobster'), url(./fonts/Lobster/Lobster-Regular.ttf) format('truetype');
+}
+
 body {
   background-color: #F8F8F8;
   margin: 0;

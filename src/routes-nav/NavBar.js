@@ -35,7 +35,7 @@ function NavBar({ logout }) {
   return (
     <nav className="Nav">
       <Link to="/">
-        QRBoxer
+        <img width="95" src={require('./QRBoxer.jpg')} alt="logo" />
       </Link>
       {currentUser ? loggedIn() : loggedOut()}
     </nav>

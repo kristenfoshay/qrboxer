@@ -5,7 +5,7 @@ import MoveCardList from "../moves/MoveCardList";
 
 
 function User() {
-  const { id } = useParams();
+  const { username } = useParams();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -15,13 +15,14 @@ function User() {
     }
 
     getUserMoves();
-  }, [id]);
+  }, [username]);
 
   if (!user) return <p> Loading ... </p>;
 
   return (
-      <div className="Move col-md-8 offset-md-2">
-        <h4>{user.username}</h4>
+      <div className="User col-md-8 offset-md-2">
+        <h4>Welcome Back {user.username}!</h4>
+        <h3>Pick a move to see your boxes!</h3>
         <MoveCardList moves={user.moves} />
       </div>
   );

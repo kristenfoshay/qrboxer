@@ -28,9 +28,10 @@ function LoginForm({ login }) {
  
     event.preventDefault();
     let result = await login(formData);
+    console.log(result);
     setFormData(INITIAL_STATE)
     if (result.success) {
-      history.push("/moves");
+      history.push(`/users/${result.username}`);
     }
 
 
@@ -38,7 +39,8 @@ function LoginForm({ login }) {
 
   return (
     <div className="Login">
-   
+   <h1>My Account</h1>
+   <br></br>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="username">
           <Form.Label>Username</Form.Label>

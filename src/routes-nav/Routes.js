@@ -43,7 +43,7 @@ function Routes({ login, signup }) {
             <Items />
           </Route>
 
-          <Route exact path="/users/:id">
+          <Route exact path="/users/:username">
             <User />
           </Route>
 

@@ -8,8 +8,8 @@ CREATE TABLE users (
 
 CREATE TABLE moves (
   id SERIAL PRIMARY KEY,
-  location TEXT UNIQUE NOT NULL,
-  month INTEGER CHECK ( month <= 12),
+  location TEXT NOT NULL,
+  month TEXT NOT NULL,
   year INTEGER CHECK (year <= 2100),
   username VARCHAR(25)
 );

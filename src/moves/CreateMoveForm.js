@@ -6,7 +6,7 @@ import "./Signup.css";
 
 
 
-function SignupForm({signup}) {
+function CreateMoveForm({signup}) {
   const history = useHistory();
   const INITIAL_STATE = {
     username: "",
@@ -37,7 +37,7 @@ function SignupForm({signup}) {
     let result = await signup(formData);
 
     if (result.success) {
-      history.push("/moves");
+      history.push("/");
     } else {
       setFormErrors(result.errors);
     }
@@ -54,13 +54,13 @@ function SignupForm({signup}) {
       <Form onSubmit={handleSubmit}>
         
         <Form.Group className="ml-3">
-          <Form.Label >Username</Form.Label>
+          <Form.Label >Location you are moving to</Form.Label>
           <Form.Control
-            type="username"
-            name="username"
-            id="username"
-            value={formData.username}
-            placeholder="Username"
+            type="location"
+            name="location"
+            id="location"
+            value={formData.location}
+            placeholder="Location"
             onChange={handleChange}
           />
 
@@ -68,25 +68,25 @@ function SignupForm({signup}) {
         </Form.Group>
 
         <Form.Group className="ml-3">
-          <Form.Label className="label">Email</Form.Label>
+          <Form.Label className="label">Month of your move</Form.Label>
           <Form.Control
-            type="email"
-            name="email"
-            id="email"
-            value={formData.email}
-            placeholder="Email"
+            type="month"
+            name="month"
+            id="month"
+            value={formData.month}
+            placeholder="Month"
             onChange={handleChange}
           />
         </Form.Group>
 
         <Form.Group className="ml-3">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>The year of your move</Form.Label>
           <Form.Control
-            type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            placeholder="Password"
+            type="year"
+            name="year"
+            id="year"
+            value={formData.year}
+            placeholder="Year"
             onChange={handleChange}
           />
         </Form.Group>
@@ -101,4 +101,4 @@ function SignupForm({signup}) {
   );
 }
 
-export default SignupForm;
+export default CreateMoveForm;

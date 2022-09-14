@@ -20,8 +20,9 @@ function Moves() {
   if (!moves) return <p> Loading ...</p>;
 
   return (
+    
       <div className="Moves col-md-8 offset-md-2">
-       
+       <h1> My Moves </h1>
         {moves.length
             ? (
                 <div className="Moves-list">

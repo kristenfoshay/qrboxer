@@ -41,8 +41,8 @@ class QRBoxerApi {
 
  
 
-  static async getMoves(location) {
-    let res = await this.request("moves", { location });
+  static async getMoves() {
+    let res = await this.request(`moves`);
     return res.moves;
   }
 
@@ -55,8 +55,8 @@ class QRBoxerApi {
 
 
 
-  static async getBoxes(room) {
-    let res = await this.request("boxes", {room});
+  static async getBoxes() {
+    let res = await this.request(`boxes`);
     return res.boxes;
   }
 
@@ -66,7 +66,7 @@ class QRBoxerApi {
   }
 
   static async getItems(description) {
-    let res = await this.request("items", {description});
+    let res = await this.request(`items`, {description});
     return res.items;
   }
 
@@ -87,6 +87,16 @@ class QRBoxerApi {
   static async signup(data) {
     let res = await this.request(`auth/register`, data, "post");
     return res.token;
+  }
+
+  static async createmove(data) {
+    let res = await this.request(`moves`, data, "post");
+    return res.moves;
+  }
+
+  static async createbox(data) {
+    let res = await this.request(`boxes`, data, "post");
+    return res.boxes;
   }
 
   /** Save user profile page. */

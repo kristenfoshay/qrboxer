@@ -97,7 +97,7 @@ class User {
     if (!user) throw new NotFoundError(`No user: ${username}`);
 
     const movesRes = await db.query(
-      `SELECT location, month, year, username
+      `SELECT location, date, username
        FROM moves
        WHERE username = $1`,
     [username],

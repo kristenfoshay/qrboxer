@@ -14,9 +14,6 @@ function ProfileForm() {
   console.log(currentUser);
  
   const INITIAL_STATE = {
-    
-    firstName: currentUser.firstName,
-    lastName: currentUser.lastName,
     email: currentUser.email,
     username: currentUser.username,
     };
@@ -51,7 +48,7 @@ const [saveConfirmed, setSaveConfirmed] = useState(false);
     setFormData(f => ({ ...f, password: "" }));
     setSaveConfirmed(true);
 
-    // trigger reloading of user information throughout the site
+
     setCurrentUser(updatedUser);
   }
 
@@ -66,7 +63,7 @@ const handleChange = (event) => {
   return (
     <div class="form-group">
       <div>
-        <h1>Edit Your Profile</h1>
+        <h1>Edit My Profile</h1>
       </div>
 
       <Form onSubmit={handleSubmit}>

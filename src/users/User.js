@@ -1,29 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import QRBoxerApi from "../api/api";
-import MoveCardList from "../moves/MoveCardList";
+import React, { useContext } from "react";
+//import React from "react";
+//import MoveCardList from "../moves/MoveCardList";
+import CreateMoveForm from "../moves/CreateMoveForm";
+import UserContext from "../UserContext";
 
+function User({createmove}) {
+  const { currentUser } = useContext(UserContext);
+ 
+  console.log(currentUser);
 
-function User() {
-  const { username } = useParams();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    async function getUserMoves() {
-      let user = await QRBoxerApi.getCurrentUser(username);
-      setUser(user);
-    }
-
-    getUserMoves();
-  }, [username]);
-
-  if (!user) return <p> Loading ... </p>;
 
   return (
       <div className="User col-md-8 offset-md-2">
-        <h4>Welcome Back {user.username}!</h4>
-        <h3>Pick a move to see your boxes!</h3>
-        <MoveCardList moves={user.moves} />
+        {/* <h1>Welcome Back {currentUser.username}!</h1> */}
+        <br></br>
+        <br></br>
+        <CreateMoveForm username={currentUser.username} createmove={createmove} />
+
       </div>
   );
 }

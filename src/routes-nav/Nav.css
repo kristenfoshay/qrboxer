@@ -10,7 +10,7 @@
 }
   
   .Nav a {
-    font-family: Lobster, serif;
+    font-family: lobster;
     padding: 0.5em 0;
     width: 10em;
     display: inline-block;
@@ -25,5 +25,5 @@
   
   .Nav a.active {
     font-weight: bold;
-    color: white;
+    color: blueviolet;
   }

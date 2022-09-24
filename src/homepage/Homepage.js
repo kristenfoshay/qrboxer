@@ -1,28 +1,49 @@
-import React, { Component } from 'react';
+import React, {useContext} from 'react';
 import Button from "react-bootstrap/Button";
+import UserContext from "../UserContext";
+//import User from "../users/User";
+//import QRCode from "../boxes/QRCode";
+import "./Homepage.css";
 
 
-class Homepage extends Component {
-  //static contextType = UserContext;
+function Homepage() {
+  const { currentUser } = useContext(UserContext);
 
-  render() {
+  function loggedOut() {
     //const currUser = this.context;
     return (
-      <div>
-        <h1>QRBoxer</h1>
-        <p>Moving made easier!</p>
-        <Button block="true" size="md" href="/login">
+      <div id="loggedout">
+        <h1 size="lg">QRBoxer</h1>
+        <p1>What's in your Box??</p1>
+        <br></br>
+        <Button block="true" size="lg" href="/login">
           Login
         </Button>
         <br></br>
-        <br></br>
-        <Button block="true" size="md" href="/signup">
+        <Button block="true" size="lg" href="/signup">
           Signup
         </Button>
-
+        <br></br>
+        <br></br>
+        
       </div>
     );
   }
+
+  function loggedIn() {
+    //const currUser = this.context;
+    return (
+      <div id="loggedin">
+        
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {currentUser ? loggedIn() : loggedOut()}
+    </div>
+);
 }
 
 export default Homepage;

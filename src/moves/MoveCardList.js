@@ -10,8 +10,7 @@ function MoveCardList({ moves }) {
                 key={move.id}
                 id={move.id}
                 location={move.location}
-                year={move.year}
-                month={move.month}
+                date={move.date}
                 // ItemCardList
             />
         ))}

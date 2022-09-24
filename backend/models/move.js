@@ -10,7 +10,7 @@ class Move {
 
   //ADD BACK Foreign Key but remove it from schema...
 
-  static async create({ id, location, month, year, username}) {
+  static async create({ id, location, date, username}) {
     const duplicateCheck = await db.query(
           `SELECT id
            FROM moves
@@ -22,13 +22,12 @@ class Move {
 
     const result = await db.query(
           `INSERT INTO moves
-           (location, month, year, username)
-           VALUES ($1, $2, $3, $4)
-           RETURNING location, month, year, username`,
+           (location, date, username)
+           VALUES ($1, $2, $3)
+           RETURNING location, date, username`,
         [
           location,
-          month,
-          year,
+          date,
           username
         ],
     );
@@ -41,8 +40,7 @@ class Move {
     const moveRes = await db.query(
           `SELECT id,
                   location,
-                  month,
-                  year,
+                  date,
                   username
            FROM moves
            WHERE id = $1`,
@@ -53,7 +51,7 @@ class Move {
     if (!move) throw new NotFoundError(`No company: ${id}`);
 
     const boxesRes = await db.query(
-          `SELECT id, room, description, move
+          `SELECT id, room, move
            FROM boxes
            WHERE move = $1
            ORDER BY id`,
@@ -76,8 +74,7 @@ class Move {
                       WHERE id = ${idVarIdx} 
                       RETURNING id, 
                       location,
-                      month,
-                      year,
+                      date,
                       username`;
     const result = await db.query(querySql, [...values, id]);
     const move = result.rows[0];
@@ -91,8 +88,7 @@ class Move {
     const moveRes = await db.query(
           `SELECT id,
                   location,
-                  month,
-                  year,
+                  date,
                   username
            FROM moves`);
 

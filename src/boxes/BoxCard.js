@@ -3,21 +3,21 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import "./BoxCard.css";
+import QRCode from "./QRCode";
 //import UserContext from "../auth/UserContext";
 
-function BoxCard({ id, room, description, move }) {
+function BoxCard({ id, room, move, location, date }) {
   console.debug("BoxCard");
 
   return (
     <Link className="BoxCard card" to={`/boxes/${id}`}>
-       <div className="BoxCard"> 
+       
         <div className="card-body">
-          <h6 className="card-description">{description}</h6>
-          <p>{move.year}</p>
+          <h6 className="card-room">{room} {location} {date}</h6>
+          <QRCode id={id}/>
+          <p>{location} {date}</p>
           {/* might have to remove "year" */}
-          <p>{room}</p>
         </div>
-      </div>
       </Link>
   );
 }

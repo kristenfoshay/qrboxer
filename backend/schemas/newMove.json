@@ -8,14 +8,8 @@
         "minLength": 1,
         "maxLength": 100
       },
-      "month": {
-        "type": "integer",
-        "minimum": 1,
-        "maximum": 12
-      },
-      "year": {
-        "type": "integer",
-        "minimum": 4
+      "date": {
+        "type": "string"
       },
       "username": {
         "type": "string",
@@ -26,7 +20,6 @@
     "additionalProperties": false,
     "required": [
       "location",
-      "month",
-      "year"
+      "date"
     ]
   }

@@ -7,16 +7,14 @@ const { sqlForPartialUpdate } = require("../helpers/sql");
 
 class Box {
 
-  static async create({ room, description, move }) {
+  static async create({ room, move }) {
     const result = await db.query(
           `INSERT INTO boxes (room,
-                             description,
                              move)
-           VALUES ($1, $2, $3)
-           RETURNING room, description, move`,
+           VALUES ($1, $2 )
+           RETURNING room, move`,
         [
           room,
-          description,
           move
         ]);
     let box = result.rows[0];
@@ -28,7 +26,6 @@ class Box {
     const boxRes = await db.query(
           `SELECT id,
                   room,
-                  description,
                   move
            FROM boxes`);
 
@@ -40,7 +37,6 @@ class Box {
     const boxRes = await db.query(
           `SELECT id,
                   room,
-                  description,
                   move
            FROM boxes
            WHERE id = $1`, [id]);
@@ -63,7 +59,6 @@ class Box {
                       WHERE id = ${idVarIdx} 
                       RETURNING id, 
                       room,
-                      description,
                       move`;
     const result = await db.query(querySql, [...values, id]);
     const box = result.rows[0];

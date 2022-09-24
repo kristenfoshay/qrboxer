@@ -11,16 +11,17 @@ import Item from "../items/Item";
 import LoginForm from "../auth/LoginForm";
 import ProfileForm from "../profiles/ProfileForm";
 import SignupForm from "../auth/SignupForm";
+//import CreateaBox from "../boxes/CreateaBox";
 
 
-function Routes({ login, signup }) {
+function Routes({ login, signup, createmove, createbox }) {
 
   return (
       <div className="pt-5">
         <Switch>
 
           <Route exact path="/">
-            <Homepage />
+            <Homepage/>
           </Route>
 
           <Route exact path="/login">
@@ -32,11 +33,11 @@ function Routes({ login, signup }) {
           </Route>
 
           <Route exact path="/moves">
-            <Moves />
+            <Moves createmove={createmove}/>
           </Route>
 
           <Route exact path="/boxes">
-            <Boxes />
+            <Boxes/>
           </Route>
 
           <Route exact path="/items">
@@ -44,11 +45,12 @@ function Routes({ login, signup }) {
           </Route>
 
           <Route exact path="/users/:username">
-            <User />
+            <User createmove={createmove} />
           </Route>
 
           <Route exact path="/moves/:id">
-            <Move/>
+            <Move createbox={createbox}/>
+           
           </Route>
 
           <Route exact path="/boxes/:id">

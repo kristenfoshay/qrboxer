@@ -1,7 +1,7 @@
 import React from "react";
 import BoxCard from "./BoxCard";
 
-function BoxCardList({ boxes }) {
+function BoxCardList({ boxes, location, date }) {
 
   return (
       <div className="BoxCardList">
@@ -10,9 +10,9 @@ function BoxCardList({ boxes }) {
                 key={box.id}
                 id={box.id}
                 room={box.room}
-                description={box.description}
                 move={box.move}
-                // ItemCardList
+                location={location}
+                date={date}
             />
         ))}
       </div>

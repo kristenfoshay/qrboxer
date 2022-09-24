@@ -20,7 +20,7 @@ function Items() {
 
   return (
       <div className="Items col-md-8 offset-md-2">
-       
+       <h1> My Items </h1>
         {items.length
             ? (
                 <div className="Items-list">

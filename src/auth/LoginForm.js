@@ -31,7 +31,7 @@ function LoginForm({ login }) {
     console.log(result);
     setFormData(INITIAL_STATE)
     if (result.success) {
-      history.push(`/users/${result.username}`);
+      history.push('/');
     }
 
 

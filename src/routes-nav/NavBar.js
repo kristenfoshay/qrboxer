@@ -11,7 +11,7 @@ function NavBar({ logout }) {
 
   function loggedOut(){
     return (
-        <nav className="Nav">
+        <nav className="Nav1">
           <NavLink exact to="/">Home</NavLink>
           <NavLink exact to="/login">Login</NavLink>
         </nav>
@@ -20,14 +20,13 @@ function NavBar({ logout }) {
 
   function loggedIn(){
     return (
-        <nav className="Nav">
+        <nav className="Nav1">
           <NavLink exact to="/">Home</NavLink>
-          <NavLink exact to="/moves">Moves</NavLink>
-          <NavLink exact to="/boxes">Boxes</NavLink>
-          <NavLink exact to="/items">Items</NavLink>
-          <NavLink exact to="/profile">Profile</NavLink>
-            <NavLink exact to="/" onClick={logout}>Logout</NavLink>
-            
+          <NavLink exact to="/moves">My Moves</NavLink>
+          <NavLink exact to="/boxes">My Boxes</NavLink>
+          <NavLink exact to="/items">My Items</NavLink>
+          <NavLink exact to="/profile">My Profile</NavLink>
+          <NavLink exact to="/" onClick={logout}>Logout</NavLink>  
         </nav>
     );
   }

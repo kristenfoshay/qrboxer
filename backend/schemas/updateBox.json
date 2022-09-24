@@ -8,9 +8,6 @@
         "minLength": 1,
         "maxLength": 100
       },
-      "description": {
-        "type": "string"
-      },
       "move": {
         "type": "integer"
       }

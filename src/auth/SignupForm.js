@@ -11,8 +11,6 @@ function SignupForm({signup}) {
   const INITIAL_STATE = {
     username: "",
     password: "",
-    firstName: "",
-    lastName: "",
     email: "",
   }
   const [formData, setFormData] = useState(INITIAL_STATE);
@@ -37,7 +35,7 @@ function SignupForm({signup}) {
     let result = await signup(formData);
 
     if (result.success) {
-      history.push("/moves");
+      history.push("/");
     } else {
       setFormErrors(result.errors);
     }

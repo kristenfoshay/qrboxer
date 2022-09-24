@@ -11,9 +11,11 @@ import LoadingSpinner from "./common/LoadingSpinner";
 
 
 function App() {
-  const [infoLoaded, setInfoLoaded] = useState(false);
+  const [infoLoaded, setInfoLoaded] = useState(false)
   const [token, setToken] = useLocalStorage("token", "");
   const [currentUser, setCurrentUser] = useState(null);
+  let [move, setMove] = useState(null);
+  let [box, setBox] = useState(null);
 
 
   useEffect(function loadUserInfo() {
@@ -34,10 +36,6 @@ function App() {
       }
       setInfoLoaded(true);
     }
-
-    // set infoLoaded to false while async getCurrentUser runs; once the
-    // data is fetched (or even if an error happens!), this will be set back
-    // to false to control the spinner.
     setInfoLoaded(false);
     getCurrentUser();
   }, [token]);
@@ -64,6 +62,27 @@ function App() {
     }
   }
   
+  async function createmove(moveData) {
+    try {
+      move = await QRBoxerApi.createmove(moveData);
+      setMove(move);
+      return { success: true };
+    } catch (errors) {
+      console.error("create move failed", errors);
+      return { success: false, errors };
+    }
+  }
+
+  async function createbox(moveData) {
+    try {
+      box = await QRBoxerApi.createbox(moveData);
+      setBox(box);
+      return { success: true };
+    } catch (errors) {
+      console.error("create move failed", errors);
+      return { success: false, errors };
+    }
+  }
 
 
   //not clearing out local storage here with either method
@@ -83,7 +102,7 @@ function App() {
       value={{ currentUser, setCurrentUser }}>
         <div className="App">
           <NavBar logout={logout} />
-          <Routes login={login} signup={signup} />
+          <Routes login={login} signup={signup} createmove={createmove} createbox={createbox} />
         </div>
       </UserContext.Provider>
     </BrowserRouter>

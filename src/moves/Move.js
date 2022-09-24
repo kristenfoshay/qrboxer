@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import QRBoxerApi from "../api/api";
 import BoxCardList from "../boxes/BoxCardList";
+import CreateaBox from "../boxes/CreateaBox";
 
 
-function Move() {
+function Move({createbox}) {
   const { id } = useParams();
   const [move, setMove] = useState(null);
 
@@ -22,9 +23,9 @@ function Move() {
   return (
       <div className="Move col-md-8 offset-md-2">
         <h4>{move.location}</h4>
-        <p>{move.year}</p>
-        <p>{move.month}</p>
-        <BoxCardList boxes={move.boxes} />
+        <p>{move.date}</p>
+        <CreateaBox move={move.id} createbox={createbox}/>
+        <BoxCardList boxes={move.boxes} location={move.location} date={move.date} />
       </div>
   );
 }

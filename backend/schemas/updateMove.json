@@ -8,14 +8,8 @@
         "minLength": 1,
         "maxLength": 100
       },
-      "month": {
-        "type": "integer",
-        "minimum": 1,
-        "maximum": 2
-      },
-      "year": {
-        "type": "integer",
-        "minimum": 4
+      "date": {
+        "type": "string"
       }
     },
     "additionalProperties": false,

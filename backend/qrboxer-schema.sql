@@ -9,22 +9,20 @@ CREATE TABLE users (
 CREATE TABLE moves (
   id SERIAL PRIMARY KEY,
   location TEXT NOT NULL,
-  month TEXT NOT NULL,
-  year INTEGER CHECK (year <= 2100),
+  date TEXT NOT NULL,
   username VARCHAR(25)
 );
 
 CREATE TABLE boxes (
   id SERIAL PRIMARY KEY,
   room TEXT NOT NULL,
-  description TEXT NOT NULL,
-  move INTEGER REFERENCES moves(id) ON DELETE CASCADE
+  move INTEGER NOT NULL
 );
 
 CREATE TABLE items (
   id SERIAL PRIMARY KEY,
   image TEXT,
   description TEXT NOT NULL,
-  box INTEGER REFERENCES boxes(id) ON DELETE CASCADE
+  box INTEGER NOT NULL
 );
 

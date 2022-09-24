@@ -1,6 +1,65 @@
-.Homepage {
-    /* put around the vertical center of page */
-    height: calc(100vh - 150px);
+@supports (-webkit-text-stroke: 1px black) {
+
+  #loggedin{
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    z-index: -1;
+    background-image: url("./movingboxes.jpg");
+    opacity: 0.9;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    
+    
+    }
+
+#loggedout{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  left: 0;
+  z-index: -1;
+  background-image: url("./movingbox.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  
+  
   }
+
+  #loggedout{
+    
+    font-family: Lobster, sans-serif;
+    font-size: xx-large;
+    color: white;
+    text-decoration: none;
+    text-shadow:
+    3px 3px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
+}
+
+
+/* Loggedout Background Image Citation: "moving." by GYLo is licensed under CC BY-ND 2.0. */
+
+/* Loggedin Background Image Citation: "Moving Boxes" by Reg Natarajan is licensed under CC BY 2.0. */

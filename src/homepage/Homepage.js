@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
 import Button from "react-bootstrap/Button";
 import UserContext from "../UserContext";
-//import User from "../users/User";
-//import QRCode from "../boxes/QRCode";
 import "./Homepage.css";
 
 
@@ -10,7 +8,7 @@ function Homepage() {
   const { currentUser } = useContext(UserContext);
 
   function loggedOut() {
-    //const currUser = this.context;
+   
     return (
       <div id="loggedout">
         <h1 size="lg">QRBoxer</h1>
@@ -31,7 +29,7 @@ function Homepage() {
   }
 
   function loggedIn() {
-    //const currUser = this.context;
+   
     return (
       <div id="loggedin">
         

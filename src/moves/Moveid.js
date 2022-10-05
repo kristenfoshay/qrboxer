@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-//import { useParams } from "react-router-dom";
 import QRBoxerApi from "../api/api";
-//import BoxCardList from "../boxes/BoxCardList";
-//import CreateaBox from "../boxes/CreateaBox";
 import QRCode from "../boxes/QRCode";
 import { Link } from "react-router-dom";
 
 
-function Moveid({id, move}) {
- 
+function Moveid({ room, id, move }) {
+
   const [moveid, setMoveid] = useState(null);
 
   useEffect(() => {
@@ -24,14 +21,17 @@ function Moveid({id, move}) {
 
   return (
     <Link className="BoxCard card" to={`/boxes/${id}`}>
-       
-        <div className="card-body">
-          <h6 className="card-room">{moveid.room} {moveid.location} {moveid.date}</h6>
-          <QRCode id={moveid.id}/>
-          <p>{moveid.location} {moveid.date}</p>
-          {/* might have to remove "year" */}
-        </div>
-      </Link>
+      <div className="card-body" style={{ height: 600, width: 300, float: 'left' }}>
+        <h6 className="card-room">Room: {room}
+          <br></br>
+          <br></br>
+          Destination: {moveid.location}
+          <br></br>
+          <br></br>
+          Move Date: {moveid.date}</h6>
+        <QRCode id={moveid.id} />
+      </div>
+    </Link>
   );
 }
 

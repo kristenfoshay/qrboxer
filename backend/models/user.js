@@ -14,7 +14,7 @@ const { BCRYPT_WORK_FACTOR } = require("../config.js");
 class User {
 
   static async authenticate(username, password) {
-    
+
     const result = await db.query(
       `SELECT username,
                   password,
@@ -27,7 +27,7 @@ class User {
     const user = result.rows[0];
 
     if (user) {
-      
+
       const isValid = await bcrypt.compare(password, user.password);
       if (isValid === true) {
         delete user.password;
@@ -97,13 +97,13 @@ class User {
     if (!user) throw new NotFoundError(`No user: ${username}`);
 
     const movesRes = await db.query(
-      `SELECT location, date, username
+      `SELECT id, location, date, username
        FROM moves
        WHERE username = $1`,
-    [username],
-);
+      [username],
+    );
 
-user.moves = movesRes.rows;
+    user.moves = movesRes.rows;
     return user;
   }
 

@@ -1,6 +1,9 @@
 .BoxCard {
-    max-height: 250px;
+    max-height: 400px;
+    max-width: 300px;
+  
     margin-bottom: 1rem;
+    margin-left: 1rem;
     color: inherit;
     border-radius: 0;
     border: none;

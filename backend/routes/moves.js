@@ -1,18 +1,13 @@
 "use strict";
 
-/** Routes for companies. */
-
 const jsonschema = require("jsonschema");
 const express = require("express");
-
 const { BadRequestError } = require("../expressError");
 //const { ensureAdmin } = require("../middleware/auth");
 const Move = require("../models/move");
-
+const Box = require("../models/box");
 const moveNewSchema = require("../schemas/newMove.json");
 const moveUpdateSchema = require("../schemas/updateMove.json");
-///const moveSearchSchema = require("../schemas/moveSearch.json");
-
 const router = new express.Router();
 
 
@@ -40,10 +35,20 @@ router.get("/", async function (req, res, next) {
     return next(err);
   }
 });
+
 router.get("/:id", async function (req, res, next) {
   try {
     const move = await Move.get(req.params.id);
     return res.json({ move });
+  } catch (err) {
+    return next(err);
+  }
+});
+
+router.get("/:id/boxes", async function (req, res, next) {
+  try {
+    const boxes = await Box.getMoveBoxes(req.params.id);
+    return res.json({ boxes });
   } catch (err) {
     return next(err);
   }

@@ -1,22 +1,21 @@
 "use strict";
 
 const db = require("../db");
-const { NotFoundError} = require("../expressError");
+const { NotFoundError } = require("../expressError");
 const { sqlForPartialUpdate } = require("../helpers/sql");
-
 
 class Box {
 
   static async create({ room, move }) {
     const result = await db.query(
-          `INSERT INTO boxes (room,
+      `INSERT INTO boxes (room,
                              move)
            VALUES ($1, $2 )
            RETURNING room, move`,
-        [
-          room,
-          move
-        ]);
+      [
+        room,
+        move
+      ]);
     let box = result.rows[0];
 
     return box;
@@ -24,7 +23,7 @@ class Box {
 
   static async findAll() {
     const boxRes = await db.query(
-          `SELECT id,
+      `SELECT id,
                   room,
                   move
            FROM boxes`);
@@ -32,10 +31,21 @@ class Box {
     return boxRes.rows;
   }
 
+  static async findAllbyUser({ move }) {
+    const boxRes = await db.query(
+      `SELECT id,
+                  room,
+                  move
+           FROM boxes
+           WHERE move = $1`, [move]);
+
+    return boxRes.rows;
+  }
+
 
   static async get(id) {
     const boxRes = await db.query(
-          `SELECT id,
+      `SELECT id,
                   room,
                   move
            FROM boxes
@@ -45,13 +55,37 @@ class Box {
 
     if (!box) throw new NotFoundError(`No box: ${id}`);
 
+    //     const itemsRes = await db.query(
+    //       `SELECT id, image, description, box
+    //        FROM items
+    //        WHERE box = $1`,
+    //     [box],
+    // );
+
+    // box.items = itemsRes.rows;
+
     return box;
+  }
+
+  static async getMoveBoxes(move) {
+    const boxesRes = await db.query(
+      `SELECT id,
+                  room,
+                  move
+           FROM boxes
+           WHERE move = $1`, [move]);
+
+    const boxes = boxesRes.rows;
+
+    if (!boxes) throw new NotFoundError(`No box: ${id}`);
+
+    return boxes;
   }
 
   static async update(id, data) {
     const { setCols, values } = sqlForPartialUpdate(
-        data,
-        {});
+      data,
+      {});
     const idVarIdx = "$" + (values.length + 1);
 
     const querySql = `UPDATE boxes 
@@ -70,7 +104,7 @@ class Box {
 
   static async remove(id) {
     const result = await db.query(
-          `DELETE
+      `DELETE
            FROM boxes
            WHERE id = $1
            RETURNING id`, [id]);

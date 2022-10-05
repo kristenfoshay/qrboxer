@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BoxCard from "./BoxCard";
 import QRBoxerApi from "../api/api";
 
-function BoxCardList({ id, location, date }) {
+function BoxesList({ id, location, date }) {
 
   const [boxes, setBoxes] = useState(null);
 
@@ -34,4 +34,4 @@ function BoxCardList({ id, location, date }) {
   );
 }
 
-export default BoxCardList;
+export default BoxesList;

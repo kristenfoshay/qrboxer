@@ -34,10 +34,10 @@
   left: 0;
   z-index: -1;
   background-image: url("./movingbox.jpg");
-  opacity: 0.8;
+  opacity: 0.7;
   background-size: cover;
   background-position: center center;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 1rem;
   

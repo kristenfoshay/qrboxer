@@ -5,28 +5,29 @@ import BoxCardList from "../boxes/BoxCardList";
 import CreateaBox from "../boxes/CreateaBox";
 
 
-function Move({createbox}) {
+function Move({ createbox }) {
   const { id } = useParams();
   const [move, setMove] = useState(null);
 
   useEffect(() => {
     async function getMoveBoxes() {
       let move = await QRBoxerApi.getMove(id);
+      console.log(move);
       setMove(move);
     }
 
     getMoveBoxes();
   }, [id]);
 
-  if (!move) return <p> Loading ... </p>;
+  if (!move) return <p> {id} </p>;
 
   return (
-      <div className="Move col-md-8 offset-md-2">
-        <h4>{move.location}</h4>
-        <p>{move.date}</p>
-        <CreateaBox move={move.id} createbox={createbox}/>
-        <BoxCardList boxes={move.boxes} location={move.location} date={move.date} />
-      </div>
+    <div className="Move col-md-8 offset-md-2">
+      <h4>Destination: {move.location}</h4>
+      <p>Move Date: {move.date}</p>
+      <CreateaBox move={move.id} createbox={createbox} />
+      <BoxCardList id={move.id} location={move.location} date={move.date} />
+    </div>
   );
 }
 

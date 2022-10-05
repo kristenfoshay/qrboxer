@@ -16,6 +16,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   let [move, setMove] = useState(null);
   let [box, setBox] = useState(null);
+  let [item, setItem] = useState(null);
 
 
   useEffect(function loadUserInfo() {
@@ -28,7 +29,7 @@ function App() {
           QRBoxerApi.token = token;
           let currentUser = await QRBoxerApi.getCurrentUser(username);
           setCurrentUser(currentUser);
-    
+
         } catch (err) {
           console.error("App loadUserInfo: problem loading", err);
           setCurrentUser(null);
@@ -61,7 +62,7 @@ function App() {
       return { success: false, errors };
     }
   }
-  
+
   async function createmove(moveData) {
     try {
       move = await QRBoxerApi.createmove(moveData);
@@ -84,14 +85,45 @@ function App() {
     }
   }
 
+  async function removebox(boxData) {
+    try {
+      box = await QRBoxerApi.removebox(boxData);
+      setBox(box);
+      return { success: true };
+    } catch (errors) {
+      console.error("remove box failed", errors);
+      return { success: false, errors };
+    }
+  }
 
-  //not clearing out local storage here with either method
-  function logout(){
-    
+  async function createitem(boxData) {
+    try {
+      item = await QRBoxerApi.createitem(boxData);
+      setItem(item);
+      return { success: true };
+    } catch (errors) {
+      console.error("create item failed", errors);
+      return { success: false, errors };
+    }
+  }
+
+  async function removeitem(itemData) {
+    try {
+      item = await QRBoxerApi.removeitem(itemData);
+      setItem(item);
+      return { success: true };
+    } catch (errors) {
+      console.error("remove item failed", errors);
+      return { success: false, errors };
+    }
+  }
+
+  function logout() {
+
     console.log("logging out")
     setToken(null);
     setCurrentUser(null);
-    
+
   }
 
   if (!infoLoaded) return <LoadingSpinner />;
@@ -99,14 +131,21 @@ function App() {
   return (
     <BrowserRouter>
       <UserContext.Provider
-      value={{ currentUser, setCurrentUser }}>
+        value={{ currentUser, setCurrentUser }}>
         <div className="App">
           <NavBar logout={logout} />
-          <Routes login={login} signup={signup} createmove={createmove} createbox={createbox} />
+          <Routes 
+          login={login} 
+          signup={signup} 
+          createmove={createmove} 
+          createbox={createbox} 
+          createitem={createitem} 
+          removebox={removebox} 
+          removeitem={removeitem} />
         </div>
       </UserContext.Provider>
     </BrowserRouter>
-);
+  );
 }
 
 export default App;

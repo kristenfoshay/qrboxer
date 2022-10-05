@@ -7,29 +7,26 @@ const { sqlForPartialUpdate } = require("../helpers/sql");
 
 class Move {
 
-
-  //ADD BACK Foreign Key but remove it from schema...
-
-  static async create({ id, location, date, username}) {
+  static async create({ location, date, username }) {
     const duplicateCheck = await db.query(
-          `SELECT id
+      `SELECT date
            FROM moves
-           WHERE id = $1`,
-        [id]);
+           WHERE date = $1`,
+      [date]);
 
     if (duplicateCheck.rows[0])
-      throw new BadRequestError(`Duplicate move: ${id}`);
+      throw new BadRequestError(`Duplicate move: ${date}`);
 
     const result = await db.query(
-          `INSERT INTO moves
+      `INSERT INTO moves
            (location, date, username)
            VALUES ($1, $2, $3)
            RETURNING location, date, username`,
-        [
-          location,
-          date,
-          username
-        ],
+      [
+        location,
+        date,
+        username
+      ],
     );
     const move = result.rows[0];
 
@@ -38,35 +35,34 @@ class Move {
 
   static async get(id) {
     const moveRes = await db.query(
-          `SELECT id,
+      `SELECT id,
                   location,
                   date,
                   username
            FROM moves
            WHERE id = $1`,
-        [id]);
+      [id]);
 
     const move = moveRes.rows[0];
 
-    if (!move) throw new NotFoundError(`No company: ${id}`);
+    if (!move) throw new NotFoundError(`No Move: ${id}`);
 
-    const boxesRes = await db.query(
-          `SELECT id, room, move
-           FROM boxes
-           WHERE move = $1
-           ORDER BY id`,
-        [id],
-    );
+    // const boxesRes = await db.query(
+    //       `SELECT id, room, move
+    //        FROM boxes
+    //        WHERE move = $1`,
+    //     [move],
+    // );
 
-    move.boxes = boxesRes.rows;
+    // move.boxes = boxesRes.rows;
 
     return move;
   }
 
   static async update(id, data) {
     const { setCols, values } = sqlForPartialUpdate(
-        data,
-        {});
+      data,
+      {});
     const idVarIdx = "$" + (values.length + 1);
 
     const querySql = `UPDATE moves 
@@ -84,24 +80,26 @@ class Move {
     return move;
   }
 
-  static async findAll() {
+  static async findAll(username) {
     const moveRes = await db.query(
-          `SELECT id,
+      `SELECT id,
                   location,
                   date,
                   username
-           FROM moves`);
+           FROM moves
+           WHERE username = $1`,
+      [username]);
 
     return moveRes.rows;
   }
 
   static async remove(id) {
     const result = await db.query(
-          `DELETE
+      `DELETE
            FROM moves
            WHERE id = $1
            RETURNING id`,
-        [id]);
+      [id]);
     const move = result.rows[0];
 
     if (!move) throw new NotFoundError(`No move: ${id}`);

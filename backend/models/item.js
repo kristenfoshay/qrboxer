@@ -1,23 +1,22 @@
 "use strict";
 
 const db = require("../db");
-const { NotFoundError} = require("../expressError");
+const { NotFoundError } = require("../expressError");
 const { sqlForPartialUpdate } = require("../helpers/sql");
-
 
 class Item {
 
   static async create({ description, image, box }) {
     const result = await db.query(
-          `INSERT INTO items (description,
+      `INSERT INTO items (description,
                              image, box)
            VALUES ($1, $2, $3)
            RETURNING description, image, box`,
-        [
-          description,
-          image,
-          box
-        ]);
+      [
+        description,
+        image,
+        box
+      ]);
     let item = result.rows[0];
 
     return item;
@@ -25,7 +24,7 @@ class Item {
 
   static async findAll() {
     const itemRes = await db.query(
-          `SELECT id,
+      `SELECT id,
                   description,
                   image,
                   box
@@ -36,7 +35,7 @@ class Item {
 
   static async get(id) {
     const itemRes = await db.query(
-          `SELECT id,
+      `SELECT id,
                   description,
                   image,
                   box
@@ -50,10 +49,26 @@ class Item {
     return item;
   }
 
+  static async getitemsbyBox(box) {
+    const itemRes = await db.query(
+      `SELECT id,
+                  description,
+                  image,
+                  box
+           FROM items
+           WHERE box = $1`, [box]);
+
+    const items = itemRes.rows;
+
+    if (!items) throw new NotFoundError(`No box: ${box}`);
+
+    return items;
+  }
+
   static async update(id, data) {
     const { setCols, values } = sqlForPartialUpdate(
-        data,
-        {});
+      data,
+      {});
     const idVarIdx = "$" + (values.length + 1);
 
     const querySql = `UPDATE items 
@@ -73,7 +88,7 @@ class Item {
 
   static async remove(id) {
     const result = await db.query(
-          `DELETE
+      `DELETE
            FROM items
            WHERE id = $1
            RETURNING id`, [id]);
@@ -81,6 +96,17 @@ class Item {
 
     if (!item) throw new NotFoundError(`No item: ${id}`);
   }
+
+  static async boxremoveitem(box) {
+    const result = await db.query(
+      `DELETE
+           FROM items
+           WHERE box = $1`, [box]);
+    const res = result.rows;
+
+    if (!box) throw new NotFoundError(`No Box: ${box}`);
+  }
 }
+
 
 module.exports = Item;

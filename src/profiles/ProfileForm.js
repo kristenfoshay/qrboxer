@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { Redirect } from "react-router";
@@ -12,14 +12,15 @@ function ProfileForm() {
   const history = useHistory();
   const { currentUser, setCurrentUser } = useContext(UserContext);
   console.log(currentUser);
- 
+
   const INITIAL_STATE = {
     email: currentUser.email,
     username: currentUser.username,
-    };
-const [formData, setFormData] = useState(INITIAL_STATE);
-const [saveConfirmed, setSaveConfirmed] = useState(false);
- if(!currentUser.username) {
+    password: currentUser.password,
+  };
+  const [formData, setFormData] = useState(INITIAL_STATE);
+  const [saveConfirmed, setSaveConfirmed] = useState(false);
+  if (!currentUser.username) {
     return <Redirect to="/login" />;
   }
 
@@ -40,7 +41,7 @@ const [saveConfirmed, setSaveConfirmed] = useState(false);
       updatedUser = await QRBoxerApi.saveProfile(username, profileData);
       if (updatedUser.success) {
         history.push("/moves");
-      }    
+      }
     } catch (errors) {
       return;
     }
@@ -52,12 +53,13 @@ const [saveConfirmed, setSaveConfirmed] = useState(false);
     setCurrentUser(updatedUser);
   }
 
-const handleChange = (event) => {
-    const {name, value} = event.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData(formData => ({
-        ...formData,
-        [name]: value
-    }))};
+      ...formData,
+      [name]: value
+    }))
+  };
 
 
   return (
@@ -67,7 +69,7 @@ const handleChange = (event) => {
       </div>
 
       <Form onSubmit={handleSubmit}>
-        
+
         <Form.Group className="ml-3">
           <Form.Label >Username</Form.Label>
           <p class="form-control-plaintext">{currentUser.username}</p>
@@ -86,10 +88,22 @@ const handleChange = (event) => {
           />
         </Form.Group>
 
+        <Form.Group className="ml-3">
+          <Form.Label className="label">Password</Form.Label>
+          <Form.Control
+            type="password"
+            name="password"
+            id="password"
+            value={formData.password}
+            placeholder="Password"
+            onChange={handleChange}
+          />
+        </Form.Group>
+
         {saveConfirmed
-                  ?
-                  <Alert type="success" messages={["Updated successfully."]} />
-                  : null}
+          ?
+          <Alert type="success" messages={["Updated successfully."]} />
+          : null}
 
         <br></br>
         <Button block="true" size="lg" type="submit">

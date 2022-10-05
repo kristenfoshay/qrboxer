@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./Signup.css";
-import Alert from 'react-bootstrap/Alert';
+import QRBoxerApi from "../api/api";
 
-function SignupForm({ signup }) {
+
+function CreateanItem({ createitem, box }) {
+
   const history = useHistory();
   const INITIAL_STATE = {
-    username: "",
-    password: "",
-    email: "",
+    description: "",
+    image: "",
+    box: box
   }
+
+  let [boxes, setBoxes] = useState(null);
+
   const [formData, setFormData] = useState(INITIAL_STATE);
-  const [isValid, setIsValid] = useState(true);
 
   const [formErrors, setFormErrors] = useState([]);
 
+  useEffect(() => {
+    async function getBoxesItems() {
+
+      let boxes = await QRBoxerApi.getBoxes();
+      console.log(boxes);
+      setBoxes(boxes);
+    }
+    getBoxesItems();
+  }, []);
+
+  if (!boxes) return <p> No Boxes yet! </p>;
+
   console.debug(
-    "SignupForm",
-    "signup=", typeof signup,
+    "CreateItemForm",
+    "createitem=", typeof createitem,
     "formData=", formData,
     "formErrors=", formErrors,
   );
@@ -32,66 +47,57 @@ function SignupForm({ signup }) {
   async function handleSubmit(event) {
 
     event.preventDefault();
-    let result = await signup(formData);
+    let result = await createitem(formData);
 
     if (result.success) {
-      setIsValid(true);
       history.push("/");
     } else {
-      setIsValid(false);
       setFormErrors(result.errors);
     }
   }
 
   return (
-
-    <div class="form-group">
-
-      <div> {isValid
-        ? null
-        : <Alert variant="danger">Oops! That username is already taken! </Alert>
-      }
-
-      </div>
+    <div className="form-group">
       <div>
-        <h1>Create an Account</h1>
+        <h1>Create a new Item</h1>
       </div>
 
       <Form onSubmit={handleSubmit}>
 
         <Form.Group className="ml-3">
-          <Form.Label >Username</Form.Label>
+          <Form.Label >Description</Form.Label>
           <Form.Control
-            type="username"
-            name="username"
-            id="username"
-            value={formData.username}
-            placeholder="Username"
+            type="description"
+            name="description"
+            id="description"
+            value={formData.description}
+            placeholder="Description of your Item"
             onChange={handleChange}
           />
+
 
         </Form.Group>
 
         <Form.Group className="ml-3">
-          <Form.Label className="label">Email</Form.Label>
+          <Form.Label >Image</Form.Label>
           <Form.Control
-            type="email"
-            name="email"
-            id="email"
-            value={formData.email}
-            placeholder="Email"
+            type="url"
+            name="image"
+            id="image"
+            value={formData.image}
+            placeholder="Image URL"
             onChange={handleChange}
           />
+
+
         </Form.Group>
 
         <Form.Group className="ml-3">
-          <Form.Label>Password</Form.Label>
           <Form.Control
-            type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            placeholder="Password"
+            type="hidden"
+            name="box"
+            id="box"
+            value={box}
             onChange={handleChange}
           />
         </Form.Group>
@@ -106,4 +112,4 @@ function SignupForm({ signup }) {
   );
 }
 
-export default SignupForm;
+export default CreateanItem;

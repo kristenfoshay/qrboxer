@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
 import UserContext from "../UserContext";
 import Form from "react-bootstrap/Form";
@@ -7,7 +7,7 @@ import "./Moves.css";
 
 
 
-function CreateMoveForm({username,createmove}) {
+function CreateMoveForm({ username, createmove }) {
   const history = useHistory();
   const { currentUser } = useContext(UserContext);
   const INITIAL_STATE = {
@@ -23,9 +23,9 @@ function CreateMoveForm({username,createmove}) {
     "createmoveform=", typeof createmove,
     "formData=", formData,
     "formErrors=", formErrors,
-);
-  //const [saveConfirmed, setSaveConfirmed] = useState(false);
- if(!currentUser.username) {
+  );
+
+  if (!currentUser.username) {
     return <Redirect to="/login" />;
   }
 
@@ -50,14 +50,14 @@ function CreateMoveForm({username,createmove}) {
 
   return (
     <div class="form-group">
-      
-        <h2>Create a New Move</h2>
-      
-<br></br>
+
+      <h2>Create a New Move</h2>
+
+      <br></br>
 
 
       <Form onSubmit={handleSubmit}>
-        
+
         <Form.Group className="ml-3">
           <Form.Label >Location you are moving to</Form.Label>
           <Form.Control

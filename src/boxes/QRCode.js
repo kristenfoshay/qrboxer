@@ -1,34 +1,42 @@
 import React, { useState, useEffect } from "react";
-//import React from "react";
 import QRBoxerApi from "../api/api";
-// import MoveCard from "./MoveCard";
-// import Dropdown from 'react-bootstrap/Dropdown';
-// import DropdownButton from 'react-bootstrap/DropdownButton';
-// import { Link } from "react-router-dom";
+import { QRCodeCanvas } from "qrcode.react";
 
 
-
-function QRCode({id}) {
+function QRCode({ id }) {
 
   let [box, setBox] = useState(null);
-  
+
+
   useEffect(() => {
     async function getQRBoxes() {
- 
-    let box = await QRBoxerApi.getBox(id);
-    console.log(box);
-    setBox(box);
-  }
-  getQRBoxes();  
-}, [id]);
+
+      let box = await QRBoxerApi.getBox(id);
+      console.log(box);
+      setBox(box);
+    }
+    getQRBoxes();
+  }, [id]);
 
   if (!box) return <p> Oops! Something went wrong! </p>;
 
-  return (
-    
-<img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=100x100&amp;choe=UTF-8&amp;chl=`/boxes/${box.id}`"></img>
-  
+  const qrcode = (
+    <QRCodeCanvas
+      id="qrCode"
+      value={`/boxes/${id}`}
+      size={150}
+      bgColor={"white"}
+      level={"H"}
+    />
+  );
 
+  return (
+
+    <div>
+      <h1>Box QR Code:</h1>
+      <br></br>
+      {qrcode}
+    </div>
 
   );
 }

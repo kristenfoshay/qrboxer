@@ -1,19 +1,16 @@
 "use strict";
 
 const jsonschema = require("jsonschema");
-
 const express = require("express");
 const { BadRequestError } = require("../expressError");
-const { ensureAdmin } = require("../middleware/auth");
+//const { ensureAdmin } = require("../middleware/auth");
 const Item = require("../models/item");
 const itemNewSchema = require("../schemas/newItem.json");
 const itemUpdateSchema = require("../schemas/updateItem.json");
-//const jobSearchSchema = require("../schemas/jobSearch.json");
-
 const router = express.Router({ mergeParams: true });
 
 
-router.post("/",  async function (req, res, next) {
+router.post("/", async function (req, res, next) {
   try {
     const validator = jsonschema.validate(req.body, itemNewSchema);
     if (!validator.valid) {
@@ -28,11 +25,10 @@ router.post("/",  async function (req, res, next) {
   }
 });
 
-
 router.get("/", async function (req, res, next) {
-    try {
-  const q = req.query;
-  
+  try {
+    const q = req.query;
+
     const items = await Item.findAll(q);
     return res.json({ items });
   } catch (err) {
@@ -49,7 +45,6 @@ router.get("/:id", async function (req, res, next) {
   }
 });
 
-
 router.patch("/:id", async function (req, res, next) {
   try {
     const validator = jsonschema.validate(req.body, itemUpdateSchema);
@@ -64,7 +59,6 @@ router.patch("/:id", async function (req, res, next) {
     return next(err);
   }
 });
-
 
 router.delete("/:id", async function (req, res, next) {
   try {

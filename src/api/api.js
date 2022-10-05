@@ -2,16 +2,8 @@ import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-/** API Class.
- *
- * Static class tying together methods used to get/send to to the API.
- * There shouldn't be any frontend-specific stuff here, and there shouldn't
- * be any API-aware stuff elsewhere in the frontend.
- *
- */
-
 class QRBoxerApi {
-  // the token for interactive with the API will be stored here.
+
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
@@ -20,8 +12,8 @@ class QRBoxerApi {
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${QRBoxerApi.token}` };
     const params = (method === "get")
-        ? data
-        : {};
+      ? data
+      : {};
 
     try {
       return (await axios({ url, method, data, params, headers })).data;
@@ -32,28 +24,20 @@ class QRBoxerApi {
     }
   }
 
-
-
   static async getCurrentUser(username) {
     let res = await this.request(`users/${username}`);
     return res.user;
   }
 
- 
-
-  static async getMoves() {
-    let res = await this.request(`moves`);
+  static async getMoves(username) {
+    let res = await this.request(`moves`, { username });
     return res.moves;
   }
-
- 
 
   static async getMove(id) {
     let res = await this.request(`moves/${id}`);
     return res.move;
   }
-
-
 
   static async getBoxes() {
     let res = await this.request(`boxes`);
@@ -66,8 +50,18 @@ class QRBoxerApi {
   }
 
   static async getItems(description) {
-    let res = await this.request(`items`, {description});
+    let res = await this.request(`items`, { description });
     return res.items;
+  }
+
+  static async getItemsbyBox(id) {
+    let res = await this.request(`boxes/${id}/items`, id);
+    return res.items;
+  }
+
+  static async getBoxesbyMove(id) {
+    let res = await this.request(`moves/${id}/boxes`, id);
+    return res.boxes;
   }
 
   static async getItem(id) {
@@ -75,14 +69,10 @@ class QRBoxerApi {
     return res.item;
   }
 
-  /** Get token for login from username, password. */
-
   static async login(data) {
     let res = await this.request(`auth/token`, data, "post");
     return res.token;
   }
-
-  /** Signup for site. */
 
   static async signup(data) {
     let res = await this.request(`auth/register`, data, "post");
@@ -99,7 +89,20 @@ class QRBoxerApi {
     return res.boxes;
   }
 
-  /** Save user profile page. */
+  static async createitem(data) {
+    let res = await this.request(`items`, data, "post");
+    return res.items;
+  }
+
+  static async removebox(id) {
+    let res = await this.request(`boxes/${id}`, id, "delete");
+    return res;
+  }
+
+  static async removeitem(id) {
+    let res = await this.request(`items/${id}`, id, "delete");
+    return res;
+  }
 
   static async saveProfile(username, data) {
     let res = await this.request(`users/${username}`, data, "patch");

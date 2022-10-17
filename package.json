@@ -45,7 +45,7 @@
     "webpack": "^4.44.2"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server.js\"",
+    "start": "concurrently \"react-scripts start\" \"cd backend && node server.js\"",
     "s": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

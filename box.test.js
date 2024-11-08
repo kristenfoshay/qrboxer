@@ -1,7 +1,7 @@
 // tests/box.test.js
 
 const db = require("./db");
-const { NotFoundError } = require("../expressError");
+const { NotFoundError } = require("./expressError");
 const Box = require("./models/box");
 
 describe("Box Model Tests", () => {

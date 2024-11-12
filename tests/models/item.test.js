@@ -1,8 +1,8 @@
 // tests/item.test.js
 
-const db = require("./db");
-const Item = require("./models/item");
-const { NotFoundError } = require("./expressError");
+const db = require("../db");
+const Item = require("../models/item");
+const { NotFoundError } = require("../expressError");
 
 describe("Item Model Tests", () => {
   // Clear database before each test

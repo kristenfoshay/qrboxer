@@ -1,8 +1,8 @@
 const request = require("supertest");
-const app = require("./app"); 
-const User = require("./models/user");
-const { createToken } = require("./helpers/tokens");
-const db = require("./db");
+const app = require("../app"); 
+const User = require("../models/user");
+const { createToken } = require("../helpers/tokens");
+const db = require("../db");
 
 describe("Auth Routes Test", () => {
   beforeEach(async () => {

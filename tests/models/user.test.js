@@ -1,7 +1,7 @@
 // tests/user.test.js
 
-const db = require("./db");
-const User = require("./models/user");
+const db = require("../db");
+const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const { 
   NotFoundError, 

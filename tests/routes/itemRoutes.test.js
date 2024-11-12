@@ -1,11 +1,11 @@
 // tests/itemRoutes.test.js
 
 const request = require("supertest");
-const app = require("./app");
-const Item = require("./models/item");
+const app = require("../app");
+const Item = require("../models/item");
 
 // Mock the Item model
-jest.mock("./models/item");
+jest.mock("../models/item");
 
 describe("Item Routes Test", () => {
   beforeEach(() => {

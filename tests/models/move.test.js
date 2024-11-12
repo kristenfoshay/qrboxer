@@ -1,8 +1,8 @@
 // tests/move.test.js
 
-const db = require("./db");
-const Move = require("./models/move");
-const { BadRequestError, NotFoundError } = require("./expressError");
+const db = require("../db");
+const Move = require("../models/move");
+const { BadRequestError, NotFoundError } = require("../expressError");
 
 describe("Move Model Tests", () => {
   beforeEach(async () => {

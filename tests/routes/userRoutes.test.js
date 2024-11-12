@@ -1,10 +1,10 @@
 // tests/userRoutes.test.js
 
 const request = require("supertest");
-const app = require("./app");
-const User = require("./models/user");
-const { createToken } = require("./helpers/tokens");
-const db = require("./db");
+const app = require("../app");
+const User = require("../models/user");
+const { createToken } = require("../helpers/tokens");
+const db = require("../db");
 
 // Mock the User model and tokens helper
 jest.mock("./models/user");

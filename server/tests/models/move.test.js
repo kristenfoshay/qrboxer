@@ -1,12 +1,12 @@
 // tests/move.test.js
 
-const db = require("../config/db");  
-const Move = require("../models/move");
-const { BadRequestError, NotFoundError } = require("../expressError");
+const db = require("../../config/db");  
+const Move = require("../../models/move");
+const { BadRequestError, NotFoundError } = require("../../expressError");
 
 describe("Move Model Tests", () => {
   beforeEach(async () => {
-    // Clear the moves table before each test
+
     await db.query("DELETE FROM moves");
   });
 
@@ -30,7 +30,6 @@ describe("Move Model Tests", () => {
         username: "testuser"
       });
 
-      // Verify it's in database
       const result = await db.query(
         `SELECT location, date, username
          FROM moves
@@ -43,7 +42,7 @@ describe("Move Model Tests", () => {
     test("bad request with duplicate date", async () => {
       try {
         await Move.create(newMove);
-        await Move.create(newMove); // Try to create duplicate
+        await Move.create(newMove);
         fail();
       } catch (err) {
         expect(err instanceof BadRequestError).toBeTruthy();
@@ -104,7 +103,6 @@ describe("Move Model Tests", () => {
         username: "testuser"
       });
 
-      // Verify in database
       const found = await db.query(
         "SELECT * FROM moves WHERE id = $1",
         [moveId]
@@ -138,7 +136,6 @@ describe("Move Model Tests", () => {
 
       const updateData = {
         location: "Los Angeles"
-        // date stays the same
       };
 
       const move = await Move.update(moveId, updateData);
@@ -154,7 +151,7 @@ describe("Move Model Tests", () => {
   /************************************** findAll */
   describe("findAll", () => {
     test("works: finds all moves for user", async () => {
-      // Create test moves
+
       await db.query(
         `INSERT INTO moves (location, date, username)
          VALUES ('New York', '2024-06-01', 'testuser'),
@@ -197,7 +194,6 @@ describe("Move Model Tests", () => {
 
       await Move.remove(moveId);
 
-      // Verify it's gone
       const found = await db.query(
         "SELECT * FROM moves WHERE id = $1",
         [moveId]

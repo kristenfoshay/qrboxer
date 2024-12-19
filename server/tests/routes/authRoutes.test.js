@@ -1,21 +1,18 @@
 const request = require("supertest");
-const app = require("../app");
-const User = require("../models/user");
-const { createToken } = require("../helpers/tokens");
-const db = require("../config/db");
+const app = require("../../app");
+const User = require("../../models/user");
+const { createToken } = require("../../helpers/tokens");
+const db = require("../../config/db");
 
 describe("Auth Routes Test", () => {
   beforeEach(async () => {
+    await db.query("DELETE FROM moves");
     await db.query("DELETE FROM users");
     
-    // Create test user
     await User.register({
       username: "testuser",
       password: "password123",
-      firstName: "Test",
-      lastName: "User",
-      email: "test@test.com",
-      admin: false,
+      email: "test@test.com"
     });
   });
 
@@ -102,7 +99,7 @@ describe("Auth Routes Test", () => {
       const resp = await request(app)
         .post("/auth/register")
         .send({
-          username: "testuser", // already exists
+          username: "testuser", 
           password: "password123",
           firstName: "Test",
           lastName: "User",
@@ -138,9 +135,9 @@ describe("Auth Routes Test", () => {
         .post("/auth/register")
         .send({
           username: "newuser",
-          password: 123, // should be string
+          password: 123,
           firstName: "New",
-          lastName: "User",
+          lastName: "Usr",
           email: "new@test.com",
         });
       expect(resp.statusCode).toBe(400);
@@ -155,11 +152,10 @@ describe("Auth Routes Test", () => {
           firstName: "New",
           lastName: "User",
           email: "new@test.com",
-          admin: true, // should be ignored
+          admin: true,
         });
       expect(resp.statusCode).toBe(201);
       
-      // Verify user was created as non-admin
       const user = await User.get("newuser");
       expect(user.admin).toBe(false);
     });
@@ -168,22 +164,7 @@ describe("Auth Routes Test", () => {
 
 /************************************** Test Config */
 
-// Mock token creation to return predictable values in tests
-jest.mock("../helpers/tokens", () => ({
+jest.mock("../../helpers/tokens", () => ({
   createToken: jest.fn(() => "test-token"),
 }));
 
-// Optional: Add these to your package.json
-/*
-{
-  "scripts": {
-    "test": "jest -i",
-    "test:watch": "jest -i --watchAll"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "testPathIgnorePatterns": ["/node_modules/"],
-    "setupFilesAfterEnv": ["./jest.setup.js"]
-  }
-}
-*/

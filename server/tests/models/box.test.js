@@ -1,16 +1,15 @@
 // tests/box.test.js
 
-const db = require("../config/db");
-const { NotFoundError } = require("../expressError");
-const Box = require("../models/box");
+const db = require("../../config/db");
+const { NotFoundError } = require("../../expressError");
+const Box = require("../../models/box");
 
 describe("Box Model Tests", () => {
-  // Clear database tables before all tests
+
   beforeAll(async () => {
     await db.query("DELETE FROM boxes");
   });
 
-  // Clear database tables before each test
   beforeEach(async () => {
     await db.query("DELETE FROM boxes");
   });
@@ -33,7 +32,6 @@ describe("Box Model Tests", () => {
         move: 1
       });
 
-      // Verify it's in database
       const result = await db.query(
         `SELECT room, move
          FROM boxes
@@ -48,7 +46,7 @@ describe("Box Model Tests", () => {
   /************************************** findAll */
   describe("findAll", () => {
     test("works: no filter", async () => {
-      // Create two boxes
+
       await Box.create({
         room: "Living Room",
         move: 1
@@ -77,7 +75,7 @@ describe("Box Model Tests", () => {
   /************************************** findAllbyUser */
   describe("findAllbyUser", () => {
     test("works with move filter", async () => {
-      // Create boxes for different moves
+
       await Box.create({
         room: "Living Room",
         move: 1
@@ -133,7 +131,7 @@ describe("Box Model Tests", () => {
   /************************************** getMoveBoxes */
   describe("getMoveBoxes", () => {
     test("works", async () => {
-      // Create boxes for a move
+
       await Box.create({
         room: "Living Room",
         move: 1
@@ -182,7 +180,6 @@ describe("Box Model Tests", () => {
         move: 1
       });
 
-      // Verify in database
       const found = await db.query(
         `SELECT * FROM boxes WHERE id = $1`,
         [boxId]);

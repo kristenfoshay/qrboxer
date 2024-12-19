@@ -1,12 +1,12 @@
 
 const request = require("supertest");
-const app = require("../app");
-const User = require("../models/user");
-const { createToken } = require("../helpers/tokens");
-const db = require("../config/db");
+const app = require("../../app");
+const User = require("../../models/user");
+const { createToken } = require("../../helpers/tokens");
+const db = require("../../config/db");
 
-jest.mock("../models/user");
-jest.mock("../helpers/tokens");
+jest.mock("../../models/user");
+jest.mock("../../helpers/tokens");
 
 describe("User Routes Test", () => {
   beforeEach(() => {

@@ -1,13 +1,13 @@
 // tests/moveRoutes.test.js
 
 const request = require("supertest");
-const app = require("../app");
-const Move = require("../models/move");
-const Box = require("../models/box");
+const app = require("../../app");
+const Move = require("../../models/move");
+const Box = require("../../models/box");
 
 // Mock the Move and Box models
-jest.mock("../models/move");
-jest.mock("../models/box");
+jest.mock("../../models/move");
+jest.mock("../../models/box");
 
 describe("Move Routes Test", () => {
   beforeEach(() => {

@@ -1,16 +1,15 @@
 // tests/item.test.js
 
-const db = require("../config/db");
-const Item = require("../models/item");
-const { NotFoundError } = require("../expressError");
+const db = require("../../config/db");
+const Item = require("../../models/item");
+const { NotFoundError } = require("../../expressError");
 
 describe("Item Model Tests", () => {
-  // Clear database before each test
+
   beforeEach(async () => {
     await db.query("DELETE FROM items");
   });
 
-  // Close db connection after all tests
   afterAll(async () => {
     await db.end();
   });
@@ -30,7 +29,6 @@ describe("Item Model Tests", () => {
       box: 1
     });
 
-    // Verify it's in database
     const found = await db.query("SELECT * FROM items WHERE description = $1", 
       ["Coffee Table Books"]);
     expect(found.rows[0]).toEqual({
@@ -41,7 +39,7 @@ describe("Item Model Tests", () => {
 
   /************************************** findAll */
   test("can find all items", async () => {
-    // Create two test items
+
     const item1 = await Item.create({
       description: "Coffee Table Books",
       image: "books.jpg",
@@ -98,7 +96,7 @@ describe("Item Model Tests", () => {
 
   /************************************** getitemsbyBox */
   test("can get items by box", async () => {
-    // Create items in the same box
+
     await Item.create({
       description: "Item 1",
       image: "item1.jpg",
@@ -109,7 +107,7 @@ describe("Item Model Tests", () => {
       image: "item2.jpg",
       box: 1
     });
-    // Create item in different box
+
     await Item.create({
       description: "Item 3",
       image: "item3.jpg",
@@ -176,7 +174,6 @@ describe("Item Model Tests", () => {
 
     await Item.remove(itemId);
     
-    // Verify it's gone
     const res = await db.query(
       "SELECT * FROM items WHERE id = $1",
       [itemId]);
@@ -194,7 +191,7 @@ describe("Item Model Tests", () => {
 
   /************************************** boxremoveitem */
   test("can remove all items from a box", async () => {
-    // Create multiple items in a box
+
     await Item.create({
       description: "Item 1",
       image: "item1.jpg",
@@ -208,7 +205,6 @@ describe("Item Model Tests", () => {
 
     await Item.boxremoveitem(1);
     
-    // Verify all items from box 1 are gone
     const res = await db.query(
       "SELECT * FROM items WHERE box = $1",
       [1]);

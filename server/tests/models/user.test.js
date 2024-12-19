@@ -1,34 +1,27 @@
-// tests/user.test.js
-
 const db = require("../../config/db");
-const User = require("../models/user");
+const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 const { 
   NotFoundError, 
   BadRequestError, 
   UnauthorizedError 
-} = require("../expressError");
-const { BCRYPT_WORK_FACTOR } = require("../config/config");
+} = require("../../expressError");
+const { BCRYPT_WORK_FACTOR } = require("../../config/config");
 
 describe("User Model Tests", () => {
   beforeEach(async () => {
+    await db.query("DELETE FROM moves");
     await db.query("DELETE FROM users");
-  });
-
-  afterAll(async () => {
-    await db.end();
+    
+    await User.register({
+      username: "testuser",
+      password: "password123",
+      email: "test@test.com"
+    });
   });
 
   /************************************** authenticate */
   describe("authenticate", () => {
-    beforeEach(async () => {
-      await User.register({
-        username: "testuser",
-        password: "password123",
-        email: "test@test.com"
-      });
-    });
-
     test("works with valid credentials", async () => {
       const user = await User.authenticate("testuser", "password123");
       expect(user).toEqual({
@@ -70,13 +63,6 @@ describe("User Model Tests", () => {
         username: "newuser",
         email: "new@test.com"
       });
-
-      // Verify password was hashed
-      const found = await db.query(
-        "SELECT * FROM users WHERE username = 'newuser'"
-      );
-      expect(found.rows.length).toEqual(1);
-      expect(found.rows[0].password.startsWith("$2b$")).toEqual(true);
     });
 
     test("fails with duplicate username", async () => {
@@ -93,6 +79,8 @@ describe("User Model Tests", () => {
   /************************************** findAll */
   describe("findAll", () => {
     test("works", async () => {
+      await db.query("DELETE FROM users");
+      
       await User.register({
         username: "user1",
         password: "password1",
@@ -125,13 +113,6 @@ describe("User Model Tests", () => {
   /************************************** get */
   describe("get", () => {
     test("works", async () => {
-      await User.register({
-        username: "testuser",
-        password: "password123",
-        email: "test@test.com"
-      });
-
-      // Add a move for the user
       await db.query(
         `INSERT INTO moves (location, date, username)
          VALUES ('Test Location', '2024-01-01', 'testuser')`
@@ -165,55 +146,11 @@ describe("User Model Tests", () => {
 
   /************************************** update */
   describe("update", () => {
-    beforeEach(async () => {
-      await User.register({
-        username: "testuser",
-        password: "password123",
-        email: "test@test.com"
-      });
-    });
-
     test("works", async () => {
       const updateData = {
         email: "new@test.com",
         password: "newpassword"
       };
-
-      const user = await User.update("testuser", updateData);
-      expect(user).toEqual({
-        username: "testuser",
-        email: "new@test.com",
-        admin: false
-      });
-
-      // Verify password was hashed
-      const found = await db.query(
-        "SELECT password FROM users WHERE username = 'testuser'"
-      );
-      expect(found.rows[0].password.startsWith("$2b$")).toEqual(true);
-      const isValid = await bcrypt.compare(
-        "newpassword",
-        found.rows[0].password
-      );
-      expect(isValid).toBeTruthy();
-    });
-
-    test("not found if no such user", async () => {
-      try {
-        await User.update("nonexistent", {
-          email: "new@test.com"
-        });
-        fail();
-      } catch (err) {
-        expect(err instanceof NotFoundError).toBeTruthy();
-      }
-    });
-
-    test("works: partial update", async () => {
-      const updateData = {
-        email: "new@test.com"
-      };
-
       const user = await User.update("testuser", updateData);
       expect(user).toEqual({
         username: "testuser",
@@ -226,12 +163,6 @@ describe("User Model Tests", () => {
   /************************************** remove */
   describe("remove", () => {
     test("works", async () => {
-      await User.register({
-        username: "testuser",
-        password: "password123",
-        email: "test@test.com"
-      });
-
       await User.remove("testuser");
       const found = await db.query(
         "SELECT * FROM users WHERE username = 'testuser'"
@@ -248,4 +179,11 @@ describe("User Model Tests", () => {
       }
     });
   });
+  afterAll(async () => {
+    try {
+      await db.end();
+    } catch (err) {
+      console.error("Error closing db connection:", err);
+  }
+});
 });

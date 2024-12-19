@@ -103,7 +103,10 @@ class User {
       [username],
     );
 
-    user.moves = movesRes.rows;
+    user.moves = movesRes.rows.map(move => ({
+  ...move,
+  date: new Date(move.date)
+}));
     return user;
   }
 

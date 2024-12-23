@@ -15,7 +15,10 @@ CREATE TABLE moves (
 
 CREATE TABLE boxes (
   id SERIAL PRIMARY KEY,
-  room TEXT NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  description TEXT,
+  location VARCHAR(100),
+  room VARCHAR(100) NOT NULL,
   move INTEGER NOT NULL
 );
 

@@ -1,22 +1,24 @@
-// tests/boxRoutes.test.js
-
 const request = require("supertest");
 const app = require("../../app");
 const db = require("../../config/db");
 const Box = require("../../models/box");
 
 describe("Box Routes Automated Tests", () => {
-    // Test data
+    // Test data with all required fields
     const testBoxes = [
         {
             name: "Box 1",
             description: "First test box",
-            location: "Location 1"
+            location: "Location 1",
+            room: "Living Room",
+            move: 1
         },
         {
             name: "Box 2",
             description: "Second test box",
-            location: "Location 2"
+            location: "Location 2",
+            room: "Kitchen",
+            move: 1
         }
     ];
 
@@ -43,6 +45,8 @@ describe("Box Routes Automated Tests", () => {
                 expect(response.statusCode).toBe(201);
                 expect(response.body.box).toHaveProperty("id");
                 expect(response.body.box.name).toBe(boxData.name);
+                expect(response.body.box.room).toBe(boxData.room);
+                expect(response.body.box.move).toBe(boxData.move);
                 
                 createdBoxes.push(response.body.box);
             }
@@ -57,7 +61,9 @@ describe("Box Routes Automated Tests", () => {
             // Verify each box exists in response
             for (let testBox of testBoxes) {
                 const found = response.body.boxes.some(
-                    box => box.name === testBox.name
+                    box => box.name === testBox.name &&
+                          box.room === testBox.room &&
+                          box.move === testBox.move
                 );
                 expect(found).toBe(true);
             }
@@ -67,7 +73,9 @@ describe("Box Routes Automated Tests", () => {
             for (let box of createdBoxes) {
                 const updateData = {
                     description: `Updated description for ${box.name}`,
-                    location: `Updated location for ${box.name}`
+                    location: `Updated location for ${box.name}`,
+                    room: `Updated room for ${box.name}`,
+                    move: 2
                 };
 
                 const response = await request(app)
@@ -77,6 +85,8 @@ describe("Box Routes Automated Tests", () => {
                 expect(response.statusCode).toBe(200);
                 expect(response.body.box.description).toBe(updateData.description);
                 expect(response.body.box.location).toBe(updateData.location);
+                expect(response.body.box.room).toBe(updateData.room);
+                expect(response.body.box.move).toBe(updateData.move);
             }
         });
 
@@ -98,9 +108,10 @@ describe("Box Routes Automated Tests", () => {
     describe("Error Handling Tests", () => {
         test("should handle invalid box creation", async () => {
             const invalidBoxes = [
-                { name: "" },  // Empty name
-                { location: "Only Location" },  // Missing name
-                { name: 123 },  // Invalid type
+                { name: "", room: "Room", move: 1 },  // Empty name
+                { name: "Box", location: "Only Location" },  // Missing required fields
+                { name: "Box", room: "Room", move: "invalid" },  // Invalid move type
+                { name: 123, room: "Room", move: 1 },  // Invalid name type
                 {}  // Empty object
             ];
 
@@ -124,7 +135,7 @@ describe("Box Routes Automated Tests", () => {
             // Try to update non-existent box
             const updateResponse = await request(app)
                 .patch(`/boxes/${nonExistentId}`)
-                .send({ name: "New Name" });
+                .send({ name: "New Name", room: "New Room", move: 1 });
             expect(updateResponse.statusCode).toBe(404);
 
             // Try to delete non-existent box
@@ -136,6 +147,9 @@ describe("Box Routes Automated Tests", () => {
 
     describe("Query Parameter Tests", () => {
         beforeAll(async () => {
+            // Clear boxes table before query tests
+            await db.query("DELETE FROM boxes");
+            
             // Create test boxes with various locations
             const locations = ["Warehouse A", "Warehouse B", "Warehouse A"];
             for (let i = 0; i < locations.length; i++) {
@@ -144,7 +158,9 @@ describe("Box Routes Automated Tests", () => {
                     .send({
                         name: `Query Test Box ${i}`,
                         description: "Test box for query",
-                        location: locations[i]
+                        location: locations[i],
+                        room: "Test Room",
+                        move: 1
                     });
             }
         });

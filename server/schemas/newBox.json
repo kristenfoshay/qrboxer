@@ -3,6 +3,19 @@
     "$id": "http://example.com/example.json",
     "type": "object",
     "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 500
+      },
+      "location": {
+        "type": "string",
+        "maxLength": 100
+      },
       "room": {
         "type": "string",
         "minLength": 1,
@@ -14,7 +27,8 @@
     },
     "additionalProperties": false,
     "required": [
+      "name",
       "room",
       "move"
     ]
-  }
+}

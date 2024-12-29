@@ -1,4 +1,3 @@
-
 const request = require("supertest");
 const app = require("../../app");
 const User = require("../../models/user");
@@ -19,6 +18,8 @@ describe("User Routes Test", () => {
       const newUser = {
         username: "newuser",
         password: "password123",
+        firstName: "New",
+        lastName: "User",
         email: "new@test.com"
       };
 
@@ -155,7 +156,10 @@ describe("User Routes Test", () => {
       const resp = await request(app)
         .get("/users/nonexistent");
 
-      expect(resp.statusCode).toBe(500);
+      expect(resp.statusCode).toBe(404);
+      expect(resp.body).toEqual({
+        error: "User not found"
+      });
     });
   });
 
@@ -193,6 +197,20 @@ describe("User Routes Test", () => {
         });
 
       expect(resp.statusCode).toBe(400);
+      expect(resp.body).toEqual({
+        error: "Invalid email format"
+      });
+    });
+
+    test("bad request with empty update", async () => {
+      const resp = await request(app)
+        .patch("/users/testuser")
+        .send({});
+
+      expect(resp.statusCode).toBe(400);
+      expect(resp.body).toEqual({
+        error: "No update data provided"
+      });
     });
 
     test("not found if user doesn't exist", async () => {
@@ -204,7 +222,10 @@ describe("User Routes Test", () => {
           email: "new@test.com"
         });
 
-      expect(resp.statusCode).toBe(500);
+      expect(resp.statusCode).toBe(404);
+      expect(resp.body).toEqual({
+        error: "User not found"
+      });
     });
   });
 
@@ -229,7 +250,10 @@ describe("User Routes Test", () => {
       const resp = await request(app)
         .delete("/users/nonexistent");
 
-      expect(resp.statusCode).toBe(500);
+      expect(resp.statusCode).toBe(404);
+      expect(resp.body).toEqual({
+        error: "User not found"
+      });
     });
   });
 });

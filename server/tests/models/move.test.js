@@ -1,6 +1,6 @@
 // tests/move.test.js
 
-const db = require("../../config/db");  
+const { db } = require("../../config/db");  
 const Move = require("../../models/move");
 const { BadRequestError, NotFoundError } = require("../../expressError");
 

@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../../app");
-const db = require("../../config/db");
+const { db } = require("../../config/db");
 const Box = require("../../models/box");
 
 describe("Box Routes Automated Tests", () => {

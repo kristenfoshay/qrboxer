@@ -1,6 +1,6 @@
 // tests/item.test.js
 
-const db = require("../../config/db");
+const { db } = require("../../config/db");
 const Item = require("../../models/item");
 const { NotFoundError } = require("../../expressError");
 

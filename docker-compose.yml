@@ -16,12 +16,24 @@ services:
       timeout: 5s
       retries: 5
 
+  test-db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: test_db
+    ports:
+      - "5433:5432"  # Different port to avoid conflicts with main db
+    volumes:
+      - test-db-data:/var/lib/postgresql/data
+      - ./server/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
-      - "3001:3001"  # Changed to match your server config
+      - "3001:3001"
     environment:
       - NODE_ENV=development
       - DB_HOST=db
@@ -37,6 +49,20 @@ services:
       - ./server:/usr/src/app
       - /usr/src/app/node_modules
 
+  tests:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile.test
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=postgresql://test_user:test_password@test-db:5432/test_db
+    depends_on:
+      - test-db
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm test
+
   client:
     build:
       context: ./client
@@ -44,7 +70,7 @@ services:
     ports:
       - "0.0.0.0:3000:3000"
     environment:
-      - REACT_APP_API_URL=http://localhost:3001  # Updated to match server port
+      - REACT_APP_API_URL=http://localhost:3001
     volumes:
       - ./client:/usr/src/app
       - /usr/src/app/node_modules
@@ -53,3 +79,4 @@ services:
 
 volumes:
   postgres_data:
+  test-db-data:

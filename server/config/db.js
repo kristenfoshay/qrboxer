@@ -13,7 +13,6 @@ if (process.env.NODE_ENV === "production") {
     }
   });
 } else if (process.env.NODE_ENV === "development") {
-  // Use Docker environment variables
   db = new Client({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -21,12 +20,48 @@ if (process.env.NODE_ENV === "production") {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
   });
+} else if (process.env.NODE_ENV === "test") {
+  db = new Client({
+    connectionString: process.env.DATABASE_URL,
+  });
 } else {
   db = new Client({
     connectionString: getDatabaseUri()
   });
 }
 
-db.connect();
+db.connect()
+  .catch(err => {
+    console.error('Database connection error:', err.stack);
+    process.exit(1);
+  });
 
-module.exports = db;
+db.on('error', err => {
+  console.error('Unexpected database error:', err);
+});
+
+process.on('SIGINT', async () => {
+  try {
+    await db.end();
+    console.log('Database connection closed.');
+    process.exit(0);
+  } catch (err) {
+    console.error('Error during graceful shutdown:', err);
+    process.exit(1);
+  }
+});
+
+async function closeDb() {
+  try {
+    await db.end();
+    console.log('Database connection closed.');
+  } catch (err) {
+    console.error('Error closing database connection:', err);
+    throw err;
+  }
+}
+
+module.exports = {
+  db,
+  closeDb
+};

@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../../app");
-const { db } = require("../../config/db");
+const { db, closeDb } = require("../../config/db");
 const Box = require("../../models/box");
 
 describe("Box Routes Automated Tests", () => {
@@ -32,7 +32,7 @@ describe("Box Routes Automated Tests", () => {
     afterAll(async () => {
         // Clean up
         await db.query("DELETE FROM boxes");
-        await db.end();
+        await closeDb();
     });
 
     describe("Automated CRUD Testing", () => {

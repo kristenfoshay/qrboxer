@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("../../app");
 const User = require("../../models/user");
 const { createToken } = require("../../helpers/tokens");
-const { db } = require("../../config/db");
+const { db, closeDb } = require("../../config/db");
 
 describe("Auth Routes Test", () => {
   beforeEach(async () => {
@@ -17,7 +17,7 @@ describe("Auth Routes Test", () => {
   });
 
   afterAll(async () => {
-    await db.end();
+    await closeDb();
   });
 
   /************************************** POST /auth/token */

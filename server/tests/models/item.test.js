@@ -1,6 +1,6 @@
 // tests/item.test.js
 
-const { db } = require("../../config/db");
+const { db, closeDb } = require("../../config/db");
 const Item = require("../../models/item");
 const { NotFoundError } = require("../../expressError");
 
@@ -11,7 +11,7 @@ describe("Item Model Tests", () => {
   });
 
   afterAll(async () => {
-    await db.end();
+    await db.closeDb();
   });
 
   /************************************** create */

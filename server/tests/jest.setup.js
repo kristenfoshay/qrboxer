@@ -1,6 +1,6 @@
 // jest.setup.js
 
-const { db } = require("../db");
+const { db, closeDb } = require("../db");
 const { BCRYPT_WORK_FACTOR } = require("../config");
 const bcrypt = require("bcrypt");
 
@@ -61,7 +61,7 @@ async function commonAfterEach() {
 }
 
 async function commonAfterAll() {
-  await db.end();
+  await closeDb();
 }
 
 // Export objects for testing

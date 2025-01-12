@@ -1,6 +1,6 @@
 // tests/testSetup.js
 
-const { db } = require("../db");
+const { db, closeDb } = require("../db");
 
 async function commonBeforeAll() {
   // Clean database
@@ -22,7 +22,7 @@ async function commonAfterEach() {
 }
 
 async function commonAfterAll() {
-  await db.end();
+  await closeDb();
 }
 
 module.exports = {

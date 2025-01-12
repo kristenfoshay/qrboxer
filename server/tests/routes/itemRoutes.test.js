@@ -4,7 +4,7 @@ const request = require("supertest");
 const app = require("../../app");
 const Item = require("../../models/item");
 const { NotFoundError } = require("../../expressError");
-const { db } = require("../../config/db");
+const { db, closeDb } = require("../../config/db");
 
 // Mock the Item model
 jest.mock("../../models/item");
@@ -213,7 +213,7 @@ describe("Item Routes Test", () => {
   });
 
   afterAll(async () => {
-  await db.end();  // Close database connection
+  await closeDb();  // Close database connection
   jest.resetModules();
   jest.clearAllMocks();
 }); 

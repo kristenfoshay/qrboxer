@@ -1,4 +1,4 @@
-const { db } = require("../../config/db");
+const { db, closeDb } = require("../../config/db");
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 const { 
@@ -181,7 +181,7 @@ describe("User Model Tests", () => {
   });
   afterAll(async () => {
     try {
-      await db.end();
+      await closeDb.end();
     } catch (err) {
       console.error("Error closing db connection:", err);
   }

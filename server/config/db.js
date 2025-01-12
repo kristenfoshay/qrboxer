@@ -5,7 +5,15 @@ const { getDatabaseUri } = require("./config.js");
 
 let db;
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "test") {
+  db = new Client({
+    user: "test_user",
+    password: "test_password",
+    host: "test-db",
+    port: 5432,
+    database: "test_db"
+  });
+} else if (process.env.NODE_ENV === "production") {
   db = new Client({
     connectionString: getDatabaseUri(),
     ssl: {
@@ -19,10 +27,6 @@ if (process.env.NODE_ENV === "production") {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
-  });
-} else if (process.env.NODE_ENV === "test") {
-  db = new Client({
-    connectionString: process.env.DATABASE_URL,
   });
 } else {
   db = new Client({

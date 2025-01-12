@@ -1,6 +1,6 @@
 // tests/box.test.js
 
-const { db } = require("../../config/db");
+const { db, closeDb } = require("../../config/db");
 const { NotFoundError } = require("../../expressError");
 const Box = require("../../models/box");
 
@@ -15,7 +15,7 @@ describe("Box Model Tests", () => {
   });
 
   afterAll(async () => {
-    await db.end();
+    await db.closeDb();
   });
 
   /************************************** create */

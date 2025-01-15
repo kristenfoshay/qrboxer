@@ -11,7 +11,7 @@ describe("Item Model Tests", () => {
   });
 
   afterAll(async () => {
-    await db.closeDb();
+    await closeDb();
   });
 
   /************************************** create */

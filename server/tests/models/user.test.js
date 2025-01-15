@@ -181,7 +181,7 @@ describe("User Model Tests", () => {
   });
   afterAll(async () => {
     try {
-      await closeDb.end();
+      await closeDb();
     } catch (err) {
       console.error("Error closing db connection:", err);
   }

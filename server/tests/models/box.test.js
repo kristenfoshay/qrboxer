@@ -15,12 +15,13 @@ describe("Box Model Tests", () => {
   });
 
   afterAll(async () => {
-    await db.closeDb();
+    await closeDb();
   });
 
   /************************************** create */
   describe("create", () => {
     const newBox = {
+      name: "Box 1",
       room: "Living Room",
       move: 1
     };
@@ -28,15 +29,17 @@ describe("Box Model Tests", () => {
     test("works", async () => {
       const box = await Box.create(newBox);
       expect(box).toEqual({
+        name: "Box 1",
         room: "Living Room",
         move: 1
       });
 
       const result = await db.query(
-        `SELECT room, move
+        `SELECT name, room, move
          FROM boxes
          WHERE room = 'Living Room'`);
       expect(result.rows[0]).toEqual({
+        name: "Box 1",
         room: "Living Room",
         move: 1
       });
@@ -48,10 +51,12 @@ describe("Box Model Tests", () => {
     test("works: no filter", async () => {
 
       await Box.create({
+        name: "Box 2",
         room: "Living Room",
         move: 1
       });
       await Box.create({
+        name: "Box 3",
         room: "Kitchen",
         move: 1
       });
@@ -60,11 +65,13 @@ describe("Box Model Tests", () => {
       expect(boxes).toEqual([
         {
           id: expect.any(Number),
+          name: "Box 2",
           room: "Living Room",
           move: 1
         },
         {
           id: expect.any(Number),
+          name: "Box 3",
           room: "Kitchen",
           move: 1
         }
@@ -77,10 +84,12 @@ describe("Box Model Tests", () => {
     test("works with move filter", async () => {
 
       await Box.create({
+        name: "Box 4",
         room: "Living Room",
         move: 1
       });
       await Box.create({
+        name: "Box 5",
         room: "Kitchen",
         move: 2
       });
@@ -89,6 +98,7 @@ describe("Box Model Tests", () => {
       expect(boxes).toEqual([
         {
           id: expect.any(Number),
+          name: "Box 4",
           room: "Living Room",
           move: 1
         }
@@ -105,14 +115,15 @@ describe("Box Model Tests", () => {
   describe("get", () => {
     test("works", async () => {
       const result = await db.query(
-        `INSERT INTO boxes (room, move)
-         VALUES ('Living Room', 1)
+        `INSERT INTO boxes (name, room, move)
+         VALUES ('Box 6', 'Living Room', 1)
          RETURNING id`);
       const boxId = result.rows[0].id;
 
       const box = await Box.get(boxId);
       expect(box).toEqual({
         id: boxId,
+        name: "Box 6",
         room: "Living Room",
         move: 1
       });
@@ -133,10 +144,12 @@ describe("Box Model Tests", () => {
     test("works", async () => {
 
       await Box.create({
+        name: "Box 7",
         room: "Living Room",
         move: 1
       });
       await Box.create({
+        name: "Box 8",
         room: "Kitchen",
         move: 1
       });
@@ -145,11 +158,13 @@ describe("Box Model Tests", () => {
       expect(boxes).toEqual([
         {
           id: expect.any(Number),
+          name: "Box 7",
           room: "Living Room",
           move: 1
         },
         {
           id: expect.any(Number),
+          name: "Box 8",
           room: "Kitchen",
           move: 1
         }
@@ -166,8 +181,8 @@ describe("Box Model Tests", () => {
   describe("update", () => {
     test("works", async () => {
       const result = await db.query(
-        `INSERT INTO boxes (room, move)
-         VALUES ('Living Room', 1)
+        `INSERT INTO boxes (name, room, move)
+         VALUES ('Box 9', 'Living Room', 1)
          RETURNING id`);
       const boxId = result.rows[0].id;
 
@@ -176,6 +191,7 @@ describe("Box Model Tests", () => {
       });
       expect(updatedBox).toEqual({
         id: boxId,
+        name: "Box 9",
         room: "Master Bedroom",
         move: 1
       });
@@ -185,6 +201,7 @@ describe("Box Model Tests", () => {
         [boxId]);
       expect(found.rows[0]).toEqual({
         id: boxId,
+        name: "Box 9",
         room: "Master Bedroom",
         move: 1
       });
@@ -206,8 +223,8 @@ describe("Box Model Tests", () => {
   describe("remove", () => {
     test("works", async () => {
       const result = await db.query(
-        `INSERT INTO boxes (room, move)
-         VALUES ('Living Room', 1)
+        `INSERT INTO boxes (name, room, move)
+         VALUES ('Box 10', 'Living Room', 1)
          RETURNING id`);
       const boxId = result.rows[0].id;
 

@@ -1,6 +1,6 @@
 // tests/move.test.js
-
-const { db, closeDb } = require("../../config/db");  
+  
+const { db, closeDb } = require("../../config/db");
 const Move = require("../../models/move");
 const { BadRequestError, NotFoundError } = require("../../expressError");
 
@@ -11,7 +11,7 @@ describe("Move Model Tests", () => {
   });
 
   afterAll(async () => {
-    await db.closeDb();
+    await closeDb();
   });
 
   /************************************** create */

@@ -12,9 +12,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 10s
+    restart: "no"
     networks:
       - app-network
 
@@ -30,19 +32,17 @@ services:
       - test-db-data:/var/lib/postgresql/data
       - ./server/db/qrboxer-schema.sql:/docker-entrypoint-initdb.d/schema.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U test_user -d test_db && psql -U test_user -d test_db -c 'SELECT 1'"]
-      interval: 5s
+      test: ["CMD-SHELL", "pg_isready -U test_user -d test_db"]
+      interval: 10s
       timeout: 5s
       retries: 5
-    command: >
-      postgres
-      -c max_connections=100
-      -c shared_buffers=128MB
+      start_period: 10s
+    restart: "no"
     networks:
       - app-network
 
   tests:
-    build: 
+    build:
       context: ./server
       dockerfile: Dockerfile.test
     environment:
@@ -52,10 +52,17 @@ services:
       - DB_USER=test_user
       - DB_PASSWORD=test_password
       - DB_NAME=test_db
-    command: npm test -- --verbose --detectOpenHandles --runInBand
+    command: >
+      npm test --
+      --verbose
+      --forceExit
+      --detectOpenHandles
+      --runInBand
+      --bail
     depends_on:
       test-db:
         condition: service_healthy
+    restart: "no"
     networks:
       - app-network
 
@@ -66,4 +73,3 @@ networks:
 volumes:
   postgres_data:
   test-db-data:
-

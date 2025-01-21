@@ -1,0 +1,271 @@
+Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_tests_1
+[36mdb_1       |[0m The files belonging to this database system will be owned by user "postgres".
+[36mdb_1       |[0m This user must also own the server process.
+[36mdb_1       |[0m 
+[33mtest-db_1  |[0m The files belonging to this database system will be owned by user "postgres".
+[33mtest-db_1  |[0m This user must also own the server process.
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m The database cluster will be initialized with locale "en_US.utf8".
+[36mdb_1       |[0m The default database encoding has accordingly been set to "UTF8".
+[36mdb_1       |[0m The default text search configuration will be set to "english".
+[36mdb_1       |[0m 
+[36mdb_1       |[0m Data page checksums are disabled.
+[36mdb_1       |[0m 
+[33mtest-db_1  |[0m The database cluster will be initialized with locale "en_US.utf8".
+[33mtest-db_1  |[0m The default database encoding has accordingly been set to "UTF8".
+[33mtest-db_1  |[0m The default text search configuration will be set to "english".
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m Data page checksums are disabled.
+[36mdb_1       |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[36mdb_1       |[0m creating subdirectories ... ok
+[33mtest-db_1  |[0m creating subdirectories ... ok
+[36mdb_1       |[0m selecting dynamic shared memory implementation ... posix
+[33mtest-db_1  |[0m selecting dynamic shared memory implementation ... posix
+[33mtest-db_1  |[0m selecting default max_connections ... 100
+[36mdb_1       |[0m selecting default max_connections ... 100
+[36mdb_1       |[0m selecting default shared_buffers ... 128MB
+[33mtest-db_1  |[0m selecting default shared_buffers ... 128MB
+[33mtest-db_1  |[0m selecting default time zone ... Etc/UTC
+[33mtest-db_1  |[0m creating configuration files ... ok
+[36mdb_1       |[0m selecting default time zone ... Etc/UTC
+[36mdb_1       |[0m creating configuration files ... ok
+[36mdb_1       |[0m running bootstrap script ... ok
+[36mdb_1       |[0m performing post-bootstrap initialization ... ok
+[33mtest-db_1  |[0m running bootstrap script ... ok
+[36mdb_1       |[0m syncing data to disk ... ok
+[36mdb_1       |[0m 
+[36mdb_1       |[0m 
+[36mdb_1       |[0m Success. You can now start the database server using:
+[36mdb_1       |[0m 
+[36mdb_1       |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[36mdb_1       |[0m 
+[33mtest-db_1  |[0m performing post-bootstrap initialization ... ok
+[33mtest-db_1  |[0m syncing data to disk ... ok
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m Success. You can now start the database server using:
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m initdb: warning: enabling "trust" authentication for local connections
+[36mdb_1       |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[36mdb_1       |[0m --auth-local and --auth-host, the next time you run initdb.
+[33mtest-db_1  |[0m initdb: warning: enabling "trust" authentication for local connections
+[33mtest-db_1  |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[33mtest-db_1  |[0m --auth-local and --auth-host, the next time you run initdb.
+[36mdb_1       |[0m waiting for server to start....2025-01-21 02:49:33.139 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m 2025-01-21 02:49:33.213 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m waiting for server to start....2025-01-21 02:49:33.182 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m 2025-01-21 02:49:33.467 UTC [49] LOG:  database system was shut down at 2025-01-21 02:49:30 UTC
+[36mdb_1       |[0m 2025-01-21 02:49:33.578 UTC [48] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m 2025-01-21 02:49:33.260 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 2025-01-21 02:49:33.517 UTC [49] LOG:  database system was shut down at 2025-01-21 02:49:30 UTC
+[36mdb_1       |[0m  done
+[36mdb_1       |[0m server started
+[33mtest-db_1  |[0m 2025-01-21 02:49:33.624 UTC [48] LOG:  database system is ready to accept connections
+[36mdb_1       |[0m CREATE DATABASE
+[33mtest-db_1  |[0m  done
+[33mtest-db_1  |[0m server started
+[36mdb_1       |[0m 
+[36mdb_1       |[0m 
+[36mdb_1       |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+[36mdb_1       |[0m 
+[33mtest-db_1  |[0m 2025-01-21 02:49:35.143 UTC [68] FATAL:  database "test_db" does not exist
+[36mdb_1       |[0m 2025-01-21 02:49:37.120 UTC [48] LOG:  received fast shutdown request
+[33mtest-db_1  |[0m CREATE DATABASE
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
+[36mdb_1       |[0m waiting for server to shut down....2025-01-21 02:49:37.235 UTC [48] LOG:  aborting any active transactions
+[33mtest-db_1  |[0m CREATE TABLE
+[36mdb_1       |[0m 2025-01-21 02:49:37.238 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[33mtest-db_1  |[0m CREATE TABLE
+[36mdb_1       |[0m 2025-01-21 02:49:37.238 UTC [50] LOG:  shutting down
+[33mtest-db_1  |[0m CREATE TABLE
+[33mtest-db_1  |[0m CREATE TABLE
+[36mdb_1       |[0m .2025-01-21 02:49:38.698 UTC [48] LOG:  database system is shut down
+[36mdb_1       |[0m  done
+[36mdb_1       |[0m server stopped
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m 
+[36mdb_1       |[0m PostgreSQL init process complete; ready for start up.
+[36mdb_1       |[0m 
+[36mdb_1       |[0m 2025-01-21 02:49:38.942 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m waiting for server to shut down...2025-01-21 02:49:38.928 UTC [48] LOG:  received fast shutdown request
+[33mtest-db_1  |[0m .2025-01-21 02:49:39.057 UTC [48] LOG:  aborting any active transactions
+[36mdb_1       |[0m 2025-01-21 02:49:38.942 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[36mdb_1       |[0m 2025-01-21 02:49:38.942 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[33mtest-db_1  |[0m 2025-01-21 02:49:39.060 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[36mdb_1       |[0m 2025-01-21 02:49:39.162 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 2025-01-21 02:49:39.060 UTC [50] LOG:  shutting down
+[36mdb_1       |[0m 2025-01-21 02:49:39.593 UTC [71] LOG:  database system was shut down at 2025-01-21 02:49:38 UTC
+[36mdb_1       |[0m 2025-01-21 02:49:39.754 UTC [1] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m .2025-01-21 02:49:40.611 UTC [48] LOG:  database system is shut down
+[33mtest-db_1  |[0m  done
+[33mtest-db_1  |[0m server stopped
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m PostgreSQL init process complete; ready for start up.
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 2025-01-21 02:49:40.804 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m 2025-01-21 02:49:40.804 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mtest-db_1  |[0m 2025-01-21 02:49:40.804 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[33mtest-db_1  |[0m 2025-01-21 02:49:40.979 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[32mtests_1    |[0m 
+[32mtests_1    |[0m > qrboxer@0.1.0 test
+[32mtests_1    |[0m > jest -i --detectOpenHandles --forceExit --verbose --forceExit --detectOpenHandles --runInBand --bail
+[32mtests_1    |[0m 
+[33mtest-db_1  |[0m 2025-01-21 02:49:41.107 UTC [73] LOG:  database system was shut down at 2025-01-21 02:49:40 UTC
+[33mtest-db_1  |[0m 2025-01-21 02:49:41.164 UTC [1] LOG:  database system is ready to accept connections
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     QRBoxer Config:
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.log (config/config.js:22:9)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     SECRET_KEY: secret-dev
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.log (config/config.js:23:9)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     PORT: 3001
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.log (config/config.js:24:9)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     BCRYPT_WORK_FACTOR 1
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.log (config/config.js:25:9)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     Database: postgresql://test_user:test_password@test-db:5432/test_db
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.log (config/config.js:26:9)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     ---
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.log (config/config.js:27:9)
+[32mtests_1    |[0m 
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.516 UTC [80] ERROR:  insert or update on table "boxes" violates foreign key constraint "boxes_move_fkey"
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.516 UTC [80] DETAIL:  Key (move)=(1) is not present in table "moves".
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.516 UTC [80] STATEMENT:  INSERT INTO boxes (name,
+[33mtest-db_1  |[0m 	                         description,
+[33mtest-db_1  |[0m 	                         location,
+[33mtest-db_1  |[0m 	                         room,
+[33mtest-db_1  |[0m 	                         move)
+[33mtest-db_1  |[0m 	           VALUES ($1, $2, $3, $4, $5)
+[33mtest-db_1  |[0m 	           RETURNING id, name, description, location, room, move
+[32mtests_1    |[0m POST /boxes 500 124 - 6.896 ms
+[32mtests_1    |[0m GET /boxes 200 12 - 1.936 ms
+[32mtests_1    |[0m GET /boxes 200 12 - 1.938 ms
+[32mtests_1    |[0m POST /boxes 400 86 - 1.157 ms
+[32mtests_1    |[0m POST /boxes 400 112 - 0.672 ms
+[32mtests_1    |[0m POST /boxes 400 80 - 0.685 ms
+[32mtests_1    |[0m POST /boxes 400 79 - 0.641 ms
+[32mtests_1    |[0m POST /boxes 400 74 - 0.579 ms
+[32mtests_1    |[0m POST /boxes 400 150 - 0.541 ms
+[32mtests_1    |[0m GET /boxes/99999 404 50 - 1.929 ms
+[32mtests_1    |[0m PATCH /boxes/99999 404 50 - 1.866 ms
+[32mtests_1    |[0m DELETE /boxes/99999 404 50 - 1.984 ms
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.643 UTC [80] ERROR:  insert or update on table "boxes" violates foreign key constraint "boxes_move_fkey"
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.643 UTC [80] DETAIL:  Key (move)=(1) is not present in table "moves".
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.643 UTC [80] STATEMENT:  INSERT INTO boxes (name,
+[33mtest-db_1  |[0m 	                         description,
+[33mtest-db_1  |[0m 	                         location,
+[33mtest-db_1  |[0m 	                         room,
+[33mtest-db_1  |[0m 	                         move)
+[33mtest-db_1  |[0m 	           VALUES ($1, $2, $3, $4, $5)
+[33mtest-db_1  |[0m 	           RETURNING id, name, description, location, room, move
+[32mtests_1    |[0m POST /boxes 500 124 - 3.736 ms
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.655 UTC [80] ERROR:  insert or update on table "boxes" violates foreign key constraint "boxes_move_fkey"
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.655 UTC [80] DETAIL:  Key (move)=(1) is not present in table "moves".
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.655 UTC [80] STATEMENT:  INSERT INTO boxes (name,
+[33mtest-db_1  |[0m 	                         description,
+[33mtest-db_1  |[0m 	                         location,
+[33mtest-db_1  |[0m 	                         room,
+[33mtest-db_1  |[0m 	                         move)
+[33mtest-db_1  |[0m 	           VALUES ($1, $2, $3, $4, $5)
+[33mtest-db_1  |[0m 	           RETURNING id, name, description, location, room, move
+[32mtests_1    |[0m POST /boxes 500 124 - 1.808 ms
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.662 UTC [80] ERROR:  insert or update on table "boxes" violates foreign key constraint "boxes_move_fkey"
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.662 UTC [80] DETAIL:  Key (move)=(1) is not present in table "moves".
+[33mtest-db_1  |[0m 2025-01-21 02:49:42.662 UTC [80] STATEMENT:  INSERT INTO boxes (name,
+[33mtest-db_1  |[0m 	                         description,
+[33mtest-db_1  |[0m 	                         location,
+[33mtest-db_1  |[0m 	                         room,
+[33mtest-db_1  |[0m 	                         move)
+[33mtest-db_1  |[0m 	           VALUES ($1, $2, $3, $4, $5)
+[33mtest-db_1  |[0m 	           RETURNING id, name, description, location, room, move
+[32mtests_1    |[0m POST /boxes 500 124 - 1.715 ms
+[32mtests_1    |[0m GET /boxes?location=Warehouse%20A 200 12 - 1.594 ms
+[32mtests_1    |[0m GET /boxes?move=1 200 12 - 1.214 ms
+[32mtests_1    |[0m GET /boxes?location=Non%20Existent%20Warehouse 200 12 - 1.491 ms
+[32mtests_1    |[0m   console.log
+[32mtests_1    |[0m     Database connection closed.
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at log (config/db.js:61:13)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m FAIL tests/routes/boxRoutes.test.js
+[32mtests_1    |[0m   Box Routes Automated Tests
+[32mtests_1    |[0m     Automated CRUD Testing
+[32mtests_1    |[0m       ✕ CREATE: should create multiple boxes (41 ms)
+[32mtests_1    |[0m       ✕ READ: should retrieve all created boxes (11 ms)
+[32mtests_1    |[0m       ✓ UPDATE: should update each box (1 ms)
+[32mtests_1    |[0m       ✓ DELETE: should delete all created boxes (10 ms)
+[32mtests_1    |[0m     Error Handling Tests
+[32mtests_1    |[0m       ✓ should handle invalid box creation (51 ms)
+[32mtests_1    |[0m       ✓ should handle non-existent box operations (25 ms)
+[32mtests_1    |[0m     Query Parameter Tests
+[32mtests_1    |[0m       ✓ should filter boxes by location (9 ms)
+[32mtests_1    |[0m       ✓ should filter boxes by move number (8 ms)
+[32mtests_1    |[0m       ✓ should return empty array for non-matching filters (8 ms)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Automated CRUD Testing › CREATE: should create multiple boxes
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     expect(received).toBe(expected) // Object.is equality
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     Expected: 201
+[32mtests_1    |[0m     Received: 500
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       40 |                     .send(boxData);
+[32mtests_1    |[0m       41 |                 
+[32mtests_1    |[0m     > 42 |                 expect(response.statusCode).toBe(201);
+[32mtests_1    |[0m          |                                             ^
+[32mtests_1    |[0m       43 |                 expect(response.body.box).toHaveProperty("id");
+[32mtests_1    |[0m       44 |                 expect(response.body.box.name).toBe(boxData.name);
+[32mtests_1    |[0m       45 |                 expect(response.body.box.description).toBe(boxData.description);
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.toBe (tests/routes/boxRoutes.test.js:42:45)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Automated CRUD Testing › READ: should retrieve all created boxes
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     expect(received).toBe(expected) // Object.is equality
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     Expected: 2
+[32mtests_1    |[0m     Received: 0
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       56 |             
+[32mtests_1    |[0m       57 |             expect(response.statusCode).toBe(200);
+[32mtests_1    |[0m     > 58 |             expect(response.body.boxes.length).toBe(testBoxes.length);
+[32mtests_1    |[0m          |                                                ^
+[32mtests_1    |[0m       59 |             
+[32mtests_1    |[0m       60 |             for (let testBox of testBoxes) {
+[32mtests_1    |[0m       61 |                 const found = response.body.boxes.some(
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.toBe (tests/routes/boxRoutes.test.js:58:48)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m Test Suites: 1 failed, 1 of 9 total
+[32mtests_1    |[0m Tests:       2 failed, 7 passed, 9 total
+[32mtests_1    |[0m Snapshots:   0 total
+[32mtests_1    |[0m Time:        1.346 s
+[32mtests_1    |[0m Ran all test suites.
+[32mtests_1    |[0m npm notice 
+[32mtests_1    |[0m npm notice New major version of npm available! 8.19.4 -> 11.0.0
+[32mtests_1    |[0m npm notice Changelog: <https://github.com/npm/cli/releases/tag/v11.0.0>
+[32mtests_1    |[0m npm notice Run `npm install -g npm@11.0.0` to update!
+[32mtests_1    |[0m npm notice 
+[32mqrboxer-backend_tests_1 exited with code 1
+[0m

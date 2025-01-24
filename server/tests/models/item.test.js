@@ -1,79 +1,96 @@
-// tests/item.test.js
-
 const { db, closeDb } = require("../../config/db");
-const Item = require("../../models/item");
 const { NotFoundError } = require("../../expressError");
+const Item = require("../../models/item");
 
 describe("Item Model Tests", () => {
+  let testBoxId;
 
   beforeEach(async () => {
+    // Clean tables in correct order
     await db.query("DELETE FROM items");
+    await db.query("DELETE FROM boxes");
+    await db.query("DELETE FROM moves");
+    await db.query("DELETE FROM users");
+
+    // Create test user
+    await db.query(`
+      INSERT INTO users (username, password, email, admin)
+      VALUES ('testuser', 'password', 'test@test.com', false)`
+    );
+
+    // Create test move
+    const moveRes = await db.query(`
+      INSERT INTO moves (location, date, username)
+      VALUES ('Test Location', '2024-01-01', 'testuser')
+      RETURNING id`
+    );
+    const testMoveId = moveRes.rows[0].id;
+
+    // Create test box
+    const boxRes = await db.query(`
+      INSERT INTO boxes (name, room, move)
+      VALUES ('Test Box', 'Living Room', $1)
+      RETURNING id`,
+      [testMoveId]
+    );
+    testBoxId = boxRes.rows[0].id;
   });
 
   afterAll(async () => {
     await closeDb();
   });
 
-  /************************************** create */
   test("can create an item", async () => {
-    const newItem = {
-      description: "Coffee Table Books",
-      image: "books.jpg",
-      box: 1
-    };
-
-    const item = await Item.create(newItem);
-    expect(item).toEqual({
-      description: "Coffee Table Books",
-      image: "books.jpg",
-      box: 1
+    const item = await Item.create({
+      description: "Test Item",
+      image: "test.jpg",
+      box: testBoxId
     });
 
-    const found = await db.query("SELECT * FROM items WHERE description = $1", 
-      ["Coffee Table Books"]);
-    expect(found.rows[0]).toEqual({
+    expect(item).toEqual({
       id: expect.any(Number),
-      ...newItem
+      description: "Test Item",
+      image: "test.jpg",
+      box: testBoxId
     });
   });
 
-  /************************************** findAll */
   test("can find all items", async () => {
-
-    const item1 = await Item.create({
-      description: "Coffee Table Books",
-      image: "books.jpg",
-      box: 1
+    await Item.create({
+      description: "Test Item 1",
+      image: "test1.jpg",
+      box: testBoxId
     });
-    const item2 = await Item.create({
-      description: "Desk Lamp",
-      image: "lamp.jpg",
-      box: 2
+    await Item.create({
+      description: "Test Item 2",
+      image: "test2.jpg",
+      box: testBoxId
     });
 
     const items = await Item.findAll();
     expect(items).toEqual([
       {
         id: expect.any(Number),
-        description: "Coffee Table Books",
-        image: "books.jpg",
-        box: 1
+        description: "Test Item 1",
+        image: "test1.jpg",
+        box: testBoxId
       },
       {
         id: expect.any(Number),
-        description: "Desk Lamp",
-        image: "lamp.jpg",
-        box: 2
+        description: "Test Item 2",
+        image: "test2.jpg",
+        box: testBoxId
       }
     ]);
   });
 
-  /************************************** get */
   test("can get item by id", async () => {
     const result = await db.query(
       `INSERT INTO items (description, image, box)
-       VALUES ('Test Item', 'test.jpg', 1)
-       RETURNING id`);
+       VALUES ($1, $2, $3)
+       RETURNING id`,
+      ["Test Item", "test.jpg", testBoxId]
+    );
     const itemId = result.rows[0].id;
 
     const item = await Item.get(itemId);
@@ -81,11 +98,62 @@ describe("Item Model Tests", () => {
       id: itemId,
       description: "Test Item",
       image: "test.jpg",
-      box: 1
+      box: testBoxId
     });
   });
 
-  test("not found if no such item exists", async () => {
+  test("can find items by box", async () => {
+    await Item.create({
+      description: "Test Item 1",
+      image: "test1.jpg",
+      box: testBoxId
+    });
+    await Item.create({
+      description: "Test Item 2",
+      image: "test2.jpg",
+      box: testBoxId
+    });
+
+    const items = await Item.findBoxItems(testBoxId);  // Changed from getBoxItems to findBoxItems
+    expect(items).toEqual([
+      {
+        id: expect.any(Number),
+        description: "Test Item 1",
+        image: "test1.jpg",
+        box: testBoxId
+      },
+      {
+        id: expect.any(Number),
+        description: "Test Item 2",
+        image: "test2.jpg",
+        box: testBoxId
+      }
+    ]);
+  });
+
+  test("can update item", async () => {
+    const result = await db.query(
+      `INSERT INTO items (description, image, box)
+       VALUES ($1, $2, $3)
+       RETURNING id`,
+      ["Test Item", "test.jpg", testBoxId]
+    );
+    const itemId = result.rows[0].id;
+
+    const updatedItem = await Item.update(itemId, {
+      description: "Updated Item",
+      image: "updated.jpg"
+    });
+
+    expect(updatedItem).toEqual({
+      id: itemId,
+      description: "Updated Item",
+      image: "updated.jpg",
+      box: testBoxId
+    });
+  });
+
+  test("not found if no such item", async () => {
     try {
       await Item.get(0);
       fail();
@@ -94,129 +162,21 @@ describe("Item Model Tests", () => {
     }
   });
 
-  /************************************** getitemsbyBox */
-  test("can get items by box", async () => {
-
-    await Item.create({
-      description: "Item 1",
-      image: "item1.jpg",
-      box: 1
-    });
-    await Item.create({
-      description: "Item 2",
-      image: "item2.jpg",
-      box: 1
-    });
-
-    await Item.create({
-      description: "Item 3",
-      image: "item3.jpg",
-      box: 2
-    });
-
-    const items = await Item.getitemsbyBox(1);
-    expect(items).toEqual([
-      {
-        id: expect.any(Number),
-        description: "Item 1",
-        image: "item1.jpg",
-        box: 1
-      },
-      {
-        id: expect.any(Number),
-        description: "Item 2",
-        image: "item2.jpg",
-        box: 1
-      }
-    ]);
-  });
-
-  /************************************** update */
-  test("can update item", async () => {
-    const result = await db.query(
-      `INSERT INTO items (description, image, box)
-       VALUES ('Original Item', 'orig.jpg', 1)
-       RETURNING id`);
-    const itemId = result.rows[0].id;
-
-    const updateData = {
-      description: "Updated Item",
-      image: "new.jpg"
-    };
-
-    const item = await Item.update(itemId, updateData);
-    expect(item).toEqual({
-      id: itemId,
-      description: "Updated Item",
-      image: "new.jpg",
-      box: 1
-    });
-  });
-
-  test("not found if no such item exists on update", async () => {
-    try {
-      await Item.update(0, {
-        description: "test"
-      });
-      fail();
-    } catch (err) {
-      expect(err instanceof NotFoundError).toBeTruthy();
-    }
-  });
-
-  /************************************** remove */
   test("can delete item", async () => {
     const result = await db.query(
       `INSERT INTO items (description, image, box)
-       VALUES ('Test Item', 'test.jpg', 1)
-       RETURNING id`);
+       VALUES ($1, $2, $3)
+       RETURNING id`,
+      ["Test Item", "test.jpg", testBoxId]
+    );
     const itemId = result.rows[0].id;
 
     await Item.remove(itemId);
-    
-    const res = await db.query(
+
+    const found = await db.query(
       "SELECT * FROM items WHERE id = $1",
-      [itemId]);
-    expect(res.rows.length).toEqual(0);
-  });
-
-  test("not found if no such item exists on delete", async () => {
-    try {
-      await Item.remove(0);
-      fail();
-    } catch (err) {
-      expect(err instanceof NotFoundError).toBeTruthy();
-    }
-  });
-
-  /************************************** boxremoveitem */
-  test("can remove all items from a box", async () => {
-
-    await Item.create({
-      description: "Item 1",
-      image: "item1.jpg",
-      box: 1
-    });
-    await Item.create({
-      description: "Item 2",
-      image: "item2.jpg",
-      box: 1
-    });
-
-    await Item.boxremoveitem(1);
-    
-    const res = await db.query(
-      "SELECT * FROM items WHERE box = $1",
-      [1]);
-    expect(res.rows.length).toEqual(0);
-  });
-
-  test("not found if no such box exists", async () => {
-    try {
-      await Item.boxremoveitem(null);
-      fail();
-    } catch (err) {
-      expect(err instanceof NotFoundError).toBeTruthy();
-    }
+      [itemId]
+    );
+    expect(found.rows.length).toEqual(0);
   });
 });

@@ -1,17 +1,15 @@
 "use strict";
 
-const { db } = require('../config/db');
+const { db } = require("../config/db");
 const { NotFoundError } = require("../expressError");
 const { sqlForPartialUpdate } = require("../helpers/sql");
 
 class Item {
-
   static async create({ description, image, box }) {
     const result = await db.query(
-      `INSERT INTO items (description,
-                             image, box)
-           VALUES ($1, $2, $3)
-           RETURNING description, image, box`,
+      `INSERT INTO items (description, image, box)
+       VALUES ($1, $2, $3)
+       RETURNING id, description, image, box`,
       [
         description,
         image,
@@ -25,10 +23,10 @@ class Item {
   static async findAll() {
     const itemRes = await db.query(
       `SELECT id,
-                  description,
-                  image,
-                  box
-           FROM items`);
+              description,
+              image,
+              box
+       FROM items`);
 
     return itemRes.rows;
   }
@@ -36,11 +34,11 @@ class Item {
   static async get(id) {
     const itemRes = await db.query(
       `SELECT id,
-                  description,
-                  image,
-                  box
-           FROM items
-           WHERE id = $1`, [id]);
+              description,
+              image,
+              box
+       FROM items
+       WHERE id = $1`, [id]);
 
     const item = itemRes.rows[0];
 
@@ -49,18 +47,16 @@ class Item {
     return item;
   }
 
-  static async getitemsbyBox(box) {
+  static async findBoxItems(box) {
     const itemRes = await db.query(
       `SELECT id,
-                  description,
-                  image,
-                  box
-           FROM items
-           WHERE box = $1`, [box]);
+              description,
+              image,
+              box
+       FROM items
+       WHERE box = $1`, [box]);
 
     const items = itemRes.rows;
-
-    if (!items) throw new NotFoundError(`No box: ${box}`);
 
     return items;
   }
@@ -89,9 +85,9 @@ class Item {
   static async remove(id) {
     const result = await db.query(
       `DELETE
-           FROM items
-           WHERE id = $1
-           RETURNING id`, [id]);
+       FROM items
+       WHERE id = $1
+       RETURNING id`, [id]);
     const item = result.rows[0];
 
     if (!item) throw new NotFoundError(`No item: ${id}`);
@@ -100,13 +96,12 @@ class Item {
   static async boxremoveitem(box) {
     const result = await db.query(
       `DELETE
-           FROM items
-           WHERE box = $1`, [box]);
+       FROM items
+       WHERE box = $1`, [box]);
     const res = result.rows;
 
     if (!box) throw new NotFoundError(`No Box: ${box}`);
   }
 }
-
 
 module.exports = Item;

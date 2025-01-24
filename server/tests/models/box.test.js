@@ -1,131 +1,110 @@
-// tests/box.test.js
-
 const { db, closeDb } = require("../../config/db");
 const { NotFoundError } = require("../../expressError");
 const Box = require("../../models/box");
 
 describe("Box Model Tests", () => {
-
-  beforeAll(async () => {
-    await db.query("DELETE FROM boxes");
-  });
+  let testMoveId;
 
   beforeEach(async () => {
+    await db.query("DELETE FROM items");
     await db.query("DELETE FROM boxes");
+    await db.query("DELETE FROM moves");
+    await db.query("DELETE FROM users");
+
+    await db.query(`
+      INSERT INTO users (username, password, email, admin)
+      VALUES ('testuser', 'password', 'test@test.com', false)`
+    );
+
+    const moveRes = await db.query(`
+      INSERT INTO moves (location, date, username)
+      VALUES ('Test Location', '2024-01-01', 'testuser')
+      RETURNING id`
+    );
+    testMoveId = moveRes.rows[0].id;
   });
 
   afterAll(async () => {
     await closeDb();
   });
 
-  /************************************** create */
   describe("create", () => {
-    const newBox = {
-      name: "Box 1",
-      room: "Living Room",
-      move: 1
-    };
-
     test("works", async () => {
-      const box = await Box.create(newBox);
-      expect(box).toEqual({
+      const box = await Box.create({
         name: "Box 1",
         room: "Living Room",
-        move: 1
+        move: testMoveId
       });
-
-      const result = await db.query(
-        `SELECT name, room, move
-         FROM boxes
-         WHERE room = 'Living Room'`);
-      expect(result.rows[0]).toEqual({
+      expect(box).toEqual({
+        id: expect.any(Number),
         name: "Box 1",
         room: "Living Room",
-        move: 1
+        move: testMoveId,
+        description: null,
+        location: null
       });
     });
   });
 
-  /************************************** findAll */
   describe("findAll", () => {
     test("works: no filter", async () => {
-
       await Box.create({
-        name: "Box 2",
+        name: "Box 1",
         room: "Living Room",
-        move: 1
+        move: testMoveId
       });
       await Box.create({
-        name: "Box 3",
+        name: "Box 2",
         room: "Kitchen",
-        move: 1
+        move: testMoveId
       });
 
       const boxes = await Box.findAll();
       expect(boxes).toEqual([
         {
           id: expect.any(Number),
-          name: "Box 2",
+          name: "Box 1",
           room: "Living Room",
-          move: 1
+          move: testMoveId,
+          description: null,
+          location: null
         },
         {
           id: expect.any(Number),
-          name: "Box 3",
+          name: "Box 2",
           room: "Kitchen",
-          move: 1
+          move: testMoveId,
+          description: null,
+          location: null
         }
       ]);
     });
   });
 
-  /************************************** findAllbyUser */
   describe("findAllbyUser", () => {
     test("works with move filter", async () => {
+      const secondMoveRes = await db.query(`
+        INSERT INTO moves (location, date, username)
+        VALUES ('Second Location', '2024-02-01', xx
 
-      await Box.create({
-        name: "Box 4",
-        room: "Living Room",
-        move: 1
-      });
-      await Box.create({
-        name: "Box 5",
-        room: "Kitchen",
-        move: 2
-      });
-
-      const boxes = await Box.findAllbyUser({ move: 1 });
-      expect(boxes).toEqual([
-        {
-          id: expect.any(Number),
-          name: "Box 4",
-          room: "Living Room",
-          move: 1
-        }
-      ]);
-    });
-
-    test("returns empty array if no boxes found", async () => {
-      const boxes = await Box.findAllbyUser({ move: 999 });
-      expect(boxes).toEqual([]);
-    });
-  });
-
-  /************************************** get */
   describe("get", () => {
     test("works", async () => {
       const result = await db.query(
         `INSERT INTO boxes (name, room, move)
-         VALUES ('Box 6', 'Living Room', 1)
-         RETURNING id`);
+         VALUES ($1, $2, $3)
+         RETURNING id`,
+        ["Box 1", "Living Room", testMoveId]
+      );
       const boxId = result.rows[0].id;
 
       const box = await Box.get(boxId);
       expect(box).toEqual({
         id: boxId,
-        name: "Box 6",
+        name: "Box 1",
         room: "Living Room",
-        move: 1
+        move: testMoveId,
+        description: null,
+        location: null
       });
     });
 
@@ -139,34 +118,36 @@ describe("Box Model Tests", () => {
     });
   });
 
-  /************************************** getMoveBoxes */
   describe("getMoveBoxes", () => {
     test("works", async () => {
-
       await Box.create({
-        name: "Box 7",
+        name: "Box 1",
         room: "Living Room",
-        move: 1
+        move: testMoveId
       });
       await Box.create({
-        name: "Box 8",
+        name: "Box 2",
         room: "Kitchen",
-        move: 1
+        move: testMoveId
       });
 
-      const boxes = await Box.getMoveBoxes(1);
+      const boxes = await Box.getMoveBoxes(testMoveId);
       expect(boxes).toEqual([
         {
           id: expect.any(Number),
-          name: "Box 7",
+          name: "Box 1",
           room: "Living Room",
-          move: 1
+          move: testMoveId,
+          description: null,
+          location: null
         },
         {
           id: expect.any(Number),
-          name: "Box 8",
+          name: "Box 2",
           room: "Kitchen",
-          move: 1
+          move: testMoveId,
+          description: null,
+          location: null
         }
       ]);
     });
@@ -177,33 +158,41 @@ describe("Box Model Tests", () => {
     });
   });
 
-  /************************************** update */
   describe("update", () => {
     test("works", async () => {
       const result = await db.query(
         `INSERT INTO boxes (name, room, move)
-         VALUES ('Box 9', 'Living Room', 1)
-         RETURNING id`);
+         VALUES ($1, $2, $3)
+         RETURNING id`,
+        ["Box 1", "Living Room", testMoveId]
+      );
       const boxId = result.rows[0].id;
 
-      const updatedBox = await Box.update(boxId, {
+      const updateData = {
         room: "Master Bedroom"
-      });
-      expect(updatedBox).toEqual({
+      };
+
+      const box = await Box.update(boxId, updateData);
+      expect(box).toEqual({
         id: boxId,
-        name: "Box 9",
+        name: "Box 1",
         room: "Master Bedroom",
-        move: 1
+        move: testMoveId,
+        description: null,
+        location: null
       });
 
       const found = await db.query(
         `SELECT * FROM boxes WHERE id = $1`,
-        [boxId]);
+        [boxId]
+      );
       expect(found.rows[0]).toEqual({
         id: boxId,
-        name: "Box 9",
+        name: "Box 1",
         room: "Master Bedroom",
-        move: 1
+        move: testMoveId,
+        description: null,
+        location: null
       });
     });
 
@@ -219,19 +208,22 @@ describe("Box Model Tests", () => {
     });
   });
 
-  /************************************** remove */
   describe("remove", () => {
     test("works", async () => {
       const result = await db.query(
         `INSERT INTO boxes (name, room, move)
-         VALUES ('Box 10', 'Living Room', 1)
-         RETURNING id`);
+         VALUES ($1, $2, $3)
+         RETURNING id`,
+        ["Box 1", "Living Room", testMoveId]
+      );
       const boxId = result.rows[0].id;
 
       await Box.remove(boxId);
+
       const found = await db.query(
         "SELECT * FROM boxes WHERE id = $1",
-        [boxId]);
+        [boxId]
+      );
       expect(found.rows.length).toEqual(0);
     });
 

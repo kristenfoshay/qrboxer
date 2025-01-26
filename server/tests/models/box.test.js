@@ -89,12 +89,12 @@ describe("Box Model Tests", () => {
 
   describe("get", () => {
     test("works", async () => {
-      const result = await db.query(
-        `INSERT INTO boxes (name, room, move)
-         VALUES ($1, $2, $3)
-         RETURNING id`,
-        ["Box 1", "Living Room", testMoveId]
-      );
+        const result = await db.query(
+            `INSERT INTO boxes (name, room, move)
+             VALUES ($1, $2, $3)
+             RETURNING id`,
+            ["Box 1", "Living Room", testMoveId]
+        );
       const boxId = result.rows[0].id;
 
       const box = await Box.get(boxId);

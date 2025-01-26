@@ -16,7 +16,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-    restart: "no"
     networks:
       - app-network
 
@@ -37,12 +36,11 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-    restart: "no"
     networks:
       - app-network
 
   tests:
-    build:
+    build: 
       context: ./server
       dockerfile: Dockerfile.test
     environment:
@@ -53,16 +51,16 @@ services:
       - DB_PASSWORD=test_password
       - DB_NAME=test_db
     command: >
-      npm test --
-      --verbose
-      --forceExit
-      --detectOpenHandles
-      --runInBand
-      --bail
+      /bin/sh -c "
+      while ! nc -z test-db 5432; do
+        echo 'Waiting for database...';
+        sleep 1;
+      done;
+      npm test -- --verbose --forceExit --detectOpenHandles --runInBand
+      "
     depends_on:
       test-db:
         condition: service_healthy
-    restart: "no"
     networks:
       - app-network
 

@@ -2,7 +2,7 @@ const { Client } = require("pg");
 
 let db;
 
-function getDatabase() {
+async function getDatabase() {
   if (!db) {
     db = new Client({
       host: process.env.DB_HOST || "localhost",
@@ -11,14 +11,19 @@ function getDatabase() {
       password: process.env.DB_PASSWORD || "postgres",
       database: process.env.NODE_ENV === "test" ? "test_db" : "dev_db"
     });
+    await db.connect();
   }
   return db;
 }
 
-async function connect() {
-  const client = getDatabase();
-  await client.connect();
-  return client;
+async function query(text, params) {
+  const client = await getDatabase();
+  try {
+    return await client.query(text, params);
+  } catch (err) {
+    console.error("Database query error:", err);
+    throw err;
+  }
 }
 
 async function closeDb() {
@@ -28,19 +33,8 @@ async function closeDb() {
   }
 }
 
-async function query(text, params) {
-  const client = getDatabase();
-  try {
-    return await client.query(text, params);
-  } catch (err) {
-    console.error("Database query error:", err);
-    throw err;
-  }
-}
-
 module.exports = {
   query,
-  connect,
   closeDb,
   getDatabase
 };

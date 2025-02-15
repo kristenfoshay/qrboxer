@@ -1,6 +1,6 @@
 // jest.setup.js
 
-const { db, closeDb } = require("../db");
+const { db, closeDb } = require("../config/db");
 const { BCRYPT_WORK_FACTOR } = require("../config");
 const bcrypt = require("bcrypt");
 

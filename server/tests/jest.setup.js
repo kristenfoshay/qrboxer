@@ -1,8 +1,12 @@
 // jest.setup.js
 
 const { db, closeDb } = require("../config/db");
-const { BCRYPT_WORK_FACTOR } = require("../config");
+const { BCRYPT_WORK_FACTOR } = require("../config/config");
 const bcrypt = require("bcrypt");
+
+beforeAll(async () => {
+    await connect();
+});
 
 async function commonBeforeAll() {
   // Delete data from all tables

@@ -1,122 +1,25 @@
-Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_tests_1
-[36mdb_1       |[0m The files belonging to this database system will be owned by user "postgres".
-[36mdb_1       |[0m This user must also own the server process.
+14: Pulling from library/postgres
+Digest: sha256:7fe0928f6de61208d6b39730456085d74578046df4c684fa198f0fb065f4381e
+Status: Downloaded newer image for postgres:14
+Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_tests_1
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m PostgreSQL Database directory appears to contain a database; Skipping initialization
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 2025-02-02 22:27:18.232 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
 [36mdb_1       |[0m 
-[36mdb_1       |[0m The database cluster will be initialized with locale "en_US.utf8".
-[36mdb_1       |[0m The default database encoding has accordingly been set to "UTF8".
-[36mdb_1       |[0m The default text search configuration will be set to "english".
+[36mdb_1       |[0m PostgreSQL Database directory appears to contain a database; Skipping initialization
 [36mdb_1       |[0m 
-[36mdb_1       |[0m Data page checksums are disabled.
-[33mtest-db_1  |[0m The files belonging to this database system will be owned by user "postgres".
-[33mtest-db_1  |[0m This user must also own the server process.
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m The database cluster will be initialized with locale "en_US.utf8".
-[33mtest-db_1  |[0m The default database encoding has accordingly been set to "UTF8".
-[33mtest-db_1  |[0m The default text search configuration will be set to "english".
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m Data page checksums are disabled.
-[32mtests_1    |[0m Waiting for database...
-[36mdb_1       |[0m 
-[36mdb_1       |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
-[33mtest-db_1  |[0m creating subdirectories ... ok
-[36mdb_1       |[0m creating subdirectories ... ok
-[33mtest-db_1  |[0m selecting dynamic shared memory implementation ... posix
-[33mtest-db_1  |[0m selecting default max_connections ... 100
-[36mdb_1       |[0m selecting dynamic shared memory implementation ... posix
-[33mtest-db_1  |[0m selecting default shared_buffers ... 128MB
-[33mtest-db_1  |[0m selecting default time zone ... Etc/UTC
-[36mdb_1       |[0m selecting default max_connections ... 100
-[36mdb_1       |[0m selecting default shared_buffers ... 128MB
-[33mtest-db_1  |[0m creating configuration files ... ok
-[33mtest-db_1  |[0m running bootstrap script ... ok
-[36mdb_1       |[0m selecting default time zone ... Etc/UTC
-[36mdb_1       |[0m creating configuration files ... ok
-[36mdb_1       |[0m running bootstrap script ... ok
-[33mtest-db_1  |[0m performing post-bootstrap initialization ... ok
-[33mtest-db_1  |[0m syncing data to disk ... initdb: warning: enabling "trust" authentication for local connections
-[33mtest-db_1  |[0m You can change this by editing pg_hba.conf or using the option -A, or
-[33mtest-db_1  |[0m --auth-local and --auth-host, the next time you run initdb.
-[36mdb_1       |[0m performing post-bootstrap initialization ... ok
-[36mdb_1       |[0m syncing data to disk ... ok
-[36mdb_1       |[0m 
-[36mdb_1       |[0m 
-[36mdb_1       |[0m Success. You can now start the database server using:
-[36mdb_1       |[0m 
-[36mdb_1       |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
-[36mdb_1       |[0m 
-[33mtest-db_1  |[0m ok
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m Success. You can now start the database server using:
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m initdb: warning: enabling "trust" authentication for local connections
-[36mdb_1       |[0m You can change this by editing pg_hba.conf or using the option -A, or
-[36mdb_1       |[0m --auth-local and --auth-host, the next time you run initdb.
-[33mtest-db_1  |[0m waiting for server to start....2025-01-26 00:25:04.855 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m 2025-01-26 00:25:04.915 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[36mdb_1       |[0m waiting for server to start....2025-01-26 00:25:04.872 UTC [47] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[36mdb_1       |[0m 2025-01-26 00:25:04.946 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[33mtest-db_1  |[0m 2025-01-26 00:25:05.514 UTC [49] LOG:  database system was shut down at 2025-01-26 00:25:02 UTC
-[33mtest-db_1  |[0m 2025-01-26 00:25:05.607 UTC [48] LOG:  database system is ready to accept connections
-[36mdb_1       |[0m 2025-01-26 00:25:05.564 UTC [48] LOG:  database system was shut down at 2025-01-26 00:25:02 UTC
-[36mdb_1       |[0m 2025-01-26 00:25:05.652 UTC [47] LOG:  database system is ready to accept connections
-[33mtest-db_1  |[0m  done
-[33mtest-db_1  |[0m server started
-[33mtest-db_1  |[0m 2025-01-26 00:25:06.853 UTC [68] FATAL:  database "test_db" does not exist
-[36mdb_1       |[0m  done
-[36mdb_1       |[0m server started
-[33mtest-db_1  |[0m CREATE DATABASE
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m CREATE DATABASE
-[36mdb_1       |[0m 
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m 
-[33mtest-db_1  |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
-[36mdb_1       |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
-[36mdb_1       |[0m 
-[36mdb_1       |[0m waiting for server to shut down...2025-01-26 00:25:10.281 UTC [47] LOG:  received fast shutdown request
-[33mtest-db_1  |[0m CREATE TABLE
-[36mdb_1       |[0m .2025-01-26 00:25:10.404 UTC [47] LOG:  aborting any active transactions
-[33mtest-db_1  |[0m CREATE TABLE
-[33mtest-db_1  |[0m CREATE TABLE
-[36mdb_1       |[0m 2025-01-26 00:25:10.407 UTC [47] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
-[33mtest-db_1  |[0m CREATE TABLE
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m waiting for server to shut down...2025-01-26 00:25:11.737 UTC [48] LOG:  received fast shutdown request
-[33mtest-db_1  |[0m .2025-01-26 00:25:11.801 UTC [48] LOG:  aborting any active transactions
-[36mdb_1       |[0m 2025-01-26 00:25:10.407 UTC [49] LOG:  shutting down
-[33mtest-db_1  |[0m 2025-01-26 00:25:11.804 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
-[36mdb_1       |[0m .2025-01-26 00:25:11.753 UTC [47] LOG:  database system is shut down
-[33mtest-db_1  |[0m 2025-01-26 00:25:11.804 UTC [50] LOG:  shutting down
-[36mdb_1       |[0m  done
-[36mdb_1       |[0m server stopped
-[36mdb_1       |[0m 
-[36mdb_1       |[0m PostgreSQL init process complete; ready for start up.
-[36mdb_1       |[0m 
-[36mdb_1       |[0m 2025-01-26 00:25:11.984 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[36mdb_1       |[0m 2025-01-26 00:25:11.984 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-[36mdb_1       |[0m 2025-01-26 00:25:11.984 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-[36mdb_1       |[0m 2025-01-26 00:25:12.095 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[36mdb_1       |[0m 2025-01-26 00:25:12.309 UTC [70] LOG:  database system was shut down at 2025-01-26 00:25:11 UTC
-[36mdb_1       |[0m 2025-01-26 00:25:12.513 UTC [1] LOG:  database system is ready to accept connections
-[33mtest-db_1  |[0m 2025-01-26 00:25:12.653 UTC [48] LOG:  database system is shut down
-[32mtests_1    |[0m Waiting for database...
-[33mtest-db_1  |[0m  done
-[33mtest-db_1  |[0m server stopped
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m PostgreSQL init process complete; ready for start up.
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 2025-01-26 00:25:12.844 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m 2025-01-26 00:25:12.844 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-[33mtest-db_1  |[0m 2025-01-26 00:25:12.844 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-[33mtest-db_1  |[0m 2025-01-26 00:25:12.920 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[33mtest-db_1  |[0m 2025-01-26 00:25:13.265 UTC [73] LOG:  database system was shut down at 2025-01-26 00:25:12 UTC
-[33mtest-db_1  |[0m 2025-01-26 00:25:13.451 UTC [1] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m 2025-02-02 22:27:18.232 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mtest-db_1  |[0m 2025-02-02 22:27:18.232 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[33mtest-db_1  |[0m 2025-02-02 22:27:18.404 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[36mdb_1       |[0m 2025-02-02 22:27:18.013 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m 2025-02-02 22:27:18.573 UTC [27] LOG:  database system was shut down at 2025-02-02 21:59:56 UTC
+[33mtest-db_1  |[0m 2025-02-02 22:27:18.620 UTC [1] LOG:  database system is ready to accept connections
+[36mdb_1       |[0m 2025-02-02 22:27:18.013 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[36mdb_1       |[0m 2025-02-02 22:27:18.013 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mdb_1       |[0m 2025-02-02 22:27:18.218 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[36mdb_1       |[0m 2025-02-02 22:27:18.356 UTC [27] LOG:  database system was shut down at 2025-02-02 21:59:56 UTC
+[36mdb_1       |[0m 2025-02-02 22:27:18.461 UTC [1] LOG:  database system is ready to accept connections
 [32mtests_1    |[0m 
 [32mtests_1    |[0m > qrboxer@0.1.0 test
 [32mtests_1    |[0m > jest -i --detectOpenHandles --forceExit --verbose --forceExit --detectOpenHandles --runInBand
@@ -151,29 +54,178 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database connection closed.
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at log (config/db.js:61:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m PASS tests/models/move.test.js
+[32mtests_1    |[0m FAIL tests/models/move.test.js
 [32mtests_1    |[0m   Move Model Tests
 [32mtests_1    |[0m     create
-[32mtests_1    |[0m       ✓ works (75 ms)
-[32mtests_1    |[0m       ✓ bad request with duplicate date (32 ms)
+[32mtests_1    |[0m       ✕ works (2 ms)
+[32mtests_1    |[0m       ✕ bad request with duplicate date (1 ms)
 [32mtests_1    |[0m     get
-[32mtests_1    |[0m       ✓ works (50 ms)
-[32mtests_1    |[0m       ✓ not found if no such move (66 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such move
 [32mtests_1    |[0m     update
-[32mtests_1    |[0m       ✓ works (50 ms)
-[32mtests_1    |[0m       ✓ not found if no such move (232 ms)
-[32mtests_1    |[0m       ✓ works: partial update (230 ms)
+[32mtests_1    |[0m       ✕ works
+[32mtests_1    |[0m       ✕ not found if no such move (1 ms)
+[32mtests_1    |[0m       ✕ works: partial update (1 ms)
 [32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✓ works: finds all moves for user (76 ms)
-[32mtests_1    |[0m       ✓ works: returns empty array if no moves found (34 ms)
+[32mtests_1    |[0m       ✕ works: finds all moves for user (1 ms)
+[32mtests_1    |[0m       ✕ works: returns empty array if no moves found (1 ms)
 [32mtests_1    |[0m     remove
-[32mtests_1    |[0m       ✓ works: removes move and boxes cascade (49 ms)
-[32mtests_1    |[0m       ✓ not found if no such move (16 ms)
+[32mtests_1    |[0m       ✕ works: removes move and boxes cascade (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such move (1 ms)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › create › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › create › bad request with duplicate date
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › get › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › get › not found if no such move
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › update › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › update › not found if no such move
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › update › works: partial update
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › findAll › works: finds all moves for user
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › findAll › works: returns empty array if no moves found
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › remove › works: removes move and boxes cascade
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Move Model Tests › remove › not found if no such move
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
+[32mtests_1    |[0m       10 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -265,153 +317,229 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /users 201 75 - 3.542 ms
-[32mtests_1    |[0m POST /users 400 202 - 1.278 ms
-[32mtests_1    |[0m POST /users 400 233 - 1.049 ms
-[32mtests_1    |[0m GET /users 200 103 - 0.539 ms
-[32mtests_1    |[0m GET /users 200 12 - 0.405 ms
-[32mtests_1    |[0m GET /users/testuser 200 144 - 0.499 ms
-[32mtests_1    |[0m GET /users/nonexistent 404 26 - 0.585 ms
-[32mtests_1    |[0m PATCH /users/testuser 200 55 - 0.960 ms
-[32mtests_1    |[0m PATCH /users/testuser 400 32 - 0.262 ms
-[32mtests_1    |[0m PATCH /users/testuser 400 35 - 0.306 ms
-[32mtests_1    |[0m PATCH /users/nonexistent 404 26 - 0.560 ms
-[32mtests_1    |[0m DELETE /users/testuser 200 22 - 0.399 ms
-[32mtests_1    |[0m DELETE /users/nonexistent 404 26 - 0.411 ms
+[32mtests_1    |[0m POST /users 201 75 - 3.527 ms
+[32mtests_1    |[0m POST /users 400 202 - 1.282 ms
+[32mtests_1    |[0m POST /users 400 233 - 1.121 ms
+[32mtests_1    |[0m GET /users 200 103 - 0.668 ms
+[32mtests_1    |[0m GET /users 200 12 - 0.414 ms
+[32mtests_1    |[0m GET /users/testuser 200 144 - 0.546 ms
+[32mtests_1    |[0m GET /users/nonexistent 404 26 - 0.394 ms
+[32mtests_1    |[0m PATCH /users/testuser 200 55 - 0.953 ms
+[32mtests_1    |[0m PATCH /users/testuser 400 32 - 0.264 ms
+[32mtests_1    |[0m PATCH /users/testuser 400 35 - 0.330 ms
+[32mtests_1    |[0m PATCH /users/nonexistent 404 26 - 0.613 ms
+[32mtests_1    |[0m DELETE /users/testuser 200 22 - 0.414 ms
+[32mtests_1    |[0m DELETE /users/nonexistent 404 26 - 0.448 ms
 [32mtests_1    |[0m PASS tests/routes/userRoutes.test.js
 [32mtests_1    |[0m   User Routes Test
 [32mtests_1    |[0m     POST /users
-[32mtests_1    |[0m       ✓ works: creates a new user (42 ms)
-[32mtests_1    |[0m       ✓ bad request with missing fields (68 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (9 ms)
+[32mtests_1    |[0m       ✓ works: creates a new user (44 ms)
+[32mtests_1    |[0m       ✓ bad request with missing fields (12 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (14 ms)
 [32mtests_1    |[0m     GET /users
-[32mtests_1    |[0m       ✓ works: gets all users (8 ms)
-[32mtests_1    |[0m       ✓ works: empty list on no users (10 ms)
+[32mtests_1    |[0m       ✓ works: gets all users (9 ms)
+[32mtests_1    |[0m       ✓ works: empty list on no users (14 ms)
 [32mtests_1    |[0m     GET /users/:username
-[32mtests_1    |[0m       ✓ works: gets user by username (8 ms)
-[32mtests_1    |[0m       ✓ not found if user doesn't exist (8 ms)
+[32mtests_1    |[0m       ✓ works: gets user by username (10 ms)
+[32mtests_1    |[0m       ✓ not found if user doesn't exist (7 ms)
 [32mtests_1    |[0m     PATCH /users/:username
-[32mtests_1    |[0m       ✓ works: updates user (10 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (9 ms)
-[32mtests_1    |[0m       ✓ bad request with empty update (8 ms)
+[32mtests_1    |[0m       ✓ works: updates user (12 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (10 ms)
+[32mtests_1    |[0m       ✓ bad request with empty update (10 ms)
 [32mtests_1    |[0m       ✓ not found if user doesn't exist (9 ms)
 [32mtests_1    |[0m     DELETE /users/:username
-[32mtests_1    |[0m       ✓ works: deletes user (8 ms)
-[32mtests_1    |[0m       ✓ not found if user doesn't exist (7 ms)
+[32mtests_1    |[0m       ✓ works: deletes user (7 ms)
+[32mtests_1    |[0m       ✓ not found if user doesn't exist (9 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m FAIL tests/models/box.test.js
-[32mtests_1    |[0m   ● Test suite failed to run
+[32mtests_1    |[0m   Box Model Tests
+[32mtests_1    |[0m     create
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m     findAll
+[32mtests_1    |[0m       ✕ works: no filter (1 ms)
+[32mtests_1    |[0m     findAllbyUser
+[32mtests_1    |[0m       ✕ works with move filter (1 ms)
+[32mtests_1    |[0m       ✕ returns empty array if no boxes found (1 ms)
+[32mtests_1    |[0m     get
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such box (1 ms)
+[32mtests_1    |[0m     getMoveBoxes
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ returns empty array if no boxes found (1 ms)
+[32mtests_1    |[0m     update
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such box (1 ms)
+[32mtests_1    |[0m     remove
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such box (1 ms)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     SyntaxError: /usr/src/app/tests/models/box.test.js: Unexpected token, expected "," (93:9)
+[32mtests_1    |[0m   ● Box Model Tests › create › works
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       91 |     test("works", async () => {
-[32mtests_1    |[0m       92 |       const result = await db.query(
-[32mtests_1    |[0m     > 93 |         `INSERT INTO boxes (name, room, move)
-[32mtests_1    |[0m          |          ^
-[32mtests_1    |[0m       94 |          VALUES ($1, $2, $3)
-[32mtests_1    |[0m       95 |          RETURNING id`,
-[32mtests_1    |[0m       96 |         ["Box 1", "Living Room", testMoveId]
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at constructor (node_modules/@babel/parser/src/parse-error.ts:95:45)
-[32mtests_1    |[0m       at Parser.toParseError [as raise] (node_modules/@babel/parser/src/tokenizer/index.ts:1496:19)
-[32mtests_1    |[0m       at Parser.raise [as unexpected] (node_modules/@babel/parser/src/tokenizer/index.ts:1536:16)
-[32mtests_1    |[0m       at Parser.unexpected [as expect] (node_modules/@babel/parser/src/parser/util.ts:157:12)
-[32mtests_1    |[0m       at Parser.expect [as parseCallExpressionArguments] (node_modules/@babel/parser/src/parser/expression.ts:994:14)
-[32mtests_1    |[0m       at Parser.parseCallExpressionArguments [as parseCoverCallAndAsyncArrowHead] (node_modules/@babel/parser/src/parser/expression.ts:883:29)
-[32mtests_1    |[0m       at Parser.parseCoverCallAndAsyncArrowHead [as parseSubscript] (node_modules/@babel/parser/src/parser/expression.ts:772:19)
-[32mtests_1    |[0m       at Parser.parseSubscript [as parseSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:730:19)
-[32mtests_1    |[0m       at Parser.parseSubscripts [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:715:17)
-[32mtests_1    |[0m       at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:688:21)
-[32mtests_1    |[0m       at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:650:23)
-[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseAwait] (node_modules/@babel/parser/src/parser/expression.ts:2884:28)
-[32mtests_1    |[0m       at Parser.parseAwait [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:612:25)
-[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:389:14)
-[32mtests_1    |[0m       at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:401:23)
-[32mtests_1    |[0m       at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:356:23)
-[32mtests_1    |[0m       at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:298:21)
-[32mtests_1    |[0m       at parseMaybeAssign (node_modules/@babel/parser/src/parser/expression.ts:252:12)
-[32mtests_1    |[0m       at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3111:16)
-[32mtests_1    |[0m       at Parser.allowInAnd [as parseMaybeAssignAllowIn] (node_modules/@babel/parser/src/parser/expression.ts:251:17)
-[32mtests_1    |[0m       at Parser.parseMaybeAssignAllowIn [as parseVar] (node_modules/@babel/parser/src/parser/statement.ts:1550:18)
-[32mtests_1    |[0m       at Parser.parseVar [as parseVarStatement] (node_modules/@babel/parser/src/parser/statement.ts:1214:10)
-[32mtests_1    |[0m       at Parser.parseVarStatement [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:566:21)
-[32mtests_1    |[0m       at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:437:17)
-[32mtests_1    |[0m       at Parser.parseStatementLike [as parseStatementListItem] (node_modules/@babel/parser/src/parser/statement.ts:386:17)
-[32mtests_1    |[0m       at Parser.parseStatementListItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1407:16)
-[32mtests_1    |[0m       at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1380:10)
-[32mtests_1    |[0m       at Parser.parseBlockBody [as parseBlock] (node_modules/@babel/parser/src/parser/statement.ts:1348:10)
-[32mtests_1    |[0m       at Parser.parseBlock [as parseFunctionBody] (node_modules/@babel/parser/src/parser/expression.ts:2565:24)
-[32mtests_1    |[0m       at Parser.parseFunctionBody [as parseArrowExpression] (node_modules/@babel/parser/src/parser/expression.ts:2506:10)
-[32mtests_1    |[0m       at Parser.parseArrowExpression [as parseAsyncArrowFromCallExpression] (node_modules/@babel/parser/src/parser/expression.ts:1025:10)
-[32mtests_1    |[0m       at Parser.parseAsyncArrowFromCallExpression [as parseCoverCallAndAsyncArrowHead] (node_modules/@babel/parser/src/parser/expression.ts:904:27)
-[32mtests_1    |[0m       at Parser.parseCoverCallAndAsyncArrowHead [as parseSubscript] (node_modules/@babel/parser/src/parser/expression.ts:772:19)
-[32mtests_1    |[0m       at Parser.parseSubscript [as parseSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:730:19)
-[32mtests_1    |[0m       at Parser.parseSubscripts [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:715:17)
-[32mtests_1    |[0m       at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:688:21)
-[32mtests_1    |[0m       at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:650:23)
-[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:389:14)
-[32mtests_1    |[0m       at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:401:23)
-[32mtests_1    |[0m       at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:356:23)
-[32mtests_1    |[0m       at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:298:21)
-[32mtests_1    |[0m       at parseMaybeAssign (node_modules/@babel/parser/src/parser/expression.ts:252:12)
-[32mtests_1    |[0m       at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3116:12)
-[32mtests_1    |[0m       at Parser.allowInAnd [as parseMaybeAssignAllowIn] (node_modules/@babel/parser/src/parser/expression.ts:251:17)
-[32mtests_1    |[0m       at Parser.parseMaybeAssignAllowIn [as parseExprListItem] (node_modules/@babel/parser/src/parser/expression.ts:2728:18)
-[32mtests_1    |[0m       at Parser.parseExprListItem [as parseCallExpressionArguments] (node_modules/@babel/parser/src/parser/expression.ts:1005:14)
-[32mtests_1    |[0m       at Parser.parseCallExpressionArguments [as parseCoverCallAndAsyncArrowHead] (node_modules/@babel/parser/src/parser/expression.ts:883:29)
-[32mtests_1    |[0m       at Parser.parseCoverCallAndAsyncArrowHead [as parseSubscript] (node_modules/@babel/parser/src/parser/expression.ts:772:19)
-[32mtests_1    |[0m       at Parser.parseSubscript [as parseSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:730:19)
-[32mtests_1    |[0m       at Parser.parseSubscripts [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:715:17)
-[32mtests_1    |[0m       at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:688:21)
-[32mtests_1    |[0m       at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:650:23)
-[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:389:14)
-[32mtests_1    |[0m       at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:401:23)
-[32mtests_1    |[0m       at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:356:23)
-[32mtests_1    |[0m       at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:298:21)
-[32mtests_1    |[0m       at Parser.parseMaybeAssign [as parseExpressionBase] (node_modules/@babel/parser/src/parser/expression.ts:221:23)
-[32mtests_1    |[0m       at parseExpressionBase (node_modules/@babel/parser/src/parser/expression.ts:212:39)
-[32mtests_1    |[0m       at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3111:16)
-[32mtests_1    |[0m       at Parser.allowInAnd [as parseExpression] (node_modules/@babel/parser/src/parser/expression.ts:212:17)
-[32mtests_1    |[0m       at Parser.parseExpression [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:656:23)
-[32mtests_1    |[0m       at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:437:17)
-[32mtests_1    |[0m       at Parser.parseStatementLike [as parseStatementListItem] (node_modules/@babel/parser/src/parser/statement.ts:386:17)
-[32mtests_1    |[0m       at Parser.parseStatementListItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1407:16)
-[32mtests_1    |[0m       at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1380:10)
-[32mtests_1    |[0m       at Parser.parseBlockBody [as parseBlock] (node_modules/@babel/parser/src/parser/statement.ts:1348:10)
-[32mtests_1    |[0m       at Parser.parseBlock [as parseFunctionBody] (node_modules/@babel/parser/src/parser/expression.ts:2565:24)
-[32mtests_1    |[0m       at Parser.parseFunctionBody [as parseArrowExpression] (node_modules/@babel/parser/src/parser/expression.ts:2506:10)
-[32mtests_1    |[0m       at Parser.parseArrowExpression [as parseParenAndDistinguishExpression] (node_modules/@babel/parser/src/parser/expression.ts:1802:12)
-[32mtests_1    |[0m       at Parser.parseParenAndDistinguishExpression [as parseExprAtom] (node_modules/@babel/parser/src/parser/expression.ts:1126:21)
-[32mtests_1    |[0m       at Parser.parseExprAtom [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:709:23)
-[32mtests_1    |[0m       at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:688:21)
-[32mtests_1    |[0m       at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:650:23)
-[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:389:14)
-[32mtests_1    |[0m       at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:401:23)
-[32mtests_1    |[0m       at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:356:23)
-[32mtests_1    |[0m       at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:298:21)
-[32mtests_1    |[0m       at parseMaybeAssign (node_modules/@babel/parser/src/parser/expression.ts:252:12)
-[32mtests_1    |[0m       at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3116:12)
-[32mtests_1    |[0m       at Parser.allowInAnd [as parseMaybeAssignAllowIn] (node_modules/@babel/parser/src/parser/expression.ts:251:17)
-[32mtests_1    |[0m       at Parser.parseMaybeAssignAllowIn [as parseExprListItem] (node_modules/@babel/parser/src/parser/expression.ts:2728:18)
-[32mtests_1    |[0m       at Parser.parseExprListItem [as parseCallExpressionArguments] (node_modules/@babel/parser/src/parser/expression.ts:1005:14)
-[32mtests_1    |[0m       at Parser.parseCallExpressionArguments [as parseCoverCallAndAsyncArrowHead] (node_modules/@babel/parser/src/parser/expression.ts:883:29)
-[32mtests_1    |[0m       at Parser.parseCoverCallAndAsyncArrowHead [as parseSubscript] (node_modules/@babel/parser/src/parser/expression.ts:772:19)
-[32mtests_1    |[0m       at Parser.parseSubscript [as parseSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:730:19)
-[32mtests_1    |[0m       at Parser.parseSubscripts [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:715:17)
-[32mtests_1    |[0m       at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:688:21)
-[32mtests_1    |[0m       at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:650:23)
-[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:389:14)
-[32mtests_1    |[0m       at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:401:23)
-[32mtests_1    |[0m       at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:356:23)
-[32mtests_1    |[0m       at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:298:21)
-[32mtests_1    |[0m       at Parser.parseMaybeAssign [as parseExpressionBase] (node_modules/@babel/parser/src/parser/expression.ts:221:23)
-[32mtests_1    |[0m       at parseExpressionBase (node_modules/@babel/parser/src/parser/expression.ts:212:39)
-[32mtests_1    |[0m       at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3111:16)
-[32mtests_1    |[0m       at Parser.allowInAnd [as parseExpression] (node_modules/@babel/parser/src/parser/expression.ts:212:17)
-[32mtests_1    |[0m       at Parser.parseExpression [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:656:23)
-[32mtests_1    |[0m       at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:437:17)
-[32mtests_1    |[0m       at Parser.parseStatementLike [as parseStatementListItem] (node_modules/@babel/parser/src/parser/statement.ts:386:17)
-[32mtests_1    |[0m       at Parser.parseStatementListItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1407:16)
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › findAll › works: no filter
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › findAllbyUser › works with move filter
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › findAllbyUser › returns empty array if no boxes found
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › get › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › get › not found if no such box
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › getMoveBoxes › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › getMoveBoxes › returns empty array if no boxes found
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › update › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › update › not found if no such box
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › remove › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Model Tests › remove › not found if no such box
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 |
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/box.test.js:9:14)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -443,101 +571,119 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /boxes 400 112 - 2.312 ms
-[32mtests_1    |[0m GET /boxes 200 12 - 4.183 ms
-[32mtests_1    |[0m GET /boxes 200 12 - 2.864 ms
-[32mtests_1    |[0m POST /boxes 400 162 - 2.651 ms
-[32mtests_1    |[0m POST /boxes 400 150 - 0.694 ms
-[32mtests_1    |[0m POST /boxes 400 155 - 0.705 ms
-[32mtests_1    |[0m POST /boxes 400 150 - 0.619 ms
-[32mtests_1    |[0m GET /boxes/99999 404 50 - 2.310 ms
-[32mtests_1    |[0m PATCH /boxes/99999 404 50 - 2.283 ms
-[32mtests_1    |[0m DELETE /boxes/99999 404 50 - 1.937 ms
-[32mtests_1    |[0m POST /boxes 400 112 - 0.637 ms
-[32mtests_1    |[0m POST /boxes 400 112 - 0.504 ms
-[32mtests_1    |[0m POST /boxes 400 112 - 0.556 ms
-[32mtests_1    |[0m GET /boxes?location=Warehouse%20A 200 12 - 2.089 ms
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database connection closed.
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at log (config/db.js:61:13)
-[32mtests_1    |[0m 
 [32mtests_1    |[0m FAIL tests/routes/boxRoutes.test.js
-[32mtests_1    |[0m   Box Routes Automated Tests
-[32mtests_1    |[0m     Automated CRUD Testing
-[32mtests_1    |[0m       ✕ CREATE: should create multiple boxes (21 ms)
-[32mtests_1    |[0m       ✕ READ: should retrieve all created boxes (21 ms)
-[32mtests_1    |[0m       ✓ UPDATE: should update each box (2 ms)
-[32mtests_1    |[0m       ✓ DELETE: should delete all created boxes (22 ms)
-[32mtests_1    |[0m     Error Handling Tests
-[32mtests_1    |[0m       ✓ should handle invalid box creation (35 ms)
-[32mtests_1    |[0m       ✓ should handle non-existent box operations (27 ms)
-[32mtests_1    |[0m     Query Parameter Tests
-[32mtests_1    |[0m       ✓ should filter boxes by location (13 ms)
-[32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Box Routes Automated Tests › Automated CRUD Testing › CREATE: should create multiple boxes
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     expect(received).toBe(expected) // Object.is equality
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     Expected: 201
-[32mtests_1    |[0m     Received: 400
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       41 |                     .send(boxData);
-[32mtests_1    |[0m       42 |                 
-[32mtests_1    |[0m     > 43 |                 expect(response.statusCode).toBe(201);
-[32mtests_1    |[0m          |                                             ^
-[32mtests_1    |[0m       44 |                 expect(response.body.box).toHaveProperty("id");
-[32mtests_1    |[0m       45 |                 expect(response.body.box.name).toBe(boxData.name);
-[32mtests_1    |[0m       46 |                 
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.toBe (tests/routes/boxRoutes.test.js:43:45)
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Box Routes Automated Tests › Automated CRUD Testing › READ: should retrieve all created boxes
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     expect(received).toBe(expected) // Object.is equality
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     Expected: 2
-[32mtests_1    |[0m     Received: 0
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       53 |             
-[32mtests_1    |[0m       54 |             expect(response.statusCode).toBe(200);
-[32mtests_1    |[0m     > 55 |             expect(response.body.boxes.length).toBe(testBoxes.length);
-[32mtests_1    |[0m          |                                                ^
-[32mtests_1    |[0m       56 |             
-[32mtests_1    |[0m       57 |             // Verify each box exists in response
-[32mtests_1    |[0m       58 |             for (let testBox of testBoxes) {
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.toBe (tests/routes/boxRoutes.test.js:55:48)
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Automated CRUD Testing › UPDATE: should update each box
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     QRBoxer Config:
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:22:9)
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     SECRET_KEY: secret-dev
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:23:9)
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Automated CRUD Testing › DELETE: should delete all created boxes
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     PORT: 3001
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:24:9)
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     BCRYPT_WORK_FACTOR 1
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:25:9)
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Error Handling Tests › should handle invalid box creation
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database: postgresql://test_user:test_password@test-db:5432/test_db
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:26:9)
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     ---
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:27:9)
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Error Handling Tests › should handle non-existent box operations
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Box Routes Automated Tests › Query Parameter Tests › should filter boxes by location
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   
+[32mtests_1    |[0m        9 |   beforeAll(async () => {
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Test suite failed to run
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       29 |
+[32mtests_1    |[0m       30 |   afterAll(async () => {
+[32mtests_1    |[0m     > 31 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       32 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       33 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       34 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/boxRoutes.test.js:31:14)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -574,7 +720,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:14:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 201 78 - 5.111 ms
+[32mtests_1    |[0m POST /items 201 78 - 8.559 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     POST /items hit with body: { description: 'Missing box field' }
 [32mtests_1    |[0m 
@@ -660,7 +806,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 400 73 - 15.667 ms
+[32mtests_1    |[0m POST /items 400 73 - 18.040 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     POST /items hit with body: { description: 'Test description', box: 'not-a-number' }
 [32mtests_1    |[0m 
@@ -746,25 +892,25 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 400 79 - 8.366 ms
+[32mtests_1    |[0m POST /items 400 79 - 11.148 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items hit with query: {}
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:31:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items 200 149 - 2.893 ms
+[32mtests_1    |[0m GET /items 200 149 - 2.904 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items hit with query: { box: '1' }
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:31:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items?box=1 200 82 - 2.679 ms
+[32mtests_1    |[0m GET /items?box=1 200 82 - 2.690 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items/:id hit with id: 1
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:42:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items/1 200 78 - 2.871 ms
+[32mtests_1    |[0m GET /items/1 200 78 - 2.891 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items/:id hit with id: 0
 [32mtests_1    |[0m 
@@ -800,7 +946,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:47:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items/0 404 47 - 7.262 ms
+[32mtests_1    |[0m GET /items/0 404 47 - 7.953 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 1 body: {
 [32mtests_1    |[0m       description: 'Updated Kitchen appliance',
@@ -810,7 +956,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:53:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/1 200 89 - 6.586 ms
+[32mtests_1    |[0m PATCH /items/1 200 89 - 3.215 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 1 body: { box: 'not-a-number' }
 [32mtests_1    |[0m 
@@ -900,7 +1046,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/1 400 79 - 7.110 ms
+[32mtests_1    |[0m PATCH /items/1 400 79 - 7.031 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 0 body: { description: 'Updated description' }
 [32mtests_1    |[0m 
@@ -936,13 +1082,13 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:64:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/0 404 47 - 5.178 ms
+[32mtests_1    |[0m PATCH /items/0 404 47 - 3.434 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     DELETE /items/:id hit with id: 1
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:70:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m DELETE /items/1 200 13 - 3.261 ms
+[32mtests_1    |[0m DELETE /items/1 200 13 - 2.748 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     DELETE /items/:id hit with id: 0
 [32mtests_1    |[0m 
@@ -978,31 +1124,26 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:75:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m DELETE /items/0 404 47 - 4.037 ms
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database connection closed.
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at log (config/db.js:61:13)
-[32mtests_1    |[0m 
+[32mtests_1    |[0m DELETE /items/0 404 47 - 3.871 ms
 [32mtests_1    |[0m PASS tests/routes/itemRoutes.test.js
 [32mtests_1    |[0m   Item Routes Test
 [32mtests_1    |[0m     POST /items
-[32mtests_1    |[0m       ✓ works: creates a new item (29 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (71 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data type (16 ms)
+[32mtests_1    |[0m       ✓ works: creates a new item (42 ms)
+[32mtests_1    |[0m       ✓ bad request with missing data (27 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data type (22 ms)
 [32mtests_1    |[0m     GET /items
-[32mtests_1    |[0m       ✓ works: gets all items (12 ms)
+[32mtests_1    |[0m       ✓ works: gets all items (9 ms)
 [32mtests_1    |[0m       ✓ works: filtering with query (11 ms)
 [32mtests_1    |[0m     GET /items/:id
-[32mtests_1    |[0m       ✓ works: gets item by id (12 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (14 ms)
+[32mtests_1    |[0m       ✓ works: gets item by id (11 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (15 ms)
 [32mtests_1    |[0m     PATCH /items/:id
-[32mtests_1    |[0m       ✓ works: updates item (14 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (17 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (13 ms)
-[32mtests_1    |[0m     DELETE /items/:id
-[32mtests_1    |[0m       ✓ works: deletes item (15 ms)
+[32mtests_1    |[0m       ✓ works: updates item (11 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (16 ms)
 [32mtests_1    |[0m       ✓ not found for non-existent item (11 ms)
+[32mtests_1    |[0m     DELETE /items/:id
+[32mtests_1    |[0m       ✓ works: deletes item (12 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (10 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -1034,30 +1175,179 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database connection closed.
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at log (config/db.js:61:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m PASS tests/models/user.test.js
+[32mtests_1    |[0m FAIL tests/models/user.test.js
 [32mtests_1    |[0m   User Model Tests
 [32mtests_1    |[0m     authenticate
-[32mtests_1    |[0m       ✓ works with valid credentials (74 ms)
-[32mtests_1    |[0m       ✓ fails with wrong password (16 ms)
-[32mtests_1    |[0m       ✓ fails with non-existent user (15 ms)
+[32mtests_1    |[0m       ✕ works with valid credentials (2 ms)
+[32mtests_1    |[0m       ✕ fails with wrong password (1 ms)
+[32mtests_1    |[0m       ✕ fails with non-existent user (1 ms)
 [32mtests_1    |[0m     register
-[32mtests_1    |[0m       ✓ works (23 ms)
-[32mtests_1    |[0m       ✓ fails with duplicate username (26 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ fails with duplicate username (1 ms)
 [32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✓ works (42 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m     get
-[32mtests_1    |[0m       ✓ works (25 ms)
-[32mtests_1    |[0m       ✓ not found if no such user (23 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such user (1 ms)
 [32mtests_1    |[0m     update
-[32mtests_1    |[0m       ✓ works (23 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m     remove
-[32mtests_1    |[0m       ✓ works (25 ms)
-[32mtests_1    |[0m       ✓ not found if no such user (18 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such user (1 ms)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › authenticate › works with valid credentials
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › authenticate › fails with wrong password
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › authenticate › fails with non-existent user
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › register › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › register › fails with duplicate username
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › findAll › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › get › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › get › not found if no such user
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › update › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › remove › works
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● User Model Tests › remove › not found if no such user
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       11 | describe("User Model Tests", () => {
+[32mtests_1    |[0m       12 |   beforeEach(async () => {
+[32mtests_1    |[0m     > 13 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       15 |     
+[32mtests_1    |[0m       16 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/user.test.js:13:14)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -1089,82 +1379,283 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /auth/token 200 22 - 4.894 ms
-[32mtests_1    |[0m POST /auth/token 401 62 - 2.052 ms
-[32mtests_1    |[0m POST /auth/token 401 62 - 3.365 ms
-[32mtests_1    |[0m POST /auth/token 400 78 - 0.787 ms
-[32mtests_1    |[0m POST /auth/token 400 83 - 0.699 ms
-[32mtests_1    |[0m POST /auth/register 201 22 - 13.240 ms
-[32mtests_1    |[0m POST /auth/register 400 65 - 3.053 ms
-[32mtests_1    |[0m POST /auth/register 400 94 - 1.551 ms
-[32mtests_1    |[0m POST /auth/register 400 202 - 2.561 ms
-[32mtests_1    |[0m POST /auth/register 400 83 - 3.913 ms
-[32mtests_1    |[0m POST /auth/register 201 22 - 10.759 ms
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database connection closed.
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at log (config/db.js:61:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m PASS tests/routes/authRoutes.test.js
+[32mtests_1    |[0m FAIL tests/routes/authRoutes.test.js
 [32mtests_1    |[0m   Auth Routes Test
 [32mtests_1    |[0m     POST /auth/token
-[32mtests_1    |[0m       ✓ works: can login with valid credentials (70 ms)
-[32mtests_1    |[0m       ✓ unauth with non-existent user (31 ms)
-[32mtests_1    |[0m       ✓ unauth with wrong password (24 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (23 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (24 ms)
+[32mtests_1    |[0m       ✕ works: can login with valid credentials (1 ms)
+[32mtests_1    |[0m       ✕ unauth with non-existent user
+[32mtests_1    |[0m       ✕ unauth with wrong password
+[32mtests_1    |[0m       ✕ bad request with missing data
+[32mtests_1    |[0m       ✕ bad request with invalid data (1 ms)
 [32mtests_1    |[0m     POST /auth/register
-[32mtests_1    |[0m       ✓ works: can register (37 ms)
-[32mtests_1    |[0m       ✓ bad request with duplicate username (25 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid email (23 ms)
-[32mtests_1    |[0m       ✓ bad request with missing fields (27 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data types (25 ms)
-[32mtests_1    |[0m       ✓ cannot set admin to true (45 ms)
+[32mtests_1    |[0m       ✕ works: can register
+[32mtests_1    |[0m       ✕ bad request with duplicate username (1 ms)
+[32mtests_1    |[0m       ✕ bad request with invalid email (1 ms)
+[32mtests_1    |[0m       ✕ bad request with missing fields
+[32mtests_1    |[0m       ✕ bad request with invalid data types
+[32mtests_1    |[0m       ✕ cannot set admin to true
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     QRBoxer Config:
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/token › works: can login with valid credentials
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:22:9)
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     SECRET_KEY: secret-dev
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:23:9)
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     PORT: 3001
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/token › unauth with non-existent user
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:24:9)
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     BCRYPT_WORK_FACTOR 1
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:25:9)
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database: postgresql://test_user:test_password@test-db:5432/test_db
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/token › unauth with wrong password
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:26:9)
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     ---
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:27:9)
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database connection closed.
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/token › bad request with missing data
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at log (config/db.js:61:13)
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PASS tests/models/item.test.js
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/token › bad request with invalid data
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/register › works: can register
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/register › bad request with duplicate username
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/register › bad request with invalid email
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/register › bad request with missing fields
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/register › bad request with invalid data types
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Auth Routes Test › POST /auth/register › cannot set admin to true
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        7 | describe("Auth Routes Test", () => {
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m     >  9 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       10 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m       11 |     
+[32mtests_1    |[0m       12 |     await User.register({
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/routes/authRoutes.test.js:9:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m FAIL tests/models/item.test.js
 [32mtests_1    |[0m   Item Model Tests
-[32mtests_1    |[0m     ✓ can create an item (73 ms)
-[32mtests_1    |[0m     ✓ can find all items (75 ms)
-[32mtests_1    |[0m     ✓ can get item by id (67 ms)
-[32mtests_1    |[0m     ✓ can find items by box (434 ms)
-[32mtests_1    |[0m     ✓ can update item (264 ms)
-[32mtests_1    |[0m     ✓ not found if no such item (159 ms)
-[32mtests_1    |[0m     ✓ can delete item (68 ms)
+[32mtests_1    |[0m     ✕ can create an item (1 ms)
+[32mtests_1    |[0m     ✕ can find all items (1 ms)
+[32mtests_1    |[0m     ✕ can get item by id (2 ms)
+[32mtests_1    |[0m     ✕ can find items by box (1 ms)
+[32mtests_1    |[0m     ✕ can update item
+[32mtests_1    |[0m     ✕ not found if no such item (1 ms)
+[32mtests_1    |[0m     ✕ can delete item (1 ms)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › can create an item
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › can find all items
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › can get item by id
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › can find items by box
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › can update item
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › not found if no such item
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
+[32mtests_1    |[0m 
+[32mtests_1    |[0m   ● Item Model Tests › can delete item
+[32mtests_1    |[0m 
+[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m 
+[32mtests_1    |[0m        8 |   beforeEach(async () => {
+[32mtests_1    |[0m        9 |     // Clean tables in correct order
+[32mtests_1    |[0m     > 10 |     await db.query("DELETE FROM items");
+[32mtests_1    |[0m          |              ^
+[32mtests_1    |[0m       11 |     await db.query("DELETE FROM boxes");
+[32mtests_1    |[0m       12 |     await db.query("DELETE FROM moves");
+[32mtests_1    |[0m       13 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m 
+[32mtests_1    |[0m       at Object.query (tests/models/item.test.js:10:14)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -1196,206 +1687,18 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     QRBoxer Config:
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:22:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     SECRET_KEY: secret-dev
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:23:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     PORT: 3001
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:24:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     BCRYPT_WORK_FACTOR 1
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:25:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database: postgresql://test_user:test_password@test-db:5432/test_db
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:26:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     ---
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:27:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     QRBoxer Config:
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:22:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     SECRET_KEY: secret-dev
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:23:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     PORT: 3001
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:24:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     BCRYPT_WORK_FACTOR 1
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:25:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database: postgresql://test_user:test_password@test-db:5432/test_db
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:26:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     ---
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:27:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m POST /moves 201 128 - 2.285 ms
-[32mtests_1    |[0m POST /moves 400 164 - 1.007 ms
+[32mtests_1    |[0m POST /moves 201 128 - 2.632 ms
+[32mtests_1    |[0m POST /moves 400 164 - 2.987 ms
 [32mtests_1    |[0m PASS tests/routes/moveRoutes.test.js
 [32mtests_1    |[0m   Move Routes Test
 [32mtests_1    |[0m     POST /moves
-[32mtests_1    |[0m       ✓ works: creates a new move (24 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (81 ms)
+[32mtests_1    |[0m       ✓ works: creates a new move (25 ms)
+[32mtests_1    |[0m       ✓ bad request with missing data (13 ms)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m Test Suites: 2 failed, 7 passed, 9 total
-[32mtests_1    |[0m Tests:       2 failed, 72 passed, 74 total
+[32mtests_1    |[0m Test Suites: 6 failed, 3 passed, 9 total
+[32mtests_1    |[0m Tests:       59 failed, 27 passed, 86 total
 [32mtests_1    |[0m Snapshots:   0 total
-[32mtests_1    |[0m Time:        6.285 s
+[32mtests_1    |[0m Time:        3.13 s
 [32mtests_1    |[0m Ran all test suites.
-[32mtests_1    |[0m 
-[32mtests_1    |[0m Jest has detected the following 6 open handles potentially keeping Jest from exiting:
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ●  TCPWRAP
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       35 | }
-[32mtests_1    |[0m       36 |
-[32mtests_1    |[0m     > 37 | db.connect()
-[32mtests_1    |[0m          |    ^
-[32mtests_1    |[0m       38 |   .catch(err => {
-[32mtests_1    |[0m       39 |     console.error('Database connection error:', err.stack);
-[32mtests_1    |[0m       40 |     process.exit(1);
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Connection.connect (node_modules/pg/lib/connection.js:38:17)
-[32mtests_1    |[0m       at Client._connect (node_modules/pg/lib/client.js:113:11)
-[32mtests_1    |[0m       at node_modules/pg/lib/client.js:166:12
-[32mtests_1    |[0m       at Client.connect (node_modules/pg/lib/client.js:165:12)
-[32mtests_1    |[0m       at Object.connect (config/db.js:37:4)
-[32mtests_1    |[0m       at Object.require (models/user.js:3:16)
-[32mtests_1    |[0m       at Object.require (routes/auth.js:5:14)
-[32mtests_1    |[0m       at Object.require (app.js:9:20)
-[32mtests_1    |[0m       at Object.require (tests/routes/userRoutes.test.js:2:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ●  TCPWRAP
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       35 | }
-[32mtests_1    |[0m       36 |
-[32mtests_1    |[0m     > 37 | db.connect()
-[32mtests_1    |[0m          |    ^
-[32mtests_1    |[0m       38 |   .catch(err => {
-[32mtests_1    |[0m       39 |     console.error('Database connection error:', err.stack);
-[32mtests_1    |[0m       40 |     process.exit(1);
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Connection.connect (node_modules/pg/lib/connection.js:38:17)
-[32mtests_1    |[0m       at Client._connect (node_modules/pg/lib/client.js:113:11)
-[32mtests_1    |[0m       at node_modules/pg/lib/client.js:166:12
-[32mtests_1    |[0m       at Client.connect (node_modules/pg/lib/client.js:165:12)
-[32mtests_1    |[0m       at Object.connect (config/db.js:37:4)
-[32mtests_1    |[0m       at Object.require (models/move.js:3:16)
-[32mtests_1    |[0m       at Object.require (routes/moves.js:7:14)
-[32mtests_1    |[0m       at Object.require (app.js:10:21)
-[32mtests_1    |[0m       at Object.require (tests/routes/userRoutes.test.js:2:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ●  TCPWRAP
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       35 | }
-[32mtests_1    |[0m       36 |
-[32mtests_1    |[0m     > 37 | db.connect()
-[32mtests_1    |[0m          |    ^
-[32mtests_1    |[0m       38 |   .catch(err => {
-[32mtests_1    |[0m       39 |     console.error('Database connection error:', err.stack);
-[32mtests_1    |[0m       40 |     process.exit(1);
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Connection.connect (node_modules/pg/lib/connection.js:38:17)
-[32mtests_1    |[0m       at Client._connect (node_modules/pg/lib/client.js:113:11)
-[32mtests_1    |[0m       at node_modules/pg/lib/client.js:166:12
-[32mtests_1    |[0m       at Client.connect (node_modules/pg/lib/client.js:165:12)
-[32mtests_1    |[0m       at Object.connect (config/db.js:37:4)
-[32mtests_1    |[0m       at Object.require (models/item.js:3:16)
-[32mtests_1    |[0m       at Object.require (routes/boxes.js:10:14)
-[32mtests_1    |[0m       at Object.require (app.js:12:21)
-[32mtests_1    |[0m       at Object.require (tests/routes/itemRoutes.test.js:4:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ●  TCPWRAP
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       35 | }
-[32mtests_1    |[0m       36 |
-[32mtests_1    |[0m     > 37 | db.connect()
-[32mtests_1    |[0m          |    ^
-[32mtests_1    |[0m       38 |   .catch(err => {
-[32mtests_1    |[0m       39 |     console.error('Database connection error:', err.stack);
-[32mtests_1    |[0m       40 |     process.exit(1);
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Connection.connect (node_modules/pg/lib/connection.js:38:17)
-[32mtests_1    |[0m       at Client._connect (node_modules/pg/lib/client.js:113:11)
-[32mtests_1    |[0m       at node_modules/pg/lib/client.js:166:12
-[32mtests_1    |[0m       at Client.connect (node_modules/pg/lib/client.js:165:12)
-[32mtests_1    |[0m       at Object.connect (config/db.js:37:4)
-[32mtests_1    |[0m       at Object.require (models/user.js:3:16)
-[32mtests_1    |[0m       at Object.require (routes/auth.js:5:14)
-[32mtests_1    |[0m       at Object.require (app.js:9:20)
-[32mtests_1    |[0m       at Object.require (tests/routes/moveRoutes.test.js:2:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ●  TCPWRAP
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       35 | }
-[32mtests_1    |[0m       36 |
-[32mtests_1    |[0m     > 37 | db.connect()
-[32mtests_1    |[0m          |    ^
-[32mtests_1    |[0m       38 |   .catch(err => {
-[32mtests_1    |[0m       39 |     console.error('Database connection error:', err.stack);
-[32mtests_1    |[0m       40 |     process.exit(1);
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Connection.connect (node_modules/pg/lib/connection.js:38:17)
-[32mtests_1    |[0m       at Client._connect (node_modules/pg/lib/client.js:113:11)
-[32mtests_1    |[0m       at node_modules/pg/lib/client.js:166:12
-[32mtests_1    |[0m       at Client.connect (node_modules/pg/lib/client.js:165:12)
-[32mtests_1    |[0m       at Object.connect (config/db.js:37:4)
-[32mtests_1    |[0m       at Object.require (models/move.js:3:16)
-[32mtests_1    |[0m       at Object.require (routes/moves.js:7:14)
-[32mtests_1    |[0m       at Object.require (app.js:10:21)
-[32mtests_1    |[0m       at Object.require (tests/routes/moveRoutes.test.js:2:13)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ●  TCPWRAP
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       35 | }
-[32mtests_1    |[0m       36 |
-[32mtests_1    |[0m     > 37 | db.connect()
-[32mtests_1    |[0m          |    ^
-[32mtests_1    |[0m       38 |   .catch(err => {
-[32mtests_1    |[0m       39 |     console.error('Database connection error:', err.stack);
-[32mtests_1    |[0m       40 |     process.exit(1);
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Connection.connect (node_modules/pg/lib/connection.js:38:17)
-[32mtests_1    |[0m       at Client._connect (node_modules/pg/lib/client.js:113:11)
-[32mtests_1    |[0m       at node_modules/pg/lib/client.js:166:12
-[32mtests_1    |[0m       at Client.connect (node_modules/pg/lib/client.js:165:12)
-[32mtests_1    |[0m       at Object.connect (config/db.js:37:4)
-[32mtests_1    |[0m       at Object.require (models/box.js:3:16)
-[32mtests_1    |[0m       at Object.require (routes/moves.js:8:13)
-[32mtests_1    |[0m       at Object.require (app.js:10:21)
-[32mtests_1    |[0m       at Object.require (tests/routes/moveRoutes.test.js:2:13)
-[32mtests_1    |[0m 
 [32mqrboxer-backend_tests_1 exited with code 1
 [0m

@@ -11,13 +11,13 @@ function getDatabase() {
       password: process.env.DB_PASSWORD || "postgres",
       database: process.env.NODE_ENV === "test" ? "test_db" : "dev_db"
     });
-    db.connect(); // Automatically connect when getting the database
   }
   return db;
 }
 
 async function connect() {
   const client = getDatabase();
+  await client.connect();
   return client;
 }
 

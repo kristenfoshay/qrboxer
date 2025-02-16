@@ -35,7 +35,7 @@ async function commonBeforeAll() {
   const moveIds = moveResults.rows.map(r => r.id);
 
   const boxResults = await db.query(`
-    INSERT INTO boxes (room, move)
+    INSERT INTO boxes (name, room, move)
     VALUES ('Living Room', $1),
            ('Kitchen', $1),
            ('Bedroom', $2)

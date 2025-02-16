@@ -1,52 +1,39 @@
 Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_tests_1
-[36mdb_1       |[0m The files belonging to this database system will be owned by user "postgres".
-[36mdb_1       |[0m This user must also own the server process.
-[36mdb_1       |[0m 
 [33mtest-db_1  |[0m The files belonging to this database system will be owned by user "postgres".
 [33mtest-db_1  |[0m This user must also own the server process.
 [33mtest-db_1  |[0m 
-[36mdb_1       |[0m The database cluster will be initialized with locale "en_US.utf8".
-[36mdb_1       |[0m The default database encoding has accordingly been set to "UTF8".
-[36mdb_1       |[0m The default text search configuration will be set to "english".
-[36mdb_1       |[0m 
-[36mdb_1       |[0m Data page checksums are disabled.
-[36mdb_1       |[0m 
 [33mtest-db_1  |[0m The database cluster will be initialized with locale "en_US.utf8".
 [33mtest-db_1  |[0m The default database encoding has accordingly been set to "UTF8".
 [33mtest-db_1  |[0m The default text search configuration will be set to "english".
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m Data page checksums are disabled.
 [33mtest-db_1  |[0m 
-[36mdb_1       |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[36mdb_1       |[0m The files belonging to this database system will be owned by user "postgres".
+[36mdb_1       |[0m This user must also own the server process.
+[36mdb_1       |[0m 
 [33mtest-db_1  |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
-[36mdb_1       |[0m creating subdirectories ... ok
+[36mdb_1       |[0m The database cluster will be initialized with locale "en_US.utf8".
+[36mdb_1       |[0m The default database encoding has accordingly been set to "UTF8".
+[36mdb_1       |[0m The default text search configuration will be set to "english".
+[36mdb_1       |[0m 
+[36mdb_1       |[0m Data page checksums are disabled.
+[36mdb_1       |[0m 
 [33mtest-db_1  |[0m creating subdirectories ... ok
-[36mdb_1       |[0m selecting dynamic shared memory implementation ... posix
-[36mdb_1       |[0m selecting default max_connections ... 100
-[36mdb_1       |[0m selecting default shared_buffers ... 128MB
+[36mdb_1       |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[36mdb_1       |[0m creating subdirectories ... ok
 [33mtest-db_1  |[0m selecting dynamic shared memory implementation ... posix
 [33mtest-db_1  |[0m selecting default max_connections ... 100
-[36mdb_1       |[0m selecting default time zone ... Etc/UTC
-[36mdb_1       |[0m creating configuration files ... ok
 [33mtest-db_1  |[0m selecting default shared_buffers ... 128MB
-[36mdb_1       |[0m running bootstrap script ... ok
-[36mdb_1       |[0m performing post-bootstrap initialization ... ok
 [33mtest-db_1  |[0m selecting default time zone ... Etc/UTC
-[36mdb_1       |[0m syncing data to disk ... ok
-[36mdb_1       |[0m 
-[36mdb_1       |[0m 
-[36mdb_1       |[0m Success. You can now start the database server using:
-[36mdb_1       |[0m 
-[36mdb_1       |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
-[36mdb_1       |[0m 
+[36mdb_1       |[0m selecting dynamic shared memory implementation ... posix
+[36mdb_1       |[0m selecting default max_connections ... 100
 [33mtest-db_1  |[0m creating configuration files ... ok
-[36mdb_1       |[0m initdb: warning: enabling "trust" authentication for local connections
-[36mdb_1       |[0m You can change this by editing pg_hba.conf or using the option -A, or
-[36mdb_1       |[0m --auth-local and --auth-host, the next time you run initdb.
 [33mtest-db_1  |[0m running bootstrap script ... ok
-[36mdb_1       |[0m waiting for server to start....2025-02-16 15:45:37.736 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m selecting default shared_buffers ... 128MB
+[36mdb_1       |[0m selecting default time zone ... Etc/UTC
 [33mtest-db_1  |[0m performing post-bootstrap initialization ... ok
-[36mdb_1       |[0m 2025-02-16 15:45:37.832 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[36mdb_1       |[0m creating configuration files ... ok
+[36mdb_1       |[0m running bootstrap script ... ok
 [33mtest-db_1  |[0m syncing data to disk ... ok
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m 
@@ -54,274 +41,156 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
 [33mtest-db_1  |[0m 
-[36mdb_1       |[0m 2025-02-16 15:45:38.292 UTC [49] LOG:  database system was shut down at 2025-02-16 15:45:35 UTC
 [33mtest-db_1  |[0m initdb: warning: enabling "trust" authentication for local connections
 [33mtest-db_1  |[0m You can change this by editing pg_hba.conf or using the option -A, or
 [33mtest-db_1  |[0m --auth-local and --auth-host, the next time you run initdb.
-[36mdb_1       |[0m 2025-02-16 15:45:38.380 UTC [48] LOG:  database system is ready to accept connections
+[36mdb_1       |[0m performing post-bootstrap initialization ... ok
+[36mdb_1       |[0m syncing data to disk ... ok
+[36mdb_1       |[0m 
+[36mdb_1       |[0m 
+[36mdb_1       |[0m Success. You can now start the database server using:
+[36mdb_1       |[0m 
+[36mdb_1       |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[36mdb_1       |[0m 
+[33mtest-db_1  |[0m waiting for server to start....2025-02-16 16:11:08.244 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m initdb: warning: enabling "trust" authentication for local connections
+[36mdb_1       |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[36mdb_1       |[0m --auth-local and --auth-host, the next time you run initdb.
+[33mtest-db_1  |[0m 2025-02-16 16:11:08.313 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 2025-02-16 16:11:08.555 UTC [49] LOG:  database system was shut down at 2025-02-16 16:11:05 UTC
+[33mtest-db_1  |[0m 2025-02-16 16:11:08.674 UTC [48] LOG:  database system is ready to accept connections
+[36mdb_1       |[0m waiting for server to start....2025-02-16 16:11:08.284 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m 2025-02-16 16:11:08.353 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m  done
+[33mtest-db_1  |[0m server started
+[36mdb_1       |[0m 2025-02-16 16:11:08.611 UTC [49] LOG:  database system was shut down at 2025-02-16 16:11:05 UTC
+[36mdb_1       |[0m 2025-02-16 16:11:08.717 UTC [48] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m CREATE DATABASE
+[33mtest-db_1  |[0m 
 [36mdb_1       |[0m  done
 [36mdb_1       |[0m server started
 [36mdb_1       |[0m CREATE DATABASE
 [36mdb_1       |[0m 
-[33mtest-db_1  |[0m waiting for server to start....2025-02-16 15:45:37.895 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m 2025-02-16 15:45:38.107 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
+[33mtest-db_1  |[0m CREATE TABLE
 [36mdb_1       |[0m 
-[33mtest-db_1  |[0m 2025-02-16 15:45:38.414 UTC [49] LOG:  database system was shut down at 2025-02-16 15:45:35 UTC
 [36mdb_1       |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
 [36mdb_1       |[0m 
-[33mtest-db_1  |[0m 2025-02-16 15:45:38.528 UTC [48] LOG:  database system is ready to accept connections
-[36mdb_1       |[0m 2025-02-16 15:45:39.920 UTC [48] LOG:  received fast shutdown request
-[33mtest-db_1  |[0m  done
-[33mtest-db_1  |[0m server started
-[33mtest-db_1  |[0m 2025-02-16 15:45:39.809 UTC [68] FATAL:  database "test_db" does not exist
-[33mtest-db_1  |[0m CREATE DATABASE
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m waiting for server to shut down....2025-02-16 15:45:40.062 UTC [48] LOG:  aborting any active transactions
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m 2025-02-16 15:45:40.063 UTC [69] FATAL:  the database system is shutting down
-[33mtest-db_1  |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
-[36mdb_1       |[0m 2025-02-16 15:45:40.065 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
-[36mdb_1       |[0m 2025-02-16 15:45:40.066 UTC [50] LOG:  shutting down
+[36mdb_1       |[0m 2025-02-16 16:11:10.459 UTC [48] LOG:  received fast shutdown request
 [33mtest-db_1  |[0m CREATE TABLE
-[36mdb_1       |[0m .2025-02-16 15:45:41.650 UTC [48] LOG:  database system is shut down
 [33mtest-db_1  |[0m CREATE TABLE
+[33mtest-db_1  |[0m CREATE TABLE
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m waiting for server to shut down....2025-02-16 16:11:10.503 UTC [48] LOG:  aborting any active transactions
+[36mdb_1       |[0m 2025-02-16 16:11:10.505 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[33mtest-db_1  |[0m 2025-02-16 16:11:12.204 UTC [48] LOG:  received fast shutdown request
+[36mdb_1       |[0m 2025-02-16 16:11:10.505 UTC [50] LOG:  shutting down
+[36mdb_1       |[0m 2025-02-16 16:11:10.604 UTC [69] FATAL:  the database system is shutting down
+[33mtest-db_1  |[0m waiting for server to shut down....2025-02-16 16:11:12.406 UTC [48] LOG:  aborting any active transactions
+[33mtest-db_1  |[0m 2025-02-16 16:11:12.410 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[36mdb_1       |[0m .2025-02-16 16:11:11.896 UTC [48] LOG:  database system is shut down
+[33mtest-db_1  |[0m 2025-02-16 16:11:12.410 UTC [50] LOG:  shutting down
 [36mdb_1       |[0m  done
 [36mdb_1       |[0m server stopped
+[33mtest-db_1  |[0m .2025-02-16 16:11:13.889 UTC [48] LOG:  database system is shut down
 [36mdb_1       |[0m 
 [36mdb_1       |[0m PostgreSQL init process complete; ready for start up.
 [36mdb_1       |[0m 
-[36mdb_1       |[0m 2025-02-16 15:45:42.119 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m CREATE TABLE
-[36mdb_1       |[0m 2025-02-16 15:45:42.119 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-[36mdb_1       |[0m 2025-02-16 15:45:42.119 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-[36mdb_1       |[0m 2025-02-16 15:45:42.437 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[36mdb_1       |[0m 2025-02-16 15:45:42.590 UTC [71] LOG:  database system was shut down at 2025-02-16 15:45:41 UTC
-[33mtest-db_1  |[0m CREATE TABLE
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m 2025-02-16 15:45:42.663 UTC [1] LOG:  database system is ready to accept connections
-[33mtest-db_1  |[0m 2025-02-16 15:45:42.041 UTC [48] LOG:  received fast shutdown request
-[33mtest-db_1  |[0m waiting for server to shut down....2025-02-16 15:45:42.158 UTC [48] LOG:  aborting any active transactions
-[33mtest-db_1  |[0m 2025-02-16 15:45:42.161 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
-[33mtest-db_1  |[0m 2025-02-16 15:45:42.162 UTC [50] LOG:  shutting down
-[33mtest-db_1  |[0m .2025-02-16 15:45:43.679 UTC [48] LOG:  database system is shut down
 [33mtest-db_1  |[0m  done
 [33mtest-db_1  |[0m server stopped
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m PostgreSQL init process complete; ready for start up.
 [33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 2025-02-16 15:45:43.921 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m 2025-02-16 15:45:43.921 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-[33mtest-db_1  |[0m 2025-02-16 15:45:43.921 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-[33mtest-db_1  |[0m 2025-02-16 15:45:44.042 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[33mtest-db_1  |[0m 2025-02-16 15:45:44.186 UTC [73] LOG:  database system was shut down at 2025-02-16 15:45:43 UTC
-[33mtest-db_1  |[0m 2025-02-16 15:45:44.377 UTC [1] LOG:  database system is ready to accept connections
+[36mdb_1       |[0m 2025-02-16 16:11:12.217 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m 2025-02-16 16:11:12.217 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mtest-db_1  |[0m 2025-02-16 16:11:14.108 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[36mdb_1       |[0m 2025-02-16 16:11:12.217 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mdb_1       |[0m 2025-02-16 16:11:12.652 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 2025-02-16 16:11:14.109 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mtest-db_1  |[0m 2025-02-16 16:11:14.109 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mdb_1       |[0m 2025-02-16 16:11:13.283 UTC [71] LOG:  database system was shut down at 2025-02-16 16:11:11 UTC
+[33mtest-db_1  |[0m 2025-02-16 16:11:14.229 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 2025-02-16 16:11:14.443 UTC [73] LOG:  database system was shut down at 2025-02-16 16:11:13 UTC
+[36mdb_1       |[0m 2025-02-16 16:11:13.357 UTC [1] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m 2025-02-16 16:11:14.524 UTC [1] LOG:  database system is ready to accept connections
 [32mtests_1    |[0m 
 [32mtests_1    |[0m > qrboxer@0.1.0 test
 [32mtests_1    |[0m > jest -i --detectOpenHandles --forceExit --verbose --forceExit --detectOpenHandles --runInBand
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     QRBoxer Config:
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:22:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     SECRET_KEY: secret-dev
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:23:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     PORT: 3001
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:24:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     BCRYPT_WORK_FACTOR 1
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:25:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     Database: postgresql://test_user:test_password@test-db:5432/test_db
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:26:9)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   console.log
-[32mtests_1    |[0m     ---
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.log (config/config.js:27:9)
-[32mtests_1    |[0m 
 [32mtests_1    |[0m FAIL tests/models/move.test.js
-[32mtests_1    |[0m   Move Model Tests
-[32mtests_1    |[0m     create
-[32mtests_1    |[0m       ✕ works (2 ms)
-[32mtests_1    |[0m       ✕ bad request with duplicate date (1 ms)
-[32mtests_1    |[0m     get
-[32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such move (1 ms)
-[32mtests_1    |[0m     update
-[32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such move
-[32mtests_1    |[0m       ✕ works: partial update
-[32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✕ works: finds all moves for user
-[32mtests_1    |[0m       ✕ works: returns empty array if no moves found (1 ms)
-[32mtests_1    |[0m     remove
-[32mtests_1    |[0m       ✕ works: removes move and boxes cascade (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such move (1 ms)
+[32mtests_1    |[0m   ● Test suite failed to run
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › create › works
+[32mtests_1    |[0m     Jest encountered an unexpected token
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m     Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 [32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m     Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m     By default "node_modules" folder is ignored by transformers.
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › create › bad request with duplicate date
+[32mtests_1    |[0m     Here's what you can do:
+[32mtests_1    |[0m      • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+[32mtests_1    |[0m      • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+[32mtests_1    |[0m      • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+[32mtests_1    |[0m      • If you need a custom transformation specify a "transform" option in your config.
+[32mtests_1    |[0m      • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
+[32mtests_1    |[0m     You'll find more details and examples of these config options in the docs:
+[32mtests_1    |[0m     https://jestjs.io/docs/configuration
+[32mtests_1    |[0m     For information about custom transformations, see:
+[32mtests_1    |[0m     https://jestjs.io/docs/code-transformation
 [32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
+[32mtests_1    |[0m     Details:
 [32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m     SyntaxError: /usr/src/app/tests/models/move.test.js: Unexpected token (297:0)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › get › works
+[32mtests_1    |[0m       295 |   });
+[32mtests_1    |[0m       296 | });
+[32mtests_1    |[0m     > 297 | });
+[32mtests_1    |[0m           | ^
+[32mtests_1    |[0m       298 |
 [32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › get › not found if no such move
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › update › works
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › update › not found if no such move
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › update › works: partial update
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › findAll › works: finds all moves for user
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › findAll › works: returns empty array if no moves found
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › remove › works: removes move and boxes cascade
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
-[32mtests_1    |[0m 
-[32mtests_1    |[0m   ● Move Model Tests › remove › not found if no such move
-[32mtests_1    |[0m 
-[32mtests_1    |[0m     TypeError: Cannot read properties of undefined (reading 'query')
-[32mtests_1    |[0m 
-[32mtests_1    |[0m        9 | describe("Move Model Tests", () => {
-[32mtests_1    |[0m       10 |   beforeEach(async () => {
-[32mtests_1    |[0m     > 11 |     await db.query("DELETE FROM items");
-[32mtests_1    |[0m          |              ^
-[32mtests_1    |[0m       12 |     await db.query("DELETE FROM boxes");
-[32mtests_1    |[0m       13 |     await db.query("DELETE FROM moves");
-[32mtests_1    |[0m       14 |     await db.query("DELETE FROM users");
-[32mtests_1    |[0m 
-[32mtests_1    |[0m       at Object.query (tests/models/move.test.js:11:14)
+[32mtests_1    |[0m       at constructor (node_modules/@babel/parser/src/parse-error.ts:95:45)
+[32mtests_1    |[0m       at Parser.toParseError [as raise] (node_modules/@babel/parser/src/tokenizer/index.ts:1496:19)
+[32mtests_1    |[0m       at Parser.raise [as unexpected] (node_modules/@babel/parser/src/tokenizer/index.ts:1536:16)
+[32mtests_1    |[0m       at Parser.unexpected [as parseExprAtom] (node_modules/@babel/parser/src/parser/expression.ts:1316:16)
+[32mtests_1    |[0m       at Parser.parseExprAtom [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:709:23)
+[32mtests_1    |[0m       at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:688:21)
+[32mtests_1    |[0m       at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:650:23)
+[32mtests_1    |[0m       at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:389:14)
+[32mtests_1    |[0m       at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:401:23)
+[32mtests_1    |[0m       at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:356:23)
+[32mtests_1    |[0m       at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:298:21)
+[32mtests_1    |[0m       at Parser.parseMaybeAssign [as parseExpressionBase] (node_modules/@babel/parser/src/parser/expression.ts:221:23)
+[32mtests_1    |[0m       at parseExpressionBase (node_modules/@babel/parser/src/parser/expression.ts:212:39)
+[32mtests_1    |[0m       at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3111:16)
+[32mtests_1    |[0m       at Parser.allowInAnd [as parseExpression] (node_modules/@babel/parser/src/parser/expression.ts:212:17)
+[32mtests_1    |[0m       at Parser.parseExpression [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:656:23)
+[32mtests_1    |[0m       at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:437:17)
+[32mtests_1    |[0m       at Parser.parseStatementLike [as parseModuleItem] (node_modules/@babel/parser/src/parser/statement.ts:374:17)
+[32mtests_1    |[0m       at Parser.parseModuleItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1406:16)
+[32mtests_1    |[0m       at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1380:10)
+[32mtests_1    |[0m       at Parser.parseBlockBody [as parseProgram] (node_modules/@babel/parser/src/parser/statement.ts:225:10)
+[32mtests_1    |[0m       at Parser.parseProgram [as parseTopLevel] (node_modules/@babel/parser/src/parser/statement.ts:203:25)
+[32mtests_1    |[0m       at Parser.parseTopLevel [as parse] (node_modules/@babel/parser/src/parser/index.ts:47:10)
+[32mtests_1    |[0m       at parse (node_modules/@babel/parser/src/index.ts:66:38)
+[32mtests_1    |[0m       at parser (node_modules/@babel/core/src/parser/index.ts:28:19)
+[32mtests_1    |[0m           at parser.next (<anonymous>)
+[32mtests_1    |[0m       at normalizeFile (node_modules/@babel/core/src/transformation/normalize-file.ts:50:24)
+[32mtests_1    |[0m           at normalizeFile.next (<anonymous>)
+[32mtests_1    |[0m       at run (node_modules/@babel/core/src/transformation/index.ts:40:36)
+[32mtests_1    |[0m           at run.next (<anonymous>)
+[32mtests_1    |[0m       at transform (node_modules/@babel/core/src/transform.ts:29:20)
+[32mtests_1    |[0m           at transform.next (<anonymous>)
+[32mtests_1    |[0m       at evaluateSync (node_modules/gensync/index.js:251:28)
+[32mtests_1    |[0m       at sync (node_modules/gensync/index.js:89:14)
+[32mtests_1    |[0m       at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)
+[32mtests_1    |[0m       at transformSync (node_modules/@babel/core/src/transform.ts:66:52)
+[32mtests_1    |[0m       at ScriptTransformer.transformSource (node_modules/@jest/transform/build/ScriptTransformer.js:545:31)
+[32mtests_1    |[0m       at ScriptTransformer._transformAndBuildScript (node_modules/@jest/transform/build/ScriptTransformer.js:674:40)
+[32mtests_1    |[0m       at ScriptTransformer.transform (node_modules/@jest/transform/build/ScriptTransformer.js:726:19)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -413,61 +282,61 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /users 201 75 - 3.554 ms
-[32mtests_1    |[0m POST /users 400 202 - 1.278 ms
+[32mtests_1    |[0m POST /users 201 75 - 3.485 ms
+[32mtests_1    |[0m POST /users 400 202 - 1.294 ms
 [32mtests_1    |[0m POST /users 400 233 - 1.113 ms
-[32mtests_1    |[0m GET /users 200 103 - 0.639 ms
-[32mtests_1    |[0m GET /users 200 12 - 0.402 ms
-[32mtests_1    |[0m GET /users/testuser 200 144 - 0.709 ms
-[32mtests_1    |[0m GET /users/nonexistent 404 26 - 0.424 ms
-[32mtests_1    |[0m PATCH /users/testuser 200 55 - 0.904 ms
-[32mtests_1    |[0m PATCH /users/testuser 400 32 - 0.264 ms
-[32mtests_1    |[0m PATCH /users/testuser 400 35 - 0.297 ms
-[32mtests_1    |[0m PATCH /users/nonexistent 404 26 - 0.654 ms
-[32mtests_1    |[0m DELETE /users/testuser 200 22 - 0.467 ms
-[32mtests_1    |[0m DELETE /users/nonexistent 404 26 - 0.426 ms
+[32mtests_1    |[0m GET /users 200 103 - 0.598 ms
+[32mtests_1    |[0m GET /users 200 12 - 0.405 ms
+[32mtests_1    |[0m GET /users/testuser 200 144 - 0.491 ms
+[32mtests_1    |[0m GET /users/nonexistent 404 26 - 0.569 ms
+[32mtests_1    |[0m PATCH /users/testuser 200 55 - 0.712 ms
+[32mtests_1    |[0m PATCH /users/testuser 400 32 - 0.253 ms
+[32mtests_1    |[0m PATCH /users/testuser 400 35 - 0.300 ms
+[32mtests_1    |[0m PATCH /users/nonexistent 404 26 - 0.707 ms
+[32mtests_1    |[0m DELETE /users/testuser 200 22 - 0.578 ms
+[32mtests_1    |[0m DELETE /users/nonexistent 404 26 - 0.609 ms
 [32mtests_1    |[0m PASS tests/routes/userRoutes.test.js
 [32mtests_1    |[0m   User Routes Test
 [32mtests_1    |[0m     POST /users
-[32mtests_1    |[0m       ✓ works: creates a new user (40 ms)
-[32mtests_1    |[0m       ✓ bad request with missing fields (14 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (10 ms)
+[32mtests_1    |[0m       ✓ works: creates a new user (42 ms)
+[32mtests_1    |[0m       ✓ bad request with missing fields (11 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (12 ms)
 [32mtests_1    |[0m     GET /users
 [32mtests_1    |[0m       ✓ works: gets all users (9 ms)
-[32mtests_1    |[0m       ✓ works: empty list on no users (15 ms)
+[32mtests_1    |[0m       ✓ works: empty list on no users (7 ms)
 [32mtests_1    |[0m     GET /users/:username
-[32mtests_1    |[0m       ✓ works: gets user by username (11 ms)
-[32mtests_1    |[0m       ✓ not found if user doesn't exist (12 ms)
+[32mtests_1    |[0m       ✓ works: gets user by username (8 ms)
+[32mtests_1    |[0m       ✓ not found if user doesn't exist (10 ms)
 [32mtests_1    |[0m     PATCH /users/:username
-[32mtests_1    |[0m       ✓ works: updates user (8 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (13 ms)
+[32mtests_1    |[0m       ✓ works: updates user (9 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (8 ms)
 [32mtests_1    |[0m       ✓ bad request with empty update (9 ms)
 [32mtests_1    |[0m       ✓ not found if user doesn't exist (8 ms)
 [32mtests_1    |[0m     DELETE /users/:username
-[32mtests_1    |[0m       ✓ works: deletes user (8 ms)
-[32mtests_1    |[0m       ✓ not found if user doesn't exist (8 ms)
+[32mtests_1    |[0m       ✓ works: deletes user (10 ms)
+[32mtests_1    |[0m       ✓ not found if user doesn't exist (11 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m FAIL tests/models/box.test.js
 [32mtests_1    |[0m   Box Model Tests
 [32mtests_1    |[0m     create
-[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ works (2 ms)
 [32mtests_1    |[0m     findAll
 [32mtests_1    |[0m       ✕ works: no filter (1 ms)
 [32mtests_1    |[0m     findAllbyUser
-[32mtests_1    |[0m       ✕ works with move filter (1 ms)
-[32mtests_1    |[0m       ✕ returns empty array if no boxes found (2 ms)
+[32mtests_1    |[0m       ✕ works with move filter
+[32mtests_1    |[0m       ✕ returns empty array if no boxes found
 [32mtests_1    |[0m     get
-[32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such box (4 ms)
-[32mtests_1    |[0m     getMoveBoxes
 [32mtests_1    |[0m       ✕ works
+[32mtests_1    |[0m       ✕ not found if no such box
+[32mtests_1    |[0m     getMoveBoxes
+[32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m       ✕ returns empty array if no boxes found (1 ms)
 [32mtests_1    |[0m     update
 [32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m       ✕ not found if no such box (1 ms)
 [32mtests_1    |[0m     remove
-[32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such box (1 ms)
+[32mtests_1    |[0m       ✕ works
+[32mtests_1    |[0m       ✕ not found if no such box
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Box Model Tests › create › works
 [32mtests_1    |[0m 
@@ -816,7 +685,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:14:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 201 78 - 7.813 ms
+[32mtests_1    |[0m POST /items 201 78 - 4.799 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     POST /items hit with body: { description: 'Missing box field' }
 [32mtests_1    |[0m 
@@ -902,7 +771,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 400 73 - 18.186 ms
+[32mtests_1    |[0m POST /items 400 73 - 14.903 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     POST /items hit with body: { description: 'Test description', box: 'not-a-number' }
 [32mtests_1    |[0m 
@@ -988,25 +857,25 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 400 79 - 11.212 ms
+[32mtests_1    |[0m POST /items 400 79 - 12.087 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items hit with query: {}
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:31:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items 200 149 - 2.785 ms
+[32mtests_1    |[0m GET /items 200 149 - 2.867 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items hit with query: { box: '1' }
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:31:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items?box=1 200 82 - 2.640 ms
+[32mtests_1    |[0m GET /items?box=1 200 82 - 2.791 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items/:id hit with id: 1
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:42:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items/1 200 78 - 2.747 ms
+[32mtests_1    |[0m GET /items/1 200 78 - 2.925 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items/:id hit with id: 0
 [32mtests_1    |[0m 
@@ -1042,7 +911,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:47:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items/0 404 47 - 7.489 ms
+[32mtests_1    |[0m GET /items/0 404 47 - 8.517 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 1 body: {
 [32mtests_1    |[0m       description: 'Updated Kitchen appliance',
@@ -1052,7 +921,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:53:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/1 200 89 - 2.503 ms
+[32mtests_1    |[0m PATCH /items/1 200 89 - 2.553 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 1 body: { box: 'not-a-number' }
 [32mtests_1    |[0m 
@@ -1142,7 +1011,7 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/1 400 79 - 6.837 ms
+[32mtests_1    |[0m PATCH /items/1 400 79 - 7.803 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 0 body: { description: 'Updated description' }
 [32mtests_1    |[0m 
@@ -1178,13 +1047,13 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:64:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/0 404 47 - 3.263 ms
+[32mtests_1    |[0m PATCH /items/0 404 47 - 3.239 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     DELETE /items/:id hit with id: 1
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:70:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m DELETE /items/1 200 13 - 2.689 ms
+[32mtests_1    |[0m DELETE /items/1 200 13 - 2.555 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     DELETE /items/:id hit with id: 0
 [32mtests_1    |[0m 
@@ -1220,26 +1089,26 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:75:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m DELETE /items/0 404 47 - 3.715 ms
+[32mtests_1    |[0m DELETE /items/0 404 47 - 3.699 ms
 [32mtests_1    |[0m PASS tests/routes/itemRoutes.test.js
 [32mtests_1    |[0m   Item Routes Test
 [32mtests_1    |[0m     POST /items
-[32mtests_1    |[0m       ✓ works: creates a new item (45 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (26 ms)
+[32mtests_1    |[0m       ✓ works: creates a new item (26 ms)
+[32mtests_1    |[0m       ✓ bad request with missing data (23 ms)
 [32mtests_1    |[0m       ✓ bad request with invalid data type (23 ms)
 [32mtests_1    |[0m     GET /items
 [32mtests_1    |[0m       ✓ works: gets all items (10 ms)
-[32mtests_1    |[0m       ✓ works: filtering with query (10 ms)
+[32mtests_1    |[0m       ✓ works: filtering with query (13 ms)
 [32mtests_1    |[0m     GET /items/:id
-[32mtests_1    |[0m       ✓ works: gets item by id (11 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (14 ms)
+[32mtests_1    |[0m       ✓ works: gets item by id (10 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (17 ms)
 [32mtests_1    |[0m     PATCH /items/:id
-[32mtests_1    |[0m       ✓ works: updates item (11 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (16 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (10 ms)
+[32mtests_1    |[0m       ✓ works: updates item (10 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (17 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (12 ms)
 [32mtests_1    |[0m     DELETE /items/:id
-[32mtests_1    |[0m       ✓ works: deletes item (11 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (10 ms)
+[32mtests_1    |[0m       ✓ works: deletes item (10 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (11 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -1274,22 +1143,22 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m FAIL tests/models/user.test.js
 [32mtests_1    |[0m   User Model Tests
 [32mtests_1    |[0m     authenticate
-[32mtests_1    |[0m       ✕ works with valid credentials (1 ms)
+[32mtests_1    |[0m       ✕ works with valid credentials (2 ms)
 [32mtests_1    |[0m       ✕ fails with wrong password (1 ms)
 [32mtests_1    |[0m       ✕ fails with non-existent user (1 ms)
 [32mtests_1    |[0m     register
 [32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ fails with duplicate username (1 ms)
+[32mtests_1    |[0m       ✕ fails with duplicate username
 [32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ works
 [32mtests_1    |[0m     get
-[32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such user
+[32mtests_1    |[0m       ✕ works
+[32mtests_1    |[0m       ✕ not found if no such user (1 ms)
 [32mtests_1    |[0m     update
-[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ works
 [32mtests_1    |[0m     remove
 [32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such user (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such user
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● User Model Tests › authenticate › works with valid credentials
 [32mtests_1    |[0m 
@@ -1479,17 +1348,17 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m   Auth Routes Test
 [32mtests_1    |[0m     POST /auth/token
 [32mtests_1    |[0m       ✕ works: can login with valid credentials (1 ms)
-[32mtests_1    |[0m       ✕ unauth with non-existent user (1 ms)
-[32mtests_1    |[0m       ✕ unauth with wrong password (1 ms)
-[32mtests_1    |[0m       ✕ bad request with missing data (1 ms)
+[32mtests_1    |[0m       ✕ unauth with non-existent user
+[32mtests_1    |[0m       ✕ unauth with wrong password
+[32mtests_1    |[0m       ✕ bad request with missing data
 [32mtests_1    |[0m       ✕ bad request with invalid data (1 ms)
 [32mtests_1    |[0m     POST /auth/register
-[32mtests_1    |[0m       ✕ works: can register
-[32mtests_1    |[0m       ✕ bad request with duplicate username
-[32mtests_1    |[0m       ✕ bad request with invalid email (1 ms)
-[32mtests_1    |[0m       ✕ bad request with missing fields (1 ms)
+[32mtests_1    |[0m       ✕ works: can register (1 ms)
+[32mtests_1    |[0m       ✕ bad request with duplicate username (1 ms)
+[32mtests_1    |[0m       ✕ bad request with invalid email
+[32mtests_1    |[0m       ✕ bad request with missing fields
 [32mtests_1    |[0m       ✕ bad request with invalid data types (1 ms)
-[32mtests_1    |[0m       ✕ cannot set admin to true
+[32mtests_1    |[0m       ✕ cannot set admin to true (1 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Auth Routes Test › POST /auth/token › works: can login with valid credentials
 [32mtests_1    |[0m 
@@ -1648,12 +1517,12 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m FAIL tests/models/item.test.js
 [32mtests_1    |[0m   Item Model Tests
 [32mtests_1    |[0m     ✕ can create an item (1 ms)
-[32mtests_1    |[0m     ✕ can find all items (1 ms)
-[32mtests_1    |[0m     ✕ can get item by id (2 ms)
+[32mtests_1    |[0m     ✕ can find all items
+[32mtests_1    |[0m     ✕ can get item by id
 [32mtests_1    |[0m     ✕ can find items by box
 [32mtests_1    |[0m     ✕ can update item
 [32mtests_1    |[0m     ✕ not found if no such item
-[32mtests_1    |[0m     ✕ can delete item
+[32mtests_1    |[0m     ✕ can delete item (1 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Item Model Tests › can create an item
 [32mtests_1    |[0m 
@@ -1783,18 +1652,18 @@ Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /moves 201 128 - 2.770 ms
-[32mtests_1    |[0m POST /moves 400 164 - 2.957 ms
+[32mtests_1    |[0m POST /moves 201 128 - 2.701 ms
+[32mtests_1    |[0m POST /moves 400 164 - 1.284 ms
 [32mtests_1    |[0m PASS tests/routes/moveRoutes.test.js
 [32mtests_1    |[0m   Move Routes Test
 [32mtests_1    |[0m     POST /moves
-[32mtests_1    |[0m       ✓ works: creates a new move (26 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (11 ms)
+[32mtests_1    |[0m       ✓ works: creates a new move (24 ms)
+[32mtests_1    |[0m       ✓ bad request with missing data (10 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m Test Suites: 6 failed, 3 passed, 9 total
-[32mtests_1    |[0m Tests:       59 failed, 27 passed, 86 total
+[32mtests_1    |[0m Tests:       48 failed, 27 passed, 75 total
 [32mtests_1    |[0m Snapshots:   0 total
-[32mtests_1    |[0m Time:        3.275 s
+[32mtests_1    |[0m Time:        3.163 s
 [32mtests_1    |[0m Ran all test suites.
 [32mtests_1    |[0m npm notice 
 [32mtests_1    |[0m npm notice New major version of npm available! 8.19.4 -> 11.1.0

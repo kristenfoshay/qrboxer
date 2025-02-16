@@ -1,29 +1,21 @@
 // tests/move.test.js
-  
+
+const {
+    commonBeforeAll,
+    commonBeforeEach,
+    commonAfterEach,
+    commonAfterAll,
+} = require("../jest.setup");  
 const { db, closeDb } = require("../../config/db");
 const Move = require("../../models/move");
 const { BadRequestError, NotFoundError } = require("../../expressError");
 const bcrypt = require("bcrypt");
 const { BCRYPT_WORK_FACTOR } = require("../../config/config");
 
-describe("Move Model Tests", () => {
-  beforeEach(async () => {
-    await db.query("DELETE FROM items");
-    await db.query("DELETE FROM boxes");
-    await db.query("DELETE FROM moves");
-    await db.query("DELETE FROM users");
-
-    const hashedPassword = await bcrypt.hash("password123", BCRYPT_WORK_FACTOR);
-    await db.query(
-      `INSERT INTO users (username, password, email, admin)
-       VALUES ($1, $2, $3, $4)`,
-      ["testuser", hashedPassword, "test@test.com", false]
-    );
-  });
-
-  afterAll(async () => {
-    await closeDb();
-  });
+beforeAll(commonBeforeAll);
+beforeEach(commonBeforeEach);
+afterEach(commonAfterEach);
+afterAll(commonAfterAll);
 
   /************************************** create */
     describe("create", () => {

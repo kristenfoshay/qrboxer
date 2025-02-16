@@ -1,50 +1,37 @@
-Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_tests_1
+Attaching to qrboxer-backend_test-db_1, qrboxer-backend_db_1, qrboxer-backend_tests_1
 [36mdb_1       |[0m The files belonging to this database system will be owned by user "postgres".
 [36mdb_1       |[0m This user must also own the server process.
 [36mdb_1       |[0m 
+[33mtest-db_1  |[0m The files belonging to this database system will be owned by user "postgres".
+[33mtest-db_1  |[0m This user must also own the server process.
+[33mtest-db_1  |[0m 
 [36mdb_1       |[0m The database cluster will be initialized with locale "en_US.utf8".
 [36mdb_1       |[0m The default database encoding has accordingly been set to "UTF8".
 [36mdb_1       |[0m The default text search configuration will be set to "english".
 [36mdb_1       |[0m 
 [36mdb_1       |[0m Data page checksums are disabled.
-[33mtest-db_1  |[0m The files belonging to this database system will be owned by user "postgres".
-[33mtest-db_1  |[0m This user must also own the server process.
-[33mtest-db_1  |[0m 
 [36mdb_1       |[0m 
-[36mdb_1       |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
 [33mtest-db_1  |[0m The database cluster will be initialized with locale "en_US.utf8".
 [33mtest-db_1  |[0m The default database encoding has accordingly been set to "UTF8".
 [33mtest-db_1  |[0m The default text search configuration will be set to "english".
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m Data page checksums are disabled.
 [33mtest-db_1  |[0m 
+[36mdb_1       |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
 [33mtest-db_1  |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
-[33mtest-db_1  |[0m creating subdirectories ... ok
 [36mdb_1       |[0m creating subdirectories ... ok
+[33mtest-db_1  |[0m creating subdirectories ... ok
 [36mdb_1       |[0m selecting dynamic shared memory implementation ... posix
-[33mtest-db_1  |[0m selecting dynamic shared memory implementation ... posix
 [36mdb_1       |[0m selecting default max_connections ... 100
 [36mdb_1       |[0m selecting default shared_buffers ... 128MB
+[33mtest-db_1  |[0m selecting dynamic shared memory implementation ... posix
 [33mtest-db_1  |[0m selecting default max_connections ... 100
-[33mtest-db_1  |[0m selecting default shared_buffers ... 128MB
-[33mtest-db_1  |[0m selecting default time zone ... Etc/UTC
 [36mdb_1       |[0m selecting default time zone ... Etc/UTC
-[33mtest-db_1  |[0m creating configuration files ... ok
 [36mdb_1       |[0m creating configuration files ... ok
-[33mtest-db_1  |[0m running bootstrap script ... ok
+[33mtest-db_1  |[0m selecting default shared_buffers ... 128MB
 [36mdb_1       |[0m running bootstrap script ... ok
-[33mtest-db_1  |[0m performing post-bootstrap initialization ... ok
 [36mdb_1       |[0m performing post-bootstrap initialization ... ok
-[33mtest-db_1  |[0m syncing data to disk ... ok
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m Success. You can now start the database server using:
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m initdb: warning: enabling "trust" authentication for local connections
-[33mtest-db_1  |[0m You can change this by editing pg_hba.conf or using the option -A, or
-[33mtest-db_1  |[0m --auth-local and --auth-host, the next time you run initdb.
+[33mtest-db_1  |[0m selecting default time zone ... Etc/UTC
 [36mdb_1       |[0m syncing data to disk ... ok
 [36mdb_1       |[0m 
 [36mdb_1       |[0m 
@@ -52,69 +39,83 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [36mdb_1       |[0m 
 [36mdb_1       |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
 [36mdb_1       |[0m 
+[33mtest-db_1  |[0m creating configuration files ... ok
 [36mdb_1       |[0m initdb: warning: enabling "trust" authentication for local connections
 [36mdb_1       |[0m You can change this by editing pg_hba.conf or using the option -A, or
 [36mdb_1       |[0m --auth-local and --auth-host, the next time you run initdb.
-[33mtest-db_1  |[0m waiting for server to start....2025-02-15 18:05:07.431 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m 2025-02-15 18:05:07.513 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[33mtest-db_1  |[0m 2025-02-15 18:05:08.114 UTC [49] LOG:  database system was shut down at 2025-02-15 18:05:05 UTC
-[36mdb_1       |[0m waiting for server to start....2025-02-15 18:05:07.377 UTC [47] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[36mdb_1       |[0m 2025-02-15 18:05:07.462 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[33mtest-db_1  |[0m .2025-02-15 18:05:08.265 UTC [48] LOG:  database system is ready to accept connections
-[33mtest-db_1  |[0m  done
-[33mtest-db_1  |[0m server started
-[36mdb_1       |[0m 2025-02-15 18:05:08.063 UTC [48] LOG:  database system was shut down at 2025-02-15 18:05:05 UTC
-[33mtest-db_1  |[0m CREATE DATABASE
+[33mtest-db_1  |[0m running bootstrap script ... ok
+[36mdb_1       |[0m waiting for server to start....2025-02-16 15:45:37.736 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m performing post-bootstrap initialization ... ok
+[36mdb_1       |[0m 2025-02-16 15:45:37.832 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m syncing data to disk ... ok
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m 
-[36mdb_1       |[0m .2025-02-15 18:05:08.190 UTC [47] LOG:  database system is ready to accept connections
-[33mtest-db_1  |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
+[33mtest-db_1  |[0m Success. You can now start the database server using:
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m 2025-02-16 15:45:38.292 UTC [49] LOG:  database system was shut down at 2025-02-16 15:45:35 UTC
+[33mtest-db_1  |[0m initdb: warning: enabling "trust" authentication for local connections
+[33mtest-db_1  |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[33mtest-db_1  |[0m --auth-local and --auth-host, the next time you run initdb.
+[36mdb_1       |[0m 2025-02-16 15:45:38.380 UTC [48] LOG:  database system is ready to accept connections
 [36mdb_1       |[0m  done
 [36mdb_1       |[0m server started
 [36mdb_1       |[0m CREATE DATABASE
-[33mtest-db_1  |[0m CREATE TABLE
-[33mtest-db_1  |[0m CREATE TABLE
 [36mdb_1       |[0m 
-[33mtest-db_1  |[0m CREATE TABLE
+[33mtest-db_1  |[0m waiting for server to start....2025-02-16 15:45:37.895 UTC [48] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m 2025-02-16 15:45:38.107 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
 [36mdb_1       |[0m 
+[33mtest-db_1  |[0m 2025-02-16 15:45:38.414 UTC [49] LOG:  database system was shut down at 2025-02-16 15:45:35 UTC
 [36mdb_1       |[0m /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
 [36mdb_1       |[0m 
+[33mtest-db_1  |[0m 2025-02-16 15:45:38.528 UTC [48] LOG:  database system is ready to accept connections
+[36mdb_1       |[0m 2025-02-16 15:45:39.920 UTC [48] LOG:  received fast shutdown request
+[33mtest-db_1  |[0m  done
+[33mtest-db_1  |[0m server started
+[33mtest-db_1  |[0m 2025-02-16 15:45:39.809 UTC [68] FATAL:  database "test_db" does not exist
+[33mtest-db_1  |[0m CREATE DATABASE
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m waiting for server to shut down....2025-02-16 15:45:40.062 UTC [48] LOG:  aborting any active transactions
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m 2025-02-16 15:45:40.063 UTC [69] FATAL:  the database system is shutting down
+[33mtest-db_1  |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/schema.sql
+[36mdb_1       |[0m 2025-02-16 15:45:40.065 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[36mdb_1       |[0m 2025-02-16 15:45:40.066 UTC [50] LOG:  shutting down
 [33mtest-db_1  |[0m CREATE TABLE
-[33mtest-db_1  |[0m 
-[33mtest-db_1  |[0m 
-[36mdb_1       |[0m waiting for server to shut down...2025-02-15 18:05:09.927 UTC [47] LOG:  received fast shutdown request
-[36mdb_1       |[0m .2025-02-15 18:05:09.996 UTC [47] LOG:  aborting any active transactions
-[33mtest-db_1  |[0m 2025-02-15 18:05:11.820 UTC [48] LOG:  received fast shutdown request
-[36mdb_1       |[0m 2025-02-15 18:05:09.999 UTC [47] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
-[33mtest-db_1  |[0m waiting for server to shut down....2025-02-15 18:05:11.904 UTC [48] LOG:  aborting any active transactions
-[36mdb_1       |[0m 2025-02-15 18:05:09.999 UTC [49] LOG:  shutting down
-[36mdb_1       |[0m 2025-02-15 18:05:10.266 UTC [68] FATAL:  the database system is shutting down
-[33mtest-db_1  |[0m 2025-02-15 18:05:11.907 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
-[36mdb_1       |[0m 2025-02-15 18:05:10.544 UTC [47] LOG:  database system is shut down
+[36mdb_1       |[0m .2025-02-16 15:45:41.650 UTC [48] LOG:  database system is shut down
+[33mtest-db_1  |[0m CREATE TABLE
 [36mdb_1       |[0m  done
 [36mdb_1       |[0m server stopped
-[33mtest-db_1  |[0m 2025-02-15 18:05:11.908 UTC [50] LOG:  shutting down
 [36mdb_1       |[0m 
 [36mdb_1       |[0m PostgreSQL init process complete; ready for start up.
 [36mdb_1       |[0m 
-[36mdb_1       |[0m 2025-02-15 18:05:10.846 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m .2025-02-15 18:05:13.762 UTC [48] LOG:  database system is shut down
-[36mdb_1       |[0m 2025-02-15 18:05:10.847 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-[36mdb_1       |[0m 2025-02-15 18:05:10.847 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mdb_1       |[0m 2025-02-16 15:45:42.119 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m CREATE TABLE
+[36mdb_1       |[0m 2025-02-16 15:45:42.119 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[36mdb_1       |[0m 2025-02-16 15:45:42.119 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mdb_1       |[0m 2025-02-16 15:45:42.437 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[36mdb_1       |[0m 2025-02-16 15:45:42.590 UTC [71] LOG:  database system was shut down at 2025-02-16 15:45:41 UTC
+[33mtest-db_1  |[0m CREATE TABLE
+[33mtest-db_1  |[0m 
+[33mtest-db_1  |[0m 
+[36mdb_1       |[0m 2025-02-16 15:45:42.663 UTC [1] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m 2025-02-16 15:45:42.041 UTC [48] LOG:  received fast shutdown request
+[33mtest-db_1  |[0m waiting for server to shut down....2025-02-16 15:45:42.158 UTC [48] LOG:  aborting any active transactions
+[33mtest-db_1  |[0m 2025-02-16 15:45:42.161 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+[33mtest-db_1  |[0m 2025-02-16 15:45:42.162 UTC [50] LOG:  shutting down
+[33mtest-db_1  |[0m .2025-02-16 15:45:43.679 UTC [48] LOG:  database system is shut down
 [33mtest-db_1  |[0m  done
 [33mtest-db_1  |[0m server stopped
-[36mdb_1       |[0m 2025-02-15 18:05:11.487 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[36mdb_1       |[0m 2025-02-15 18:05:12.123 UTC [70] LOG:  database system was shut down at 2025-02-15 18:05:10 UTC
 [33mtest-db_1  |[0m 
 [33mtest-db_1  |[0m PostgreSQL init process complete; ready for start up.
 [33mtest-db_1  |[0m 
-[36mdb_1       |[0m 2025-02-15 18:05:12.422 UTC [1] LOG:  database system is ready to accept connections
-[33mtest-db_1  |[0m 2025-02-15 18:05:14.046 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[33mtest-db_1  |[0m 2025-02-15 18:05:14.046 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-[33mtest-db_1  |[0m 2025-02-15 18:05:14.046 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-[33mtest-db_1  |[0m 2025-02-15 18:05:14.255 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-[33mtest-db_1  |[0m 2025-02-15 18:05:14.683 UTC [73] LOG:  database system was shut down at 2025-02-15 18:05:13 UTC
-[33mtest-db_1  |[0m 2025-02-15 18:05:14.848 UTC [1] LOG:  database system is ready to accept connections
+[33mtest-db_1  |[0m 2025-02-16 15:45:43.921 UTC [1] LOG:  starting PostgreSQL 14.15 (Debian 14.15-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33mtest-db_1  |[0m 2025-02-16 15:45:43.921 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mtest-db_1  |[0m 2025-02-16 15:45:43.921 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[33mtest-db_1  |[0m 2025-02-16 15:45:44.042 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mtest-db_1  |[0m 2025-02-16 15:45:44.186 UTC [73] LOG:  database system was shut down at 2025-02-16 15:45:43 UTC
+[33mtest-db_1  |[0m 2025-02-16 15:45:44.377 UTC [1] LOG:  database system is ready to accept connections
 [32mtests_1    |[0m 
 [32mtests_1    |[0m > qrboxer@0.1.0 test
 [32mtests_1    |[0m > jest -i --detectOpenHandles --forceExit --verbose --forceExit --detectOpenHandles --runInBand
@@ -159,10 +160,10 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m       ✕ not found if no such move (1 ms)
 [32mtests_1    |[0m     update
 [32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such move (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such move
 [32mtests_1    |[0m       ✕ works: partial update
 [32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✕ works: finds all moves for user (1 ms)
+[32mtests_1    |[0m       ✕ works: finds all moves for user
 [32mtests_1    |[0m       ✕ works: returns empty array if no moves found (1 ms)
 [32mtests_1    |[0m     remove
 [32mtests_1    |[0m       ✕ works: removes move and boxes cascade (1 ms)
@@ -412,60 +413,60 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /users 201 75 - 3.524 ms
-[32mtests_1    |[0m POST /users 400 202 - 1.243 ms
-[32mtests_1    |[0m POST /users 400 233 - 1.064 ms
-[32mtests_1    |[0m GET /users 200 103 - 0.694 ms
-[32mtests_1    |[0m GET /users 200 12 - 0.507 ms
-[32mtests_1    |[0m GET /users/testuser 200 144 - 0.527 ms
-[32mtests_1    |[0m GET /users/nonexistent 404 26 - 0.387 ms
-[32mtests_1    |[0m PATCH /users/testuser 200 55 - 0.933 ms
-[32mtests_1    |[0m PATCH /users/testuser 400 32 - 0.268 ms
-[32mtests_1    |[0m PATCH /users/testuser 400 35 - 0.309 ms
-[32mtests_1    |[0m PATCH /users/nonexistent 404 26 - 0.609 ms
-[32mtests_1    |[0m DELETE /users/testuser 200 22 - 0.409 ms
-[32mtests_1    |[0m DELETE /users/nonexistent 404 26 - 0.416 ms
+[32mtests_1    |[0m POST /users 201 75 - 3.554 ms
+[32mtests_1    |[0m POST /users 400 202 - 1.278 ms
+[32mtests_1    |[0m POST /users 400 233 - 1.113 ms
+[32mtests_1    |[0m GET /users 200 103 - 0.639 ms
+[32mtests_1    |[0m GET /users 200 12 - 0.402 ms
+[32mtests_1    |[0m GET /users/testuser 200 144 - 0.709 ms
+[32mtests_1    |[0m GET /users/nonexistent 404 26 - 0.424 ms
+[32mtests_1    |[0m PATCH /users/testuser 200 55 - 0.904 ms
+[32mtests_1    |[0m PATCH /users/testuser 400 32 - 0.264 ms
+[32mtests_1    |[0m PATCH /users/testuser 400 35 - 0.297 ms
+[32mtests_1    |[0m PATCH /users/nonexistent 404 26 - 0.654 ms
+[32mtests_1    |[0m DELETE /users/testuser 200 22 - 0.467 ms
+[32mtests_1    |[0m DELETE /users/nonexistent 404 26 - 0.426 ms
 [32mtests_1    |[0m PASS tests/routes/userRoutes.test.js
 [32mtests_1    |[0m   User Routes Test
 [32mtests_1    |[0m     POST /users
-[32mtests_1    |[0m       ✓ works: creates a new user (43 ms)
-[32mtests_1    |[0m       ✓ bad request with missing fields (11 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (13 ms)
+[32mtests_1    |[0m       ✓ works: creates a new user (40 ms)
+[32mtests_1    |[0m       ✓ bad request with missing fields (14 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (10 ms)
 [32mtests_1    |[0m     GET /users
 [32mtests_1    |[0m       ✓ works: gets all users (9 ms)
-[32mtests_1    |[0m       ✓ works: empty list on no users (14 ms)
+[32mtests_1    |[0m       ✓ works: empty list on no users (15 ms)
 [32mtests_1    |[0m     GET /users/:username
-[32mtests_1    |[0m       ✓ works: gets user by username (9 ms)
-[32mtests_1    |[0m       ✓ not found if user doesn't exist (8 ms)
+[32mtests_1    |[0m       ✓ works: gets user by username (11 ms)
+[32mtests_1    |[0m       ✓ not found if user doesn't exist (12 ms)
 [32mtests_1    |[0m     PATCH /users/:username
-[32mtests_1    |[0m       ✓ works: updates user (12 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data (10 ms)
-[32mtests_1    |[0m       ✓ bad request with empty update (11 ms)
+[32mtests_1    |[0m       ✓ works: updates user (8 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data (13 ms)
+[32mtests_1    |[0m       ✓ bad request with empty update (9 ms)
 [32mtests_1    |[0m       ✓ not found if user doesn't exist (8 ms)
 [32mtests_1    |[0m     DELETE /users/:username
-[32mtests_1    |[0m       ✓ works: deletes user (7 ms)
-[32mtests_1    |[0m       ✓ not found if user doesn't exist (7 ms)
+[32mtests_1    |[0m       ✓ works: deletes user (8 ms)
+[32mtests_1    |[0m       ✓ not found if user doesn't exist (8 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m FAIL tests/models/box.test.js
 [32mtests_1    |[0m   Box Model Tests
 [32mtests_1    |[0m     create
-[32mtests_1    |[0m       ✕ works (2 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✕ works: no filter
+[32mtests_1    |[0m       ✕ works: no filter (1 ms)
 [32mtests_1    |[0m     findAllbyUser
-[32mtests_1    |[0m       ✕ works with move filter
-[32mtests_1    |[0m       ✕ returns empty array if no boxes found (1 ms)
+[32mtests_1    |[0m       ✕ works with move filter (1 ms)
+[32mtests_1    |[0m       ✕ returns empty array if no boxes found (2 ms)
 [32mtests_1    |[0m     get
 [32mtests_1    |[0m       ✕ works (1 ms)
-[32mtests_1    |[0m       ✕ not found if no such box (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such box (4 ms)
 [32mtests_1    |[0m     getMoveBoxes
 [32mtests_1    |[0m       ✕ works
-[32mtests_1    |[0m       ✕ returns empty array if no boxes found
+[32mtests_1    |[0m       ✕ returns empty array if no boxes found (1 ms)
 [32mtests_1    |[0m     update
-[32mtests_1    |[0m       ✕ works
-[32mtests_1    |[0m       ✕ not found if no such box
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such box (1 ms)
 [32mtests_1    |[0m     remove
-[32mtests_1    |[0m       ✕ works
+[32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m       ✕ not found if no such box (1 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Box Model Tests › create › works
@@ -815,7 +816,7 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:14:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 201 78 - 5.102 ms
+[32mtests_1    |[0m POST /items 201 78 - 7.813 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     POST /items hit with body: { description: 'Missing box field' }
 [32mtests_1    |[0m 
@@ -901,7 +902,7 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 400 73 - 25.207 ms
+[32mtests_1    |[0m POST /items 400 73 - 18.186 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     POST /items hit with body: { description: 'Test description', box: 'not-a-number' }
 [32mtests_1    |[0m 
@@ -987,25 +988,25 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /items 400 79 - 11.694 ms
+[32mtests_1    |[0m POST /items 400 79 - 11.212 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items hit with query: {}
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:31:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items 200 149 - 3.003 ms
+[32mtests_1    |[0m GET /items 200 149 - 2.785 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items hit with query: { box: '1' }
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:31:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items?box=1 200 82 - 2.839 ms
+[32mtests_1    |[0m GET /items?box=1 200 82 - 2.640 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items/:id hit with id: 1
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:42:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items/1 200 78 - 2.884 ms
+[32mtests_1    |[0m GET /items/1 200 78 - 2.747 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     GET /items/:id hit with id: 0
 [32mtests_1    |[0m 
@@ -1041,7 +1042,7 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:47:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m GET /items/0 404 47 - 7.995 ms
+[32mtests_1    |[0m GET /items/0 404 47 - 7.489 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 1 body: {
 [32mtests_1    |[0m       description: 'Updated Kitchen appliance',
@@ -1051,7 +1052,7 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:53:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/1 200 89 - 2.646 ms
+[32mtests_1    |[0m PATCH /items/1 200 89 - 2.503 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 1 body: { box: 'not-a-number' }
 [32mtests_1    |[0m 
@@ -1141,7 +1142,7 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m       at done (node_modules/raw-body/index.js:220:7)
 [32mtests_1    |[0m       at IncomingMessage.onEnd (node_modules/raw-body/index.js:280:7)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/1 400 79 - 6.118 ms
+[32mtests_1    |[0m PATCH /items/1 400 79 - 6.837 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     PATCH /items/:id hit with id: 0 body: { description: 'Updated description' }
 [32mtests_1    |[0m 
@@ -1177,13 +1178,13 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:64:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m PATCH /items/0 404 47 - 3.747 ms
+[32mtests_1    |[0m PATCH /items/0 404 47 - 3.263 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     DELETE /items/:id hit with id: 1
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at log (routes/items.js:70:11)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m DELETE /items/1 200 13 - 2.858 ms
+[32mtests_1    |[0m DELETE /items/1 200 13 - 2.689 ms
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     DELETE /items/:id hit with id: 0
 [32mtests_1    |[0m 
@@ -1219,26 +1220,26 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at error (routes/items.js:75:13)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m DELETE /items/0 404 47 - 4.260 ms
+[32mtests_1    |[0m DELETE /items/0 404 47 - 3.715 ms
 [32mtests_1    |[0m PASS tests/routes/itemRoutes.test.js
 [32mtests_1    |[0m   Item Routes Test
 [32mtests_1    |[0m     POST /items
-[32mtests_1    |[0m       ✓ works: creates a new item (23 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (49 ms)
-[32mtests_1    |[0m       ✓ bad request with invalid data type (21 ms)
+[32mtests_1    |[0m       ✓ works: creates a new item (45 ms)
+[32mtests_1    |[0m       ✓ bad request with missing data (26 ms)
+[32mtests_1    |[0m       ✓ bad request with invalid data type (23 ms)
 [32mtests_1    |[0m     GET /items
-[32mtests_1    |[0m       ✓ works: gets all items (13 ms)
-[32mtests_1    |[0m       ✓ works: filtering with query (11 ms)
+[32mtests_1    |[0m       ✓ works: gets all items (10 ms)
+[32mtests_1    |[0m       ✓ works: filtering with query (10 ms)
 [32mtests_1    |[0m     GET /items/:id
-[32mtests_1    |[0m       ✓ works: gets item by id (10 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (18 ms)
+[32mtests_1    |[0m       ✓ works: gets item by id (11 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (14 ms)
 [32mtests_1    |[0m     PATCH /items/:id
-[32mtests_1    |[0m       ✓ works: updates item (10 ms)
+[32mtests_1    |[0m       ✓ works: updates item (11 ms)
 [32mtests_1    |[0m       ✓ bad request with invalid data (16 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (12 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (10 ms)
 [32mtests_1    |[0m     DELETE /items/:id
-[32mtests_1    |[0m       ✓ works: deletes item (10 ms)
-[32mtests_1    |[0m       ✓ not found for non-existent item (13 ms)
+[32mtests_1    |[0m       ✓ works: deletes item (11 ms)
+[32mtests_1    |[0m       ✓ not found for non-existent item (10 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   console.log
 [32mtests_1    |[0m     QRBoxer Config:
@@ -1273,17 +1274,17 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m FAIL tests/models/user.test.js
 [32mtests_1    |[0m   User Model Tests
 [32mtests_1    |[0m     authenticate
-[32mtests_1    |[0m       ✕ works with valid credentials (5 ms)
-[32mtests_1    |[0m       ✕ fails with wrong password
-[32mtests_1    |[0m       ✕ fails with non-existent user
+[32mtests_1    |[0m       ✕ works with valid credentials (1 ms)
+[32mtests_1    |[0m       ✕ fails with wrong password (1 ms)
+[32mtests_1    |[0m       ✕ fails with non-existent user (1 ms)
 [32mtests_1    |[0m     register
-[32mtests_1    |[0m       ✕ works
-[32mtests_1    |[0m       ✕ fails with duplicate username
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ fails with duplicate username (1 ms)
 [32mtests_1    |[0m     findAll
-[32mtests_1    |[0m       ✕ works
+[32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m     get
-[32mtests_1    |[0m       ✕ works
-[32mtests_1    |[0m       ✕ not found if no such user (1 ms)
+[32mtests_1    |[0m       ✕ works (1 ms)
+[32mtests_1    |[0m       ✕ not found if no such user
 [32mtests_1    |[0m     update
 [32mtests_1    |[0m       ✕ works (1 ms)
 [32mtests_1    |[0m     remove
@@ -1477,11 +1478,11 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m FAIL tests/routes/authRoutes.test.js
 [32mtests_1    |[0m   Auth Routes Test
 [32mtests_1    |[0m     POST /auth/token
-[32mtests_1    |[0m       ✕ works: can login with valid credentials (2 ms)
+[32mtests_1    |[0m       ✕ works: can login with valid credentials (1 ms)
 [32mtests_1    |[0m       ✕ unauth with non-existent user (1 ms)
 [32mtests_1    |[0m       ✕ unauth with wrong password (1 ms)
 [32mtests_1    |[0m       ✕ bad request with missing data (1 ms)
-[32mtests_1    |[0m       ✕ bad request with invalid data (4 ms)
+[32mtests_1    |[0m       ✕ bad request with invalid data (1 ms)
 [32mtests_1    |[0m     POST /auth/register
 [32mtests_1    |[0m       ✕ works: can register
 [32mtests_1    |[0m       ✕ bad request with duplicate username
@@ -1648,10 +1649,10 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m   Item Model Tests
 [32mtests_1    |[0m     ✕ can create an item (1 ms)
 [32mtests_1    |[0m     ✕ can find all items (1 ms)
-[32mtests_1    |[0m     ✕ can get item by id (5 ms)
-[32mtests_1    |[0m     ✕ can find items by box (1 ms)
-[32mtests_1    |[0m     ✕ can update item (1 ms)
-[32mtests_1    |[0m     ✕ not found if no such item (1 ms)
+[32mtests_1    |[0m     ✕ can get item by id (2 ms)
+[32mtests_1    |[0m     ✕ can find items by box
+[32mtests_1    |[0m     ✕ can update item
+[32mtests_1    |[0m     ✕ not found if no such item
 [32mtests_1    |[0m     ✕ can delete item
 [32mtests_1    |[0m 
 [32mtests_1    |[0m   ● Item Model Tests › can create an item
@@ -1782,18 +1783,18 @@ Attaching to qrboxer-backend_db_1, qrboxer-backend_test-db_1, qrboxer-backend_te
 [32mtests_1    |[0m 
 [32mtests_1    |[0m       at Object.log (config/config.js:27:9)
 [32mtests_1    |[0m 
-[32mtests_1    |[0m POST /moves 201 128 - 2.561 ms
-[32mtests_1    |[0m POST /moves 400 164 - 1.101 ms
+[32mtests_1    |[0m POST /moves 201 128 - 2.770 ms
+[32mtests_1    |[0m POST /moves 400 164 - 2.957 ms
 [32mtests_1    |[0m PASS tests/routes/moveRoutes.test.js
 [32mtests_1    |[0m   Move Routes Test
 [32mtests_1    |[0m     POST /moves
-[32mtests_1    |[0m       ✓ works: creates a new move (24 ms)
-[32mtests_1    |[0m       ✓ bad request with missing data (9 ms)
+[32mtests_1    |[0m       ✓ works: creates a new move (26 ms)
+[32mtests_1    |[0m       ✓ bad request with missing data (11 ms)
 [32mtests_1    |[0m 
 [32mtests_1    |[0m Test Suites: 6 failed, 3 passed, 9 total
 [32mtests_1    |[0m Tests:       59 failed, 27 passed, 86 total
 [32mtests_1    |[0m Snapshots:   0 total
-[32mtests_1    |[0m Time:        3.16 s
+[32mtests_1    |[0m Time:        3.275 s
 [32mtests_1    |[0m Ran all test suites.
 [32mtests_1    |[0m npm notice 
 [32mtests_1    |[0m npm notice New major version of npm available! 8.19.4 -> 11.1.0

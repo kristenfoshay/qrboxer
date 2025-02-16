@@ -1,6 +1,6 @@
 // jest.setup.js
 
-const { db, closeDb } = require("../config/db");
+const { db, closeDb, connect } = require("../config/db");
 const { BCRYPT_WORK_FACTOR } = require("../config/config");
 const bcrypt = require("bcrypt");
 
@@ -9,13 +9,11 @@ beforeAll(async () => {
 });
 
 async function commonBeforeAll() {
-  // Delete data from all tables
   await db.query("DELETE FROM items");
   await db.query("DELETE FROM boxes");
   await db.query("DELETE FROM moves");
   await db.query("DELETE FROM users");
 
-  // Create test users
   const hashedPassword = await bcrypt.hash("password123", BCRYPT_WORK_FACTOR);
   await db.query(`
     INSERT INTO users (username, password, email, admin)
@@ -25,7 +23,6 @@ async function commonBeforeAll() {
     [hashedPassword]
   );
 
-  // Create test moves
   const moveResults = await db.query(`
     INSERT INTO moves (location, date, username)
     VALUES ('Location 1', '2024-01-01', 'testuser1'),
@@ -35,7 +32,6 @@ async function commonBeforeAll() {
   );
   const moveIds = moveResults.rows.map(r => r.id);
 
-  // Create test boxes
   const boxResults = await db.query(`
     INSERT INTO boxes (room, move)
     VALUES ('Living Room', $1),
@@ -46,7 +42,6 @@ async function commonBeforeAll() {
   );
   const boxIds = boxResults.rows.map(r => r.id);
 
-  // Create test items
   await db.query(`
     INSERT INTO items (description, image, box)
     VALUES ('Item 1', 'image1.jpg', $1),
@@ -68,7 +63,6 @@ async function commonAfterAll() {
   await closeDb();
 }
 
-// Export objects for testing
 const testObjects = {
   testUserData: {
     username: "testuser1",
@@ -82,24 +76,21 @@ const testObjects = {
   },
   testBoxData: {
     room: "Test Room",
-    move: 1  // This will need to be updated with actual move ID in tests
+    move: 1
   },
   testItemData: {
     description: "Test Item",
     image: "test.jpg",
-    box: 1  // This will need to be updated with actual box ID in tests
+    box: 1
   }
 };
 
-// Mock tokens helper
 jest.mock("./helpers/tokens", () => ({
   createToken: jest.fn(() => "test-token")
 }));
 
-// Global test configuration
-jest.setTimeout(10000); // 10 second timeout
+jest.setTimeout(10000);
 
-// Suppress console logs during tests unless explicitly needed
 global.console = {
   ...console,
   log: jest.fn(),
@@ -107,7 +98,6 @@ global.console = {
   warn: jest.fn(),
 };
 
-// Add custom matchers if needed
 expect.extend({
   toBeWithinRange(received, floor, ceiling) {
     const pass = received >= floor && received <= ceiling;

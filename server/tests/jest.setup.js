@@ -1,11 +1,13 @@
 // jest.setup.js
 
-const { db, closeDb, connect } = require("../config/db");
+const { closeDb, getDatabase } = require("../config/db");
 const { BCRYPT_WORK_FACTOR } = require("../config/config");
 const bcrypt = require("bcrypt");
 
+let db;
+
 beforeAll(async () => {
-    await connect();
+    db = await getDatabase();
 });
 
 async function commonBeforeAll() {
@@ -85,7 +87,7 @@ const testObjects = {
   }
 };
 
-jest.mock("./helpers/tokens", () => ({
+jest.mock("../helpers/tokens", () => ({
   createToken: jest.fn(() => "test-token")
 }));
 
